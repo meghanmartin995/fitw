@@ -1,0 +1,66 @@
+.home-page {
+  background: #1533A2;
+  height: 100vh;
+}
+
+header.home-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 66px;
+  max-width: 1600px;
+  margin: 0 auto;
+  .fitw-logo {
+    letter-spacing: 0.02em;
+    font-family: Poppins;
+    font-weight: bold;
+    font-size: 38px;
+    color: #FFDAE9;
+  }
+}
+
+div.home-page {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1533A2;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 1;
+}
+
+section.cta {
+  font-family: Rubik One;
+  font-size: 6.7vw;
+  letter-spacing: 0.02em;
+  color: #FDDCEB;
+  text-transform: uppercase;
+  margin: 3.5% auto 0 auto;
+  text-align: center;
+  max-width: 1600px;
+  .cta-text {
+    margin-bottom: 20px;
+  }
+  .have-to {
+    transform: rotate(4.49deg);
+  }
+  .enter {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 48px 0 0 0;
+    i {
+      font-size: 28px;
+      padding: 0 12px;
+    }
+  }
+
+}
+
+@media screen and (min-width: 2000px) {
+  section.cta {
+     font-size: 130px;
+  }
+}
