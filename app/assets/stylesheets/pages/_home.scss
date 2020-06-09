@@ -1,15 +1,17 @@
-.home-page {
+html {
   background: #1533A2;
-  height: 100vh;
 }
-
 header.home-header {
+  top: 32px;
+  right: 66px;
+  left: 66px;
+  max-width: 1600px;
+  margin: 0 auto;
+  position: fixed;
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 40px 66px;
-  max-width: 1600px;
-  margin: 0 auto;
   .fitw-logo {
     letter-spacing: 0.02em;
     font-family: Poppins;
@@ -19,17 +21,30 @@ header.home-header {
   }
 }
 
-div.home-page {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #1533A2;
-  pointer-events: none;
-  mix-blend-mode: difference;
+section.matter {
   z-index: 1;
+  position: fixed;
+
 }
+
+section.home-page {
+  margin-top: 100vh;
+  height: 100vh;
+  width: 100vw;
+  background-color: #FFDAE9;
+  position: relative;
+  z-index: 2;
+}
+
+// div.home-page {
+//   position: fixed;
+//   top: 0;
+//   right: 0;
+//   width: 100%;
+//   height: 100%;
+//   // background-color: #1533A2;
+//   pointer-events: none;
+// }
 
 section.cta {
   font-family: Rubik One;

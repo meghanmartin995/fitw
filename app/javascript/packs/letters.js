@@ -16,7 +16,7 @@ const renderer = Render.create({
     width: w,
     height: h,
     pixelRatio: dpi,
-    background: '',
+    background: '#1533A2',
     wireframes: false
   }
 })
@@ -25,10 +25,10 @@ const createShape = function (x, y) {
   const randomNum = Math.random()
 
   if (randomNum > 0.85) {
-    return Bodies.circle(x, y, 30, {
+    return Bodies.circle(x, y, 20, {
       render: {
         sprite: {
-          texture: "",
+          texture: "https://res.cloudinary.com/dq61mo2kj/image/upload/v1591732929/a_ubhdwl.svg",
           xScale: 1,
           yScale: 1
         }
@@ -36,10 +36,10 @@ const createShape = function (x, y) {
     })
   }
     else if (randomNum > 0.7) {
-        return Bodies.circle(x, y, 30, {
+        return Bodies.circle(x, y, 20, {
       render: {
         sprite: {
-          texture: "",
+          texture: "https://res.cloudinary.com/dq61mo2kj/image/upload/v1591732929/b_eqoh32.svg",
           xScale: 1,
           yScale: 1
         }
@@ -51,7 +51,7 @@ const createShape = function (x, y) {
     return Bodies.circle(x, y, 20, {
       render: {
         sprite: {
-          texture: "",
+          texture: "https://res.cloudinary.com/dq61mo2kj/image/upload/v1591732929/c_ytlqj1.svg",
           xScale: 1,
           yScale: 1
         }
@@ -79,11 +79,46 @@ const shapes = Composites.stack(50, 50, 10, 10, 40, 40, function (x, y) {
 // const circle = Bodies.circle(w / 2, h / 2, Math.min(w / 4.5, h / 4.5), {
 //   isStatic: true,
 //   render: {
-//     fillStyle: '#F6B67B',
-//     strokeStyle: 'transparent'
+//     sprite: {
+//       texture: "https://res.cloudinary.com/dq61mo2kj/image/upload/v1591737355/new_ubnxwu.svg",
+//       xScale: 1,
+//       yScale: 1
+//     }
 //   }
 // })
 
+const circle = Bodies.circle(w / 2.5, h / 2.1, 60, {
+  isStatic: true,
+  render: {
+    sprite: {
+      texture: "https://res.cloudinary.com/dq61mo2kj/image/upload/v1591738076/purple_pn5riq.svg",
+      xScale: 1,
+      yScale: 1
+    }
+  }
+})
+
+const circle2 = Bodies.circle(w / 1.5, h / 2.1, 60, {
+  isStatic: true,
+  render: {
+    sprite: {
+      texture: "https://res.cloudinary.com/dq61mo2kj/image/upload/v1591738224/green_v0wpbz.svg",
+      xScale: 1,
+      yScale: 1
+    }
+  }
+})
+
+const circle3 = Bodies.circle(w / 1.7, h / 1.8, 60, {
+  isStatic: true,
+  render: {
+    sprite: {
+      texture: "https://res.cloudinary.com/dq61mo2kj/image/upload/v1591738258/pink_pqdz30.svg",
+      xScale: 1,
+      yScale: 1
+    }
+  }
+})
 
 
 
@@ -99,7 +134,9 @@ const mouse = MouseConstraint.create(engine, {
 World.add(engine.world, [
   mouse,
   shapes,
-  // circle,
+  circle,
+  circle2,
+  circle3,
   ground,
   ceiling,
   leftWall,
