@@ -16,4 +16,3 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import { letters } from '../packs/letters'
-// import { matterwrap } from '../packs/matterwrap'
