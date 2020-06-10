@@ -7,5 +7,5 @@ class Font < ApplicationRecord
   has_many :extwebsites, through: :extwebsite_fonts
   has_many :font_types
   has_many :types, through: :font_types
-  # validates :name, presence: true
+  #validates :name, presence: true
 end

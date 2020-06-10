@@ -2,6 +2,7 @@
   <%= f.input :website %>
   <%= f.input :url %>
   <%= f.input :photo, as: :file %>
+  <%= f.association :vibes, as: :check_boxes %>
   <%= f.association :fonts, as: :check_boxes %>
   <%= f.simple_fields_for :fonts do |p| %>
     <%= p.input :name %>
@@ -9,8 +10,6 @@
   <% end %>
 <%= f.button :submit,  "Add" %>
 <% end %>
-
-
 
 <% if @posts %>
   <% @posts.each do |post| %>
@@ -23,6 +22,11 @@
       <% post.fonts.each do |font| %>
         <%= font.name %>
       <% end %>
+    <% if post.vibes.present? %>
+      <% post.vibes.each do |vibe| %>
+        <%= vibe.name %>
+      <% end %>
+    <% end %>
     <% end %>
   <% end %>
 <% end %>
