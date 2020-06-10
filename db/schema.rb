@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_10_154756) do
+ActiveRecord::Schema.define(version: 2020_06_10_170140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,6 +94,15 @@ ActiveRecord::Schema.define(version: 2020_06_10_154756) do
     t.index ["post_id"], name: "index_post_fonts_on_post_id"
   end
 
+  create_table "post_vibes", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.bigint "vibe_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_post_vibes_on_post_id"
+    t.index ["vibe_id"], name: "index_post_vibes_on_vibe_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "website"
     t.string "url"
@@ -119,6 +128,12 @@ ActiveRecord::Schema.define(version: 2020_06_10_154756) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "vibes", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "extwebsite_fonts", "extwebsites"
   add_foreign_key "extwebsite_fonts", "fonts"
@@ -128,4 +143,6 @@ ActiveRecord::Schema.define(version: 2020_06_10_154756) do
   add_foreign_key "font_types", "types"
   add_foreign_key "post_fonts", "fonts"
   add_foreign_key "post_fonts", "posts"
+  add_foreign_key "post_vibes", "posts"
+  add_foreign_key "post_vibes", "vibes"
 end

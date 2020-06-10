@@ -5,6 +5,7 @@
   <%= f.association :fonts, as: :check_boxes %>
   <%= f.simple_fields_for :fonts do |p| %>
     <%= p.input :name %>
+    <%#= f.association :categories, as: :check_boxes %>
   <% end %>
 <%= f.button :submit,  "Add" %>
 <% end %>
