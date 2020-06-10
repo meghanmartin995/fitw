@@ -15,6 +15,9 @@
   <% @posts.each do |post| %>
     <%= post.website %>
     <%= post.url %>
+    <% if post.photo.attached? %>
+      <%= cl_image_tag post.photo.key %>
+    <% end %>
     <% if post.fonts.present? %>
       <% post.fonts.each do |font| %>
         <%= font.name %>
