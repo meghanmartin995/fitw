@@ -2,6 +2,9 @@
   <%= f.input :website %>
   <%= f.input :url %>
   <%= f.association :fonts, as: :check_boxes %>
+  <%= f.simple_fields_for :fonts do |p| %>
+    <%= p.input :name %>
+  <% end %>
 <%= f.button :submit,  "Add" %>
 <% end %>
 

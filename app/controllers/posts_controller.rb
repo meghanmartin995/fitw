@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @post = Post.new
+    @post.fonts.build
   end
 
   def new
@@ -13,13 +14,13 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path
     else
-      render :new
+      redirect_to posts_path
     end
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:website, :url, font_ids: [])
+    params.require(:post).permit(:website, :url, font_ids: [], :fonts_attributes => [:name, :font_id])
   end
 end
