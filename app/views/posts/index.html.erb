@@ -1,7 +1,7 @@
 <header class="index">
   <%= image_tag "logo-s.svg", class: "logo-eye" %>
   <div class="dropdown show">
-    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a class="btn btn-secondary dropdown-toggle shadow-none" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      ✨ Most recent
     </a>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -12,7 +12,7 @@
 
 <div class="filters">
   <div class="dropdown show">
-    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a class="btn btn-secondary dropdown-toggle shadow-none" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      Vibes
     </a>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -23,7 +23,7 @@
   </div>
 
   <div class="dropdown show">
-    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a class="btn btn-secondary dropdown-toggle shadow-none" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      Google Fonts
     </a>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -37,7 +37,11 @@
 <div class="search-index">
   <%= form_tag(posts_path, method: 'get', class: "form-inline") do %>
 <!--   <div id= "search-data" class="form-search search-data" data-articles="<%= @posts.to_json %>"> -->
+  <div class="search">
     <%= text_field_tag :q_search, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search for fonts" %>
+    <%= image_tag("search.svg") %>
+  </div>
+
 <!--   </div> -->
   <% end %>
 </div>

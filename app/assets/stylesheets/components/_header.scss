@@ -5,15 +5,11 @@ header.index {
   font-size: 19px;
   font-family: Inter;
   justify-content: space-between;
-  // position: fixed;
   padding: 12px 62px 0 26px;
-  // width: 100%;
+  max-width: 1600px;
   .filters {
     display: flex;
     align-items: center;
-    a {
-      padding: 0 28px 0 0;
-    }
   }
 }
 
@@ -29,6 +25,7 @@ header.index {
   font-weight: 600;
   font-size: 19px;
   letter-spacing: .01em;
+  padding: 0 28px 0 0;
 }
 
 .dropdown-toggle::after {
@@ -36,14 +33,17 @@ header.index {
   vertical-align: 0.12em !important;
 }
 
-.form-control {
-  background: #FAFAFA;
-  border-radius: 29px;
+.dropdown-menu {
   border: none;
-  font-family: Inter;
-  font-size: 18.5px;
-  line-height: 22px;
-  color: #828796;
-  width: 400px;
-  padding: 0.375rem 1.55rem;
+  box-shadow: 4px 4px 9px rgba(199, 199, 199, 0.23);
+  a {
+    color: #AEAEAE;
+    font-family: Open sans;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: .01em;
+    text-align: center;
+    padding: 6px 0;
+  }
 }
+
