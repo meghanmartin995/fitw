@@ -1,3 +1,93 @@
+<header class="index">
+  <%= image_tag "logo-s.svg", class: "logo-eye" %>
+  <div class="dropdown show">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     ✨ Most recent
+    </a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item" href="#">Trending</a>
+      <a class="dropdown-item" href="#">Random</a>
+    </div>
+  </div>
+
+<div class="filters">
+  <div class="dropdown show">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     Vibes
+    </a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item" href="#">Tech</a>
+      <a class="dropdown-item" href="#">Experimental</a>
+      <a class="dropdown-item" href="#">Classic</a>
+    </div>
+  </div>
+
+  <div class="dropdown show">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     Google Fonts
+    </a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item" href="#">Squarespace</a>
+      <a class="dropdown-item" href="#">Shopify</a>
+      <a class="dropdown-item" href="#">Adobe Fonts</a>
+    </div>
+  </div>
+  <%= link_to "Free fonts", vibe_path(@vibes.first), class: '' %>
+</div>
+<div class="search-index">
+  <%= form_tag(posts_path, method: 'get', class: "form-inline") do %>
+<!--   <div id= "search-data" class="form-search search-data" data-articles="<%= @posts.to_json %>"> -->
+    <%= text_field_tag :q_search, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search for fonts" %>
+<!--   </div> -->
+  <% end %>
+</div>
+</header>
+<section class="content">
+  <% if @posts %>
+  <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 398 }'>
+    <% @posts.each do |post| %>
+      <% if post.photo.attached? %>
+      <div class="grid-item"><%= cl_image_tag post.photo.key %>
+      <% if post.fonts.present? %>
+        <% post.fonts.each do |font| %>
+           <p> <%= font.name.capitalize %> </p>
+        <% end %>
+      <% end %>
+      </div>
+
+    <% end %>
+    <% end %>
+    </div>
+  <% end %>
+</section>
+
+<% if @pg_results %>
+  <% @pg_results.each do |result| %>
+    <% if result.searchable_type == 'Post' %>
+      <% post = result.searchable %>
+      <%= post.website %>
+      <%= post.website %>
+      <% post.fonts.each do |font| %>
+        <%= font.name %>
+      <% end %>
+    <% else %>
+      <% font = result.searchable %>
+      <% font.posts.each do |post| %>
+        <%= post.website %>
+        <%= post.url %>
+        <%= font.name %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<%#= search_form_for @q do |f| %>
+  <%#= f.select :vibe_name_eq,
+            options_for_select(Vibe.all.map{|x| x.name}),
+            {include_blank: "Vibe", class: 'filter-select'}
+          %>
+<%# end %>
+
 <%= simple_form_for(@post) do |f| %>
   <%= f.input :website %>
   <%= f.input :url %>
@@ -11,22 +101,13 @@
 <%= f.button :submit,  "Add" %>
 <% end %>
 
-<% if @posts %>
-  <% @posts.each do |post| %>
-    <%= post.website %>
-    <%= post.url %>
-    <% if post.photo.attached? %>
-      <%= cl_image_tag post.photo.key %>
-    <% end %>
-    <% if post.fonts.present? %>
-      <% post.fonts.each do |font| %>
-        <%= font.name %>
-      <% end %>
-    <% if post.vibes.present? %>
-      <% post.vibes.each do |vibe| %>
-        <%= vibe.name %>
-      <% end %>
-    <% end %>
-    <% end %>
-  <% end %>
-<% end %>
+
+
+
+<%= link_to "tech", vibe_path(@vibes.first), class: '' %>
+<%= link_to "experimental", vibe_path(@vibes.second), class: '' %>
+<%= link_to "classic", vibe_path(@vibes.third), class: '' %>
+
+
+
+
