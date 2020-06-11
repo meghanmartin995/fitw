@@ -1,9 +1,49 @@
 header.index {
   display: flex;
-  // height: 82px;
-  align-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 19px;
+  font-family: Inter;
+  justify-content: space-between;
+  // position: fixed;
+  padding: 12px 62px 0 26px;
+  // width: 100%;
+  .filters {
+    display: flex;
+    align-items: center;
+    a {
+      padding: 0 28px 0 0;
+    }
+  }
 }
 
 .logo-eye {
   height: 68px;
+}
+
+#dropdownMenuLink {
+  background-color: transparent;
+  border: none;
+  color: #AEAEAE;
+  font-family: Open sans;
+  font-weight: 600;
+  font-size: 19px;
+  letter-spacing: .01em;
+}
+
+.dropdown-toggle::after {
+  margin-left: 0.085em !important;
+  vertical-align: 0.12em !important;
+}
+
+.form-control {
+  background: #FAFAFA;
+  border-radius: 29px;
+  border: none;
+  font-family: Inter;
+  font-size: 18.5px;
+  line-height: 22px;
+  color: #828796;
+  width: 400px;
+  padding: 0.375rem 1.55rem;
 }

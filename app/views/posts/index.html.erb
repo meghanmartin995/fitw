@@ -10,6 +10,7 @@
     </div>
   </div>
 
+<div class="filters">
   <div class="dropdown show">
     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      Vibes
@@ -31,26 +32,35 @@
       <a class="dropdown-item" href="#">Adobe Fonts</a>
     </div>
   </div>
-<%= link_to "Free fonts", vibe_path(@vibes.first), class: '' %>
-
-</header>
-
+  <%= link_to "Free fonts", vibe_path(@vibes.first), class: '' %>
+</div>
 <div class="search-index">
   <%= form_tag(posts_path, method: 'get', class: "form-inline") do %>
 <!--   <div id= "search-data" class="form-search search-data" data-articles="<%= @posts.to_json %>"> -->
-    <%= text_field_tag :q_search, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search" %>
+    <%= text_field_tag :q_search, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search for fonts" %>
 <!--   </div> -->
   <% end %>
 </div>
+</header>
+<section class="content">
+</section>
 
 <% if @pg_results %>
   <% @pg_results.each do |result| %>
     <% if result.searchable_type == 'Post' %>
       <% post = result.searchable %>
       <%= post.website %>
+      <%= post.website %>
+      <% post.fonts.each do |font| %>
+        <%= font.name %>
+      <% end %>
     <% else %>
       <% font = result.searchable %>
-      <%= font.name %>
+      <% font.posts.each do |post| %>
+        <%= post.website %>
+        <%= post.url %>
+        <%= font.name %>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>
