@@ -17,3 +17,5 @@ import "bootstrap"
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 // import { letters } from '../packs/letters'
+
+import { masonry } from '../packs/masonry'
