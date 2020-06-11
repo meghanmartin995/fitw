@@ -5,8 +5,9 @@ header.index {
   font-size: 19px;
   font-family: Inter;
   justify-content: space-between;
-  padding: 12px 62px 0 26px;
+  padding: 12px 62px 12px 26px;
   max-width: 1600px;
+  border-bottom: 1px solid #F3F5F8;
   .filters {
     display: flex;
     align-items: center;
