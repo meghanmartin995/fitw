@@ -1,0 +1,5 @@
+<%= @vibe.name %>
+<% @vibe.posts.each do |post| %>
+  <%= post&.website %>
+  <%= post&.url %>
+<% end %>

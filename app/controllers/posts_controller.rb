@@ -4,6 +4,7 @@ class PostsController < ApplicationController
     @posts = Post.all
     @post = Post.new
     @post.fonts.build
+    @vibes = Vibe.all
   end
 
   def new
