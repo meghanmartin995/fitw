@@ -47,12 +47,13 @@
   <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 398 }'>
     <% @posts.each do |post| %>
       <% if post.photo.attached? %>
-      <div class="grid-item"><%= cl_image_tag post.photo.key %></div>
+      <div class="grid-item"><%= cl_image_tag post.photo.key %>
       <% if post.fonts.present? %>
         <% post.fonts.each do |font| %>
            <p> <%= font.name.capitalize %> </p>
         <% end %>
       <% end %>
+      </div>
 
     <% end %>
     <% end %>
