@@ -1,17 +1,47 @@
-<header>
+<header class="index">
+  <%= image_tag "logo.svg", class: "logo-eye" %>
   <div class="dropdown show">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   ✨ Most recent
-  </a>
-
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="#">Trending</a>
-    <a class="dropdown-item" href="#">Random</a>
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     ✨ Most recent
+    </a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item" href="#">Trending</a>
+      <a class="dropdown-item" href="#">Random</a>
+    </div>
   </div>
-</div>
+
+  <div class="dropdown show">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     Vibes
+    </a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item" href="#">Tech</a>
+      <a class="dropdown-item" href="#">Experimental</a>
+      <a class="dropdown-item" href="#">Classic</a>
+    </div>
+  </div>
+
+  <div class="dropdown show">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     Google Fonts
+    </a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item" href="#">Squarespace</a>
+      <a class="dropdown-item" href="#">Shopify</a>
+      <a class="dropdown-item" href="#">Adobe Fonts</a>
+    </div>
+  </div>
+<%= link_to "Free fonts", vibe_path(@vibes.first), class: '' %>
+
 </header>
 
-
+<div class="search-index">
+  <%= form_tag(posts_path, method: 'get', class: "form-inline") do %>
+  <div id= "search-data" class="form-search search-data" data-articles="<%= @posts.to_json %>">
+    <%= text_field_tag :q_search, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search" %>
+  </div>
+  <% end %>
+</div>
 
 
 

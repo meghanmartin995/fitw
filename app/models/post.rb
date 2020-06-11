@@ -5,4 +5,11 @@ class Post < ApplicationRecord
   has_many :vibes, through: :post_vibes
   accepts_nested_attributes_for :fonts, reject_if: proc { |attributes| attributes['name'].blank? }
   has_one_attached :photo
+  include PgSearch::Model
+  pg_search_scope :search_by_website,
+    against: [ :website ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+  #multisearchable against: [:website]
 end
