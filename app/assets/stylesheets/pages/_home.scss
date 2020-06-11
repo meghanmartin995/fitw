@@ -79,3 +79,17 @@ section.cta {
      font-size: 130px;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .join-btn {
+    display: none;
+  }
+
+  .fitw-logo {
+    width: 200px;
+  }
+
+  header.home-header {
+    left: 34px;
+  }
+}

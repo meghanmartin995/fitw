@@ -1,0 +1,32 @@
+<%= simple_form_for(@post) do |f| %>
+  <%= f.input :website %>
+  <%= f.input :url %>
+  <%= f.input :photo, as: :file %>
+  <%= f.association :vibes, as: :check_boxes %>
+  <%= f.association :fonts, as: :check_boxes %>
+  <%= f.simple_fields_for :fonts do |p| %>
+    <%= p.input :name %>
+    <%#= f.association :categories, as: :check_boxes %>
+  <% end %>
+<%= f.button :submit,  "Add" %>
+<% end %>
+
+<% if @posts %>
+  <% @posts.each do |post| %>
+    <%= post.website %>
+    <%= post.url %>
+    <% if post.photo.attached? %>
+      <%= cl_image_tag post.photo.key %>
+    <% end %>
+    <% if post.fonts.present? %>
+      <% post.fonts.each do |font| %>
+        <%= font.name %>
+      <% end %>
+    <% if post.vibes.present? %>
+      <% post.vibes.each do |vibe| %>
+        <%= vibe.name %>
+      <% end %>
+    <% end %>
+    <% end %>
+  <% end %>
+<% end %>
