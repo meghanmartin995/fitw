@@ -1,4 +1,16 @@
 .content {
   max-width: 1196px;
   height: 800px;
+  margin: 42px auto;
+  img {
+    border-radius: 18px;
+  }
+  p {
+    font-family: Inter;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 23px;
+    color: #0F0F0F;
+    margin-top: 12px;
+  }
 }
