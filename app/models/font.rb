@@ -9,7 +9,7 @@ class Font < ApplicationRecord
   has_many :types, through: :font_types
   #validates :name, presence: true
   include PgSearch::Model
-  #multisearchable against: [:name, :designer]
+  multisearchable against: [:name, :designer]
   # pg_search_scope :search_by_name_and_designer,
   #   against: [ :name, :designer ],
   #   using: {

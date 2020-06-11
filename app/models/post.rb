@@ -6,10 +6,14 @@ class Post < ApplicationRecord
   accepts_nested_attributes_for :fonts, reject_if: proc { |attributes| attributes['name'].blank? }
   has_one_attached :photo
   include PgSearch::Model
-  pg_search_scope :search_by_website,
-    against: [ :website ],
-    using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
-    }
-  #multisearchable against: [:website]
+  # pg_search_scope :search_by_website,
+  #   against: [ :website ],
+  #   using: {
+  #     tsearch: { prefix: true } # <-- now `superman batm` will return something!
+  #   }
+  multisearchable against: [:website]
+  def posts_by_font(name)
+    Post.joins(:fonts)
+        .where(fonts: { name: name })
+  end
 end

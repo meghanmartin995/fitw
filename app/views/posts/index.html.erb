@@ -37,13 +37,30 @@
 
 <div class="search-index">
   <%= form_tag(posts_path, method: 'get', class: "form-inline") do %>
-  <div id= "search-data" class="form-search search-data" data-articles="<%= @posts.to_json %>">
+<!--   <div id= "search-data" class="form-search search-data" data-articles="<%= @posts.to_json %>"> -->
     <%= text_field_tag :q_search, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search" %>
-  </div>
+<!--   </div> -->
   <% end %>
 </div>
 
+<% if @pg_results %>
+  <% @pg_results.each do |result| %>
+    <% if result.searchable_type == 'Post' %>
+      <% post = result.searchable %>
+      <%= post.website %>
+    <% else %>
+      <% font = result.searchable %>
+      <%= font.name %>
+    <% end %>
+  <% end %>
+<% end %>
 
+<%#= search_form_for @q do |f| %>
+  <%#= f.select :vibe_name_eq,
+            options_for_select(Vibe.all.map{|x| x.name}),
+            {include_blank: "Vibe", class: 'filter-select'}
+          %>
+<%# end %>
 
 <%= simple_form_for(@post) do |f| %>
   <%= f.input :website %>

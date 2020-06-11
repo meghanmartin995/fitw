@@ -2,12 +2,13 @@ class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index ]
   def index
     #@q = Post.ransack(params[:q])
+    #@posts = @q.result(distinct: true).includes(:fonts)
     #@posts = @q.result(distinct: true).includes(:category, :tags)
     if params[:q_search].present?
-      @pg_result = Post.search_by_website(params[:q_search])
+      @pg_results = PgSearch.multisearch(params[:q_search])
     end
     @posts = Post.all
-    @posts = @posts & @pg_result if @pg_result
+    #@posts = @posts & @pg_results if @pg_results
     @post = Post.new
     @post.fonts.build
     @vibes = Vibe.all
