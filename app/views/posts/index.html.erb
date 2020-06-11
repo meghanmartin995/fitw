@@ -44,8 +44,8 @@
 </header>
 <section class="content">
   <% if @posts %>
+  <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 398 }'>
     <% @posts.each do |post| %>
-      <div class="grid">
       <% if post.photo.attached? %>
       <div class="grid-item"><%= cl_image_tag post.photo.key %></div>
       <% if post.fonts.present? %>
@@ -53,9 +53,10 @@
            <p> <%= font.name.capitalize %> </p>
         <% end %>
       <% end %>
+
+    <% end %>
+    <% end %>
     </div>
-    <% end %>
-    <% end %>
   <% end %>
 </section>
 
