@@ -65,6 +65,8 @@
   <% end %>
 </section>
 
+<%= pagy_bootstrap_nav(@pagy).html_safe %>
+
 <% if @pg_results %>
   <% @pg_results.each do |result| %>
     <% if result.searchable_type == 'Post' %>

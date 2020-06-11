@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     if params[:q_search].present?
       @pg_results = PgSearch.multisearch(params[:q_search])
     end
-    @posts = Post.all
+    @pagy, @posts = pagy(Post.all, items: 15)
     #@posts = @posts & @pg_results if @pg_results
     @post = Post.new
     @post.fonts.build
