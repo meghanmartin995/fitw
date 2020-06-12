@@ -28,7 +28,12 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.with_attached_photo.find(params[:id])
+    # respond_to do |format|
+    #   format.html
+    #   format.js { layout: false, template: ‘modal’ }
+    # end
   end
+
 
   def create
     @post = Post.new(post_params)
