@@ -18,6 +18,22 @@ header.index {
   height: 68px;
 }
 
+.toggle .dropdown-toggle::after {
+  display: none;
+}
+
+.toggle {
+  #dropdownMenuLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      padding-left: 6px;
+      padding-top: 1px;
+    }
+  }
+}
+
 #dropdownMenuLink {
   background-color: transparent;
   border: none;
