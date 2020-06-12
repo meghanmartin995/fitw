@@ -1,7 +1,5 @@
 <%= render 'shared/navbar' %>
 
-<%= link_to "Add post", new_post_path %>
-
 <%#= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
     <%#= f.input :tags, label: "Fonts",  collection: $tags, as: :check_boxes, onClick: "test"%>
     <%#= f.input :strengths, label: "Flavor", collection: $flavors, as: :check_boxes  %>
@@ -15,8 +13,8 @@
       <%= render 'post', posts: @posts %>
   </div>
   <% end %>
-  <%= pagy_bootstrap_nav(@pagy).html_safe %>
 </section>
+<%= pagy_bootstrap_nav(@pagy).html_safe %>
 
 
 <%#= search_form_for @q do |f| %>
