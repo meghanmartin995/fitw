@@ -5,13 +5,19 @@ class PostsController < ApplicationController
     #@posts = @q.result(distinct: true).includes(:fonts)
     #@posts = @q.result(distinct: true).includes(:category, :tags)
     if params[:q_search].present?
+      #@filter = params[:q_search]["fonts"].concat(params[:q_search]).flatten.reject(&:blank?)
       @pg_results = PgSearch.multisearch(params[:q_search])
     end
+    @posts = @posts & @pg_results if @pg_results
     @pagy, @posts = pagy(Post.all, items: 15)
-    #@posts = @posts & @pg_results if @pg_results
+
     @post = Post.new
     @post.fonts.build
     @vibes = Vibe.all
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new

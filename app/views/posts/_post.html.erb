@@ -1,0 +1,29 @@
+<% if @pg_results %>
+  <% @pg_results.each do |result| %>
+    <% if result.searchable_type == 'Font' %>
+        <% font = result.searchable %>
+        <% font.posts.each do |post| %>
+          <% if post.photo.attached? %>
+            <div class="grid-item"><%= cl_image_tag post.photo.key %>
+              <% font =  post.fonts.map(&:name).join ', '.titleize %>
+              <p><%= font.titleize %></p>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% else %>
+  <% posts.each do |post| %>
+    <% if post.photo.attached? %>
+      <div class="grid-item"><%= cl_image_tag post.photo.key %>
+      <% if post.fonts.present? %>
+        <% font =  post.fonts.map(&:name).join ', '.titleize %>
+        <p><%= font.titleize %></p>
+      <% end %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+
+
