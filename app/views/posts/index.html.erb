@@ -2,11 +2,11 @@
 
 <%= link_to "Add post", new_post_path %>
 
-<%= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
-    <%= f.input :tags, label: "Fonts",  collection: $tags, as: :check_boxes, onClick: "test"%>
+<%#= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
+    <%#= f.input :tags, label: "Fonts",  collection: $tags, as: :check_boxes, onClick: "test"%>
     <%#= f.input :strengths, label: "Flavor", collection: $flavors, as: :check_boxes  %>
-    <%= link_to "Reset", posts_path  %>
-<% end %>
+    <%#= link_to "Reset", posts_path  %>
+<%# end %>
 
 <section class="content">
   <% if @posts %>
