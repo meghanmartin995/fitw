@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index ]
+  impressionist actions: [:show], unique: [:session_hash]
   def index
     #@q = Post.ransack(params[:q])
     #@posts = @q.result(distinct: true).includes(:fonts)
@@ -25,14 +26,18 @@ class PostsController < ApplicationController
     @post.fonts.build
   end
 
+  def show
+    @post = Post.with_attached_photo.find(params[:id])
+  end
+
   def create
     @post = Post.new(post_params)
     if @post.save
       redirect_to posts_path
-      flash.now[:alert] = 'Post saved!'
+      flash[:alert] = 'Post saved!'
     else
       render :new
-      flash.now[:alert] = 'Post not saved :('
+      flash[:alert] = 'Post not saved :('
     end
   end
 
