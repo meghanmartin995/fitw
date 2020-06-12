@@ -8,7 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 import "bootstrap"
-import $ from 'jquery';
+global.$ = jQuery;
 
 
 
@@ -22,3 +22,14 @@ import $ from 'jquery';
 
 import { masonry } from '../packs/masonry'
 
+$(document).ready(function() {
+
+  var clickOnPopupLink = function(){
+    $('body').on('click', '.static-popup-link', function(){
+      $('#exampleModal').modal('show');
+    });
+  }
+
+  clickOnPopupLink();
+
+});
