@@ -8,6 +8,8 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 import "bootstrap"
+global.$ = jQuery;
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -19,3 +21,15 @@ import "bootstrap"
 // import { letters } from '../packs/letters'
 
 import { masonry } from '../packs/masonry'
+
+$(document).ready(function() {
+
+  var clickOnPopupLink = function(){
+    $('body').on('click', '.static-popup-link', function(){
+      $('#exampleModal').modal('show');
+    });
+  }
+
+  clickOnPopupLink();
+
+});

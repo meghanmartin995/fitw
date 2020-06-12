@@ -10,9 +10,9 @@ class Font < ApplicationRecord
   #validates :name, presence: true
   include PgSearch::Model
   multisearchable against: [:name, :designer]
-  # pg_search_scope :search_by_name_and_designer,
-  #   against: [ :name, :designer ],
-  #   using: {
-  #     tsearch: { prefix: true }
-  #   }
+  pg_search_scope :search_by_name_and_designer_and_websites,
+    against: [ :name, :designer, :squarespace, :adobe, :google, :free_commercial ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end

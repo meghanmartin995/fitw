@@ -1,0 +1,7 @@
+<div class="modal-body">
+  <% post.fonts.each do |font| %>
+    <%= font.name %>
+  <% end %>
+  <%= post&.website %>
+  <%= cl_image_tag post.photo&.key %>
+</div>
