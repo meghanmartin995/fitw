@@ -13,6 +13,6 @@ class Font < ApplicationRecord
   pg_search_scope :search_by_name_and_designer_and_websites,
     against: [ :name, :designer, :squarespace, :adobe, :google, :free_commercial ],
     using: {
-      tsearch: { any_word: true }
+      tsearch: { prefix: true }
     }
 end

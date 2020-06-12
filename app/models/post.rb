@@ -13,6 +13,15 @@ class Post < ApplicationRecord
   #     tsearch: { prefix: true } # <-- now `superman batm` will return something!
   #   }
   multisearchable against: [:website]
+
+  pg_search_scope :global_search,
+  against: [:website],
+  associated_against: {
+    tags: [:name]
+  },
+  using: {
+    tsearch: {prefix: true}
+  }
   def posts_by_font(name)
     Post.joins(:fonts)
         .where(fonts: { name: name })

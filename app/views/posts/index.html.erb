@@ -1,52 +1,9 @@
-<header class="index">
-  <%= image_tag "logo-s.svg", class: "logo-eye" %>
-  <div class="dropdown show">
-    <a class="btn btn-secondary dropdown-toggle shadow-none" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     ✨ Most recent
-    </a>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <a class="dropdown-item" href="#">Trending</a>
-      <a class="dropdown-item" href="#">Random</a>
-    </div>
-  </div>
+<%= render 'shared/navbar' %>
 
-<div class="filters">
-  <div class="dropdown show">
-    <a class="btn btn-secondary dropdown-toggle shadow-none" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     Vibes
-    </a>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <a class="dropdown-item" href="#">Tech</a>
-      <a class="dropdown-item" href="#">Experimental</a>
-      <a class="dropdown-item" href="#">Classic</a>
-    </div>
-  </div>
-
-  <div class="dropdown show">
-    <a class="btn btn-secondary dropdown-toggle shadow-none" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     Google Fonts
-    </a>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <a class="dropdown-item" href="#">Squarespace</a>
-      <a class="dropdown-item" href="#">Adobe Fonts</a>
-    </div>
-  </div>
-  <%#= link_to "Free fonts", vibe_path(@vibes.first), class: '' %>
-</div>
-<div class="search-index">
-  <%= form_tag(posts_path, method: 'get', remote: true, class: "form-inline") do %>
-<!--   <div id= "search-data" class="form-search search-data" data-articles="<%= @posts.to_json %>"> -->
-  <div class="search">
-    <%= text_field_tag :q_search, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search for fonts" %>
-    <%= image_tag("search.svg") %>
-  </div>
-<!--   </div> -->
-  <% end %>
-</div>
-</header>
+<%= link_to "Add post", new_post_path %>
 
 <%= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
-    <%= f.input :fonts, label: "Fonts",  collection: $fonts, as: :check_boxes, onClick: "test"%>
+    <%= f.input :tags, label: "Fonts",  collection: $tags, as: :check_boxes, onClick: "test"%>
     <%#= f.input :strengths, label: "Flavor", collection: $flavors, as: :check_boxes  %>
     <%= link_to "Reset", posts_path  %>
 <% end %>
@@ -62,54 +19,12 @@
 </section>
 
 
-
-<%# if @pg_results %>
-  <%# @pg_results.each do |result| %>
-    <%# if result.searchable_type == 'Post' %>
-      <%# post = result.searchable %>
-      <%#= post.website %>
-      <%#= post.website %>
-      <%# post.fonts.each do |font| %>
-        <%#= font.name %>
-      <%# end %>
-    <%# else %>
-      <%# font = result.searchable %>
-      <%# font.posts.each do |post| %>
-        <%#= post.website %>
-        <%#= post.url %>
-        <%#= font.name %>
-      <%# end %>
-    <%# end %>
-  <%# end %>
-<%# end %>
-
 <%#= search_form_for @q do |f| %>
   <%#= f.select :vibe_name_eq,
             options_for_select(Vibe.all.map{|x| x.name}),
             {include_blank: "Vibe", class: 'filter-select'}
           %>
 <%# end %>
-
-<%= simple_form_for(@post) do |f| %>
-  <%= f.input :website %>
-  <%= f.input :url %>
-  <%= f.input :photo, as: :file %>
-  <%= f.association :vibes, as: :check_boxes %>
-  <%= f.association :fonts, as: :check_boxes %>
-  <%= f.simple_fields_for :fonts do |p| %>
-    <%= p.input :name %>
-    <%#= f.association :categories, as: :check_boxes %>
-  <% end %>
-<%= f.button :submit,  "Add" %>
-<% end %>
-
-
-
-
-<%#= link_to "tech", vibe_path(@vibes.first), class: '' %>
-<%#= link_to "experimental", vibe_path(@vibes.second), class: '' %>
-<%#= link_to "classic", vibe_path(@vibes.third), class: '' %>
-
 
 
 

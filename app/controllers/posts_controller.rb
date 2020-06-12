@@ -22,20 +22,23 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @post.fonts.build
   end
 
   def create
     @post = Post.new(post_params)
     if @post.save
       redirect_to posts_path
+      flash.now[:alert] = 'Post saved!'
     else
-      redirect_to posts_path
+      render :new
+      flash.now[:alert] = 'Post not saved :('
     end
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:website, :url, :photo, font_ids: [], vibe_ids: [],:fonts_attributes => [:name, :font_id])
+    params.require(:post).permit(:website, :url, :photo, :tag_id, font_ids: [], vibe_ids: [], :fonts_attributes => [:name, :font_id])
   end
 end

@@ -17,6 +17,7 @@ font_1 = Font.create!(name: "Arial", free_commercial: true, google: true)
 font_2 = Font.create!(name: "Open Sans", free_commercial: true, google: true)
 font_3 = Font.create!(name: "Roboto", free_commercial: false, google: false)
 font_4 = Font.create!(name: "Calibre", free_commercial: false, google: false)
+font_5 = Font.create!(name: "Zingy", free_commercial: false, google: false)
 
 puts "#{Font.count} fonts created!"
 
@@ -26,6 +27,7 @@ post_1.photo.attach(io: post_photo_1, filename: 'post_photo_1.jpg', content_type
 post_1.save!
 
 PostFont.create!(font: font_1, post: post_1)
+PostFont.create!(font: font_5, post: post_1)
 
 post_photo_2 = URI.open('https://i.pinimg.com/236x/ac/19/60/ac1960f861fd5c8ab3dbe499dbd11446.jpg')
 post_2 = Post.new(website: "Weapons of Reason", url: "https://weaponsofreason.com/", tag: tag_2)
