@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  belongs_to :tag
   has_many :post_fonts
   has_many :fonts, through: :post_fonts
   has_many :post_vibes

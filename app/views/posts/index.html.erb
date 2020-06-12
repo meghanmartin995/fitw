@@ -31,7 +31,7 @@
       <a class="dropdown-item" href="#">Adobe Fonts</a>
     </div>
   </div>
-  <%= link_to "Free fonts", vibe_path(@vibes.first), class: '' %>
+  <%#= link_to "Free fonts", vibe_path(@vibes.first), class: '' %>
 </div>
 <div class="search-index">
   <%= form_tag(posts_path, method: 'get', remote: true, class: "form-inline") do %>
@@ -40,11 +40,17 @@
     <%= text_field_tag :q_search, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search for fonts" %>
     <%= image_tag("search.svg") %>
   </div>
-
 <!--   </div> -->
   <% end %>
 </div>
 </header>
+
+<%= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
+    <%= f.input :fonts, label: "Fonts",  collection: $fonts, as: :check_boxes, onClick: "test"%>
+    <%#= f.input :strengths, label: "Flavor", collection: $flavors, as: :check_boxes  %>
+    <%= link_to "Reset", posts_path  %>
+<% end %>
+
 <section class="content">
   <% if @posts %>
   <div class="grid" id="posts">
@@ -100,9 +106,9 @@
 
 
 
-<%= link_to "tech", vibe_path(@vibes.first), class: '' %>
-<%= link_to "experimental", vibe_path(@vibes.second), class: '' %>
-<%= link_to "classic", vibe_path(@vibes.third), class: '' %>
+<%#= link_to "tech", vibe_path(@vibes.first), class: '' %>
+<%#= link_to "experimental", vibe_path(@vibes.second), class: '' %>
+<%#= link_to "classic", vibe_path(@vibes.third), class: '' %>
 
 
 
