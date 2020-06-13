@@ -7,6 +7,21 @@ class Post < ApplicationRecord
   accepts_nested_attributes_for :fonts, reject_if: proc { |attributes| attributes['name'].blank? }
   has_one_attached :photo
   is_impressionable
+
+  scope :tag, -> tag_id { where(:tag_id => tag_id) }
+
+  scope :with_tag, lambda { |tags|
+    where(tag: [*tag])
+  }
+
+  scope :with_tag_id, ->(tag_ids) {
+    where(tag_id: [*tag_ids])
+  }
+
+  scope :with_country_name, ->(country_name) {
+    where(country: { name: country_name }).joins(:country)
+  }
+
   include PgSearch::Model
   # pg_search_scope :search_by_website,
   #   against: [ :website ],
@@ -27,4 +42,5 @@ class Post < ApplicationRecord
     Post.joins(:fonts)
         .where(fonts: { name: name })
   end
+
 end
