@@ -31,7 +31,7 @@
   <%= form_tag(posts_path, method: 'get', remote: true, class: "form-inline") do %>
 <!--   <div id= "search-data" class="form-search search-data" data-articles="<%= @posts.to_json %>"> -->
   <div class="search">
-    <%= text_field_tag :q_search, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search for fonts" %>
+    <%= search_field_tag :q_search, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search for fonts" %>
     <%#= button_tag "Reset", type: :reset %>
     <%= image_tag("search.svg") %>
     <!-- <p class="x">x</p> -->

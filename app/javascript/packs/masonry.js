@@ -4,7 +4,7 @@ var masonry = new Masonry( elem, {
   itemSelector: '.grid-item',
   itemSelector: '.grid-item',
   columnWidth: '.grid-sizer',
-  gutter: 20,
+  // "gutter": 20,
   // percentPosition: true,
   isFitWidth: true
 });

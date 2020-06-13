@@ -1,5 +1,5 @@
 .content {
-  max-width: 1196px;
+  max-width: 1296px;
   margin: 34px auto;
   img {
     border-radius: 18px;
@@ -15,19 +15,27 @@
 }
 
 .grid {
-  max-width: 1196px;
+  max-width: 1296px;
   margin: 0 auto;
 }
 
 .grid-sizer,
 .grid-item {
-  width: 376px;
+  width: 400px;
+  display: block;
+  padding: 1em .9em;
+  // margin: 0 0 1.5em;
+  background: #fff;
 }
 
 .grid-item {
   float: left;
-  margin: 10px 0;
+
   position: relative;
+  // margin: 10px 0;
+  img {
+
+  }
 }
 
 .website-text {
