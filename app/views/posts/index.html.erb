@@ -12,7 +12,7 @@
 
 <section class="content">
   <div class="filters recent">
-    <div class="dropdown show drop-recent">
+<!--     <div class="dropdown show drop-recent">
       <a class="btn btn-secondary dropdown-toggle shadow-none" href="/posts" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
        ✨ Most recent
       </a>
@@ -20,9 +20,10 @@
         <a class="dropdown-item" href="#">Trending</a>
         <a class="dropdown-item" href="#">Random</a>
       </div>
-    </div>
+    </div> -->
 
     <div class="tag">
+      <%= link_to "All", posts_path %>
       <%= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
 <!--         <div class="inputs form-check form-check-inline"> -->
           <%= f.input :tag, collection: $tags, as: :check_boxes,

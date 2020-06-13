@@ -1,0 +1,14 @@
+function replacePosts (innerHTML) {
+  const posts = document.getElementById('posts');
+  posts.innerHTML = innerHTML;
+}
+// replacePosts("<%= j render 'post', posts: @posts %>");
+
+
+if ('<%= @filter %>' === "[]") {
+replacePosts("<%= j render 'post', posts: Post.is_free %>");
+}
+else {
+replacePosts("<%= j render 'post', posts: @posts %>");
+}
+

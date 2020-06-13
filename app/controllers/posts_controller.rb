@@ -40,7 +40,21 @@ class PostsController < ApplicationController
   end
 
   def free
+    if params[:search]
+      @filter = params[:search]["tag"].reject(&:blank?)
+      @pagy, @posts = pagy(Post.is_free.global_search("#{@filter}"))
+
+    elsif params[:q]
+      @posts = @q.result.includes(:fonts, :tags).page(params[:page]).to_a.uniq
+    else
+    @posts = @posts & @pg_results if @pg_results
     @pagy, @posts = pagy(Post.is_free, items: 18)
+
+      respond_to do |format|
+        format.html
+        format.js
+      end
+    end
   end
 
   def squarespace

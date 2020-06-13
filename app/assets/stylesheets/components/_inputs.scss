@@ -23,8 +23,8 @@ header {
     display: none;
   }
   .form-check {
-    padding-left: 2.4rem;
-    padding-top: .1rem;
+    // padding-left: 2.4rem;
+    // padding-top: .1rem;
     color: #807E8B;
   }
   .form-group {
@@ -40,6 +40,44 @@ header {
     font-weight: bold;
     padding-bottom: 18px;
   }
+}
+
+.form-check-input {
+  position: relative;
+}
+input[type='checkbox']{
+  // width: 10px !important;
+  // height: 10px !important;
+  // margin: 9px 10px 0 0;
+  // -webkit-appearance: none;
+  // -moz-appearance: none;
+  // -o-appearance: none;
+  // appearance:none;
+  // outline: 2px solid #919191;
+  // box-shadow: none;
+    width: 1em;
+    height: 1em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: -4px;
+    margin-right: 8px;
+}
+
+input[type='checkbox']:checked {
+  background-color: #919191;
+}
+  input[type='checkbox']:checked:after {
+    content: '\2713';
+    color: white;
+    position: absolute;
+    line-height: 1rem;
+    font-size:1rem;
+    padding-left: 0.15rem;
 }
 
 nav.pagy-bootstrap-nav {

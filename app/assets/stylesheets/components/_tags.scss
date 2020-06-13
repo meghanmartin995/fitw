@@ -21,22 +21,28 @@
   display: inline;
   padding: 0px 15px 0 15px;
   input {
-    display: none;
+    // display: none;
   }
  }
 
  .tag {
-  margin-top: 6px;
+  margin-top: -8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   a {
     font-family: Open Sans;
     font-weight: 600;
+    color: #928F9C;
+    font-size: 19px;
+    font-family: Open Sans;
+    font-weight: 600;
+    margin: 0px 3px 0 3px;
+    background: #F8F8F8;
+    border-radius: 10px;
+    padding: 11px 17px;
+    margin-top: -14px;
+    margin-right: 20px;
   }
  }
-
- // .active {
- //    background: #2D47AA;
- //    border-radius: 10px;
- //    color: white;
- //    padding: 8px;
- // }
 

@@ -12,7 +12,7 @@
     <%= link_to "Squarespace Fonts", squarespace_path, class: '' %>
     <div class="free-squig">
       <%= link_to "Free fonts", free_path, class: 'free free-page' %>
-      <%= image_tag("squig.svg") %>
+      <%= image_tag("squig.svg", class:'animate__animated animate__fadeIn') %>
     </div>
   <%= form_tag(posts_path, method: 'get', remote: true, class: "form-inline") do %>
 <!--   <div id= "search-data" class="form-search search-data" data-articles="<%= @posts.to_json %>"> -->
@@ -32,7 +32,7 @@
 
 <section class="content">
   <div class="filters recent">
-    <div class="dropdown show drop-recent">
+<!--     <div class="dropdown show drop-recent">
       <a class="btn btn-secondary dropdown-toggle shadow-none" href="/posts" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
        ✨ Most recent
       </a>
@@ -40,9 +40,10 @@
         <a class="dropdown-item" href="#">Trending</a>
         <a class="dropdown-item" href="#">Random</a>
       </div>
-    </div>
+    </div> -->
 
     <div class="tag">
+      <%= link_to "All", posts_path %>
       <%= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
 <!--         <div class="inputs form-check form-check-inline"> -->
           <%= f.input :tag, collection: $tags, as: :check_boxes,
@@ -112,3 +113,5 @@
   </div>
   <% end %>
 </section>
+
+<%= pagy_bootstrap_nav(@pagy).html_safe %>

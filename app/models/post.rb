@@ -8,7 +8,7 @@ class Post < ApplicationRecord
   is_impressionable
   acts_as_taggable_on :tags
 
-  $tags = ['tech', 'classic', 'experimental']
+  $tags = ['tech', 'classic', 'experimental', 'rising', 'trending']
 
   include PgSearch::Model
 
