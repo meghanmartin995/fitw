@@ -15,4 +15,5 @@ class Font < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+  scope :true, ->(boolean = true) { where(commercial_free: boolean) }
 end

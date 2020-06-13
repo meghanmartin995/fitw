@@ -9,6 +9,7 @@ header.index {
   max-width: 1600px;
   border-bottom: 1px solid #F3F5F8;
   margin: 0 auto;
+  letter-spacing: 0.01em;
   .filters {
     display: flex;
     align-items: center;
@@ -21,9 +22,29 @@ header.index {
   a {
     padding: 0 22px;
     color: #928F9C;
+    font-family: Open Sans;
+    font-weight: 600;
   }
   .search {
     margin: 0 50px 0 0;
+  }
+}
+
+.free {
+  margin-right: 28px;
+}
+
+.free-page {
+  color: #1533A2 !important;
+}
+
+.free-squig {
+  position: relative;
+  font-family: inter;
+  img {
+    position: absolute;
+    top: 25px;
+    left: 19px;
   }
 }
 

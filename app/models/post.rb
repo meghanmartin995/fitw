@@ -11,11 +11,6 @@ class Post < ApplicationRecord
   $tags = ['tech', 'classic', 'experimental']
 
   include PgSearch::Model
-  # pg_search_scope :search_by_website,
-  #   against: [ :website ],
-  #   using: {
-  #     tsearch: { prefix: true } # <-- now `superman batm` will return something!
-  #   }
 
   multisearchable against: [:website]
 
@@ -27,6 +22,7 @@ class Post < ApplicationRecord
   using: {
     tsearch: {prefix: true}
   }
+  scope :is_free, -> { joins(:fonts).where(fonts: { free_commercial: true } ) }
 
   def posts_by_font(name)
     Post.joins(:fonts)

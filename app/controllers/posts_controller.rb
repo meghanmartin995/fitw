@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index ]
-  impressionist actions: [:show], unique: [:session_hash]
+  skip_before_action :authenticate_user!, only: [ :index, :free, :show, :show_modal ]
+  impressionist actions: [:show_modal], unique: [:session_hash]
+
   def index
+    @q = Post.ransack(params[:q])
     if params[:q_search].present?
       @pg_results = PgSearch.multisearch(params[:q_search])
 
@@ -9,6 +11,9 @@ class PostsController < ApplicationController
       @filter = params[:search]["tag"].reject(&:blank?)
       @pagy, @posts = pagy(Post.all.global_search("#{@filter}"))
 
+    elsif params[:q]
+
+      @posts = @q.result.includes(:fonts, :tags).page(params[:page]).to_a.uniq
     else
     @posts = @posts & @pg_results if @pg_results
     @pagy, @posts = pagy(Post.all, items: 18)
@@ -32,6 +37,18 @@ class PostsController < ApplicationController
       format.html
       format.js
     end
+  end
+
+  def free
+    @pagy, @posts = pagy(Post.is_free, items: 18)
+  end
+
+  def squarespace
+    @pagy, @posts = pagy(Post.is_free, items: 18)
+  end
+
+  def google
+    @pagy, @posts = pagy(Post.is_free, items: 18)
   end
 
   def show_modal

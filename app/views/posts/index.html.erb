@@ -1,10 +1,19 @@
 <%= render 'shared/navbar' %>
 
+<%#= search_form_for @q do |f| %>
+  <%#= f.label :website_start %>
+  <%#= f.search_field :website_start %>
+  <%#= f.select :tags_name, options_for_select(Vibe.all.map(&:name)), {include_blank: "Vibes"} %>
+   <%#= f.label :fonts_start %>
+  <%#= f.search_field :fonts_start %>
+  <%#= content_tag :th, sort_link(@q, :fonts_commercial_free_true) %>
+  <%#= f.submit %>
+<%# end %>
 
 <section class="content">
   <div class="filters recent">
     <div class="dropdown show drop-recent">
-      <a class="btn btn-secondary dropdown-toggle shadow-none" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="btn btn-secondary dropdown-toggle shadow-none" href="/posts" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
        ✨ Most recent
       </a>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">

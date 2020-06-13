@@ -7,9 +7,10 @@
 
   </div>
 <div class="search-index">
-    <%= link_to "Google Fonts", root_path, class: '' %>
-    <%= link_to "Squarespace", root_path, class: '' %>
-    <%= link_to "Free fonts", root_path, class: '' %>
+    <%= link_to "All Fonts", root_path, class: '' %>
+    <%= link_to "Google Fonts", google_path, class: '' %>
+    <%= link_to "Squarespace Fonts", squarespace_path, class: '' %>
+    <%= link_to "Free fonts", free_path, class: 'free' %>
   <%= form_tag(posts_path, method: 'get', remote: true, class: "form-inline") do %>
 <!--   <div id= "search-data" class="form-search search-data" data-articles="<%= @posts.to_json %>"> -->
   <div class="search">
