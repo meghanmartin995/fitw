@@ -2,19 +2,26 @@
 
 
 <section class="content">
-  <div class="dropdown show drop-recent">
-    <a class="btn btn-secondary dropdown-toggle shadow-none" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     ✨ Most recent
-    </a>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <a class="dropdown-item" href="#">Trending</a>
-      <a class="dropdown-item" href="#">Random</a>
+  <div class="filters recent">
+    <div class="dropdown show drop-recent">
+      <a class="btn btn-secondary dropdown-toggle shadow-none" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       ✨ Most recent
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="#">Trending</a>
+        <a class="dropdown-item" href="#">Random</a>
+      </div>
+    </div>
+
+    <div class="tag">
+      <%= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
+<!--         <div class="inputs form-check form-check-inline"> -->
+          <%= f.input :tag, collection: $tags, as: :check_boxes,
+          item_wrapper_class: 'checkbox_container' %>
+<!--         </div> -->
+      <% end %>
     </div>
   </div>
-
-  <%= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
-      <%= f.input :tag, collection: $tags, as: :check_boxes %>
-  <% end %>
 
   <% if @posts %>
   <div class="grid" id="posts">

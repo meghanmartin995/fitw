@@ -20,11 +20,15 @@ header.index {
   align-items: center;
   a {
     padding: 0 22px;
+    color: #928F9C;
+  }
+  .search {
+    margin: 0 50px 0 0;
   }
 }
 
 .logo-eye {
-  height: 68px;
+  height: 66px;
   cursor: pointer;
 }
 
@@ -62,10 +66,10 @@ header.index {
   border-radius: 10px;
   padding-left: 16px;
   #dropdownMenuLink {
-    color: #3B374C;
+    color: #1533A2;
   }
   .dropdown-item {
-    color: #807E8B;
+    color: #1533A2;
     font-size: 17.5px;
   }
 }
@@ -105,7 +109,7 @@ header.index {
     font-size: 18 !important;
   }
   a:hover {
-    color: #807E8B;
+    color: #1533A2;
     background: #FAFAFA;
   }
 }

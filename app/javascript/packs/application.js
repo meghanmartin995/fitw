@@ -47,3 +47,4 @@ for (const check of checkBoxes) {
     Rails.fire(form, 'submit');
   });
 }
+

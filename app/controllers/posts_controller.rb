@@ -7,12 +7,10 @@ class PostsController < ApplicationController
 
     elsif params[:search]
       @filter = params[:search]["tag"].reject(&:blank?)
-      #@posts = @filter.empty? ? Post.all : Post.all.tagged_with(@filter, any: true)
-      @posts = Post.all.global_search("#{@filter}")
+      @pagy, @posts = pagy(Post.all.global_search("#{@filter}"))
 
     else
     @posts = @posts & @pg_results if @pg_results
-    #@posts = @posts & @filtered_posts if @filtered_posts
     @pagy, @posts = pagy(Post.all, items: 18)
 
       respond_to do |format|

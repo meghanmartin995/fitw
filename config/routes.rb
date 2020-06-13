@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :posts, only: [ :index, :new, :create, :show ]
   resources :tags, only: [ :show ]
   get 'show_modal/:id', to: 'posts#show_modal', as: :show_modal
+  #get 'free', to: 'posts#free', as: :free
 end
