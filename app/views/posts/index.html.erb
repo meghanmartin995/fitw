@@ -7,6 +7,15 @@
 <%# end %>
 
 <section class="content">
+  <div class="dropdown show drop-recent">
+    <a class="btn btn-secondary dropdown-toggle shadow-none" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     ✨ Most recent
+    </a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item" href="#">Trending</a>
+      <a class="dropdown-item" href="#">Random</a>
+    </div>
+  </div>
   <% if @posts %>
   <div class="grid" id="posts">
     <div class="grid-sizer"></div>

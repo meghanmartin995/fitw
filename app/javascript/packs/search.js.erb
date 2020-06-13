@@ -1,0 +1,14 @@
+const x = document.querySelector(".x")
+const search = document.querySelector(".search-input")
+console.log(search)
+
+search.addEventListener("keydown", function(event) {
+  if (event.currentTarget.value == "") {
+    x.classList.remove('show-x')
+  }
+  else {
+    x.classList.add('show-x')
+  }
+});
+
+

@@ -21,6 +21,7 @@ global.$ = jQuery;
 // import { letters } from '../packs/letters'
 
 import { masonry } from '../packs/masonry'
+import { search } from '../packs/search.js.erb'
 
 $(document).ready(function() {
 

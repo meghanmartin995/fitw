@@ -1,7 +1,5 @@
 function replacePosts (innerHTML) {
   const posts = document.getElementById('posts');
-  console.log(posts)
   posts.innerHTML = innerHTML;
-  console.log(posts.innerHTML)
 }
 replacePosts("<%= j render 'post', posts: @posts %>");
