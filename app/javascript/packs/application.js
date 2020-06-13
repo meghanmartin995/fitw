@@ -10,6 +10,10 @@ require("channels")
 import "bootstrap"
 global.$ = jQuery;
 
+import Rails from "@rails/ujs";
+window.Rails = Rails;
+// Rails.start();
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -21,7 +25,7 @@ global.$ = jQuery;
 // import { letters } from '../packs/letters'
 
 import { masonry } from '../packs/masonry'
-import { search } from '../packs/search.js.erb'
+// import { search } from '../packs/search.js.erb'
 
 $(document).ready(function() {
 
@@ -34,3 +38,12 @@ $(document).ready(function() {
   clickOnPopupLink();
 
 });
+
+var checkBoxes = document.querySelectorAll(".tag .form-check-input");
+var form = document.querySelector('.tag form');
+
+for (const check of checkBoxes) {
+  check.addEventListener( 'change', function() {
+    Rails.fire(form, 'submit');
+  });
+}

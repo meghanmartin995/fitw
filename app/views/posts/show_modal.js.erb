@@ -1,2 +1,2 @@
-$('#modal_content').html("<%= j render 'post_content', post: @post %>");
+$('#modal_content').html("<%= j render 'post_content', post: @post, related_posts: @related_posts %>");
 $("#myModal").modal('show');

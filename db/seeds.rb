@@ -2,10 +2,10 @@ require "open-uri"
 
 puts 'Cleaning database...'
 
-PostFont.destroy_all
-Post.destroy_all
-Font.destroy_all
-Tag.destroy_all
+PostFont.destroy_all if Rails.env.development?
+Post.destroy_all if Rails.env.development?
+Font.destroy_all if Rails.env.development?
+Tag.destroy_all if Rails.env.development?
 
 tag_1 = Tag.create!(name: "Tech")
 tag_2 = Tag.create!(name: "Classic")
