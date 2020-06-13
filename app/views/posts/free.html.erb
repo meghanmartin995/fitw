@@ -44,7 +44,7 @@
 
     <div class="tag">
       <%= link_to "All", posts_path %>
-      <%= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
+      <%= simple_form_for :search, url: free_path, method: "GET", remote: true do |f| %>
 <!--         <div class="inputs form-check form-check-inline"> -->
           <%= f.input :tag, collection: $tags, as: :check_boxes,
           item_wrapper_class: 'checkbox_container' %>
