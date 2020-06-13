@@ -1,9 +1,4 @@
 <%= render 'shared/navbar' %>
-<div class="tag">
-  <%= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
-      <%= f.input :tag, label: "tags",  collection: $tags, as: :check_boxes %>
-  <% end %>
-</div>
 
 
 <section class="content">

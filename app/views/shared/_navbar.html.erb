@@ -2,26 +2,18 @@
   <%= link_to new_post_path do %>
     <%= image_tag "logoxxxs.svg", class: "logo-eye" %>
   <% end %>
-<!--   <div class="dropdown show">
-    <a class="btn btn-secondary dropdown-toggle shadow-none" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     ✨ Most recent
-    </a>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <a class="dropdown-item" href="#">Trending</a>
-      <a class="dropdown-item" href="#">Random</a>
-    </div>
-  </div> -->
+
   <div class="filters toggle">
-    <div class="dropdown show">
-      <a class="btn btn-secondary dropdown-toggle shadow-none" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-       Vibes <%= image_tag("down.png") %>
-      </a>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#">Tech</a>
-        <a class="dropdown-item" href="#">Experimental</a>
-        <a class="dropdown-item" href="#">Classic</a>
+      <div class="tag dropdown show">
+          <a class="btn btn-secondary dropdown-toggle shadow-none" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Vibes <%= image_tag("down.png") %>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <%= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
+              <%= f.input :tag, collection: $tags, as: :check_boxes %>
+          <% end %>
+        </div>
       </div>
-    </div>
 
     <div class="dropdown show">
       <a class="btn btn-secondary dropdown-toggle shadow-none" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
