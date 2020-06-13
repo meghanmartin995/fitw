@@ -4,30 +4,12 @@
   <% end %>
 
   <div class="filters toggle">
-      <div class="tag dropdown show">
-          <a class="btn btn-secondary dropdown-toggle shadow-none" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Vibes <%= image_tag("down.png") %>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <%= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
-              <%= f.input :tag, collection: $tags, as: :check_boxes %>
-          <% end %>
-        </div>
-      </div>
 
-    <div class="dropdown show">
-      <a class="btn btn-secondary dropdown-toggle shadow-none" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-       Sources <%= image_tag("down.png") %>
-      </a>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#">Google Fonts</a>
-        <a class="dropdown-item" href="#">Squarespace</a>
-        <a class="dropdown-item" href="#">Adobe Fonts</a>
-      </div>
-    </div>
-  <%= link_to "Free fonts", root_path, class: '' %>
-</div>
+  </div>
 <div class="search-index">
+      <%= link_to "Google Fonts", root_path, class: '' %>
+    <%= link_to "Squarespace", root_path, class: '' %>
+    <%= link_to "Free fonts", root_path, class: '' %>
   <%= form_tag(posts_path, method: 'get', remote: true, class: "form-inline") do %>
 <!--   <div id= "search-data" class="form-search search-data" data-articles="<%= @posts.to_json %>"> -->
   <div class="search">

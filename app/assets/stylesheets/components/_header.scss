@@ -15,6 +15,14 @@ header.index {
   }
 }
 
+.search-index {
+  display: flex;
+  align-items: center;
+  a {
+    padding: 0 22px;
+  }
+}
+
 .logo-eye {
   height: 68px;
   cursor: pointer;

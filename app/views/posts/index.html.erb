@@ -11,6 +11,11 @@
       <a class="dropdown-item" href="#">Random</a>
     </div>
   </div>
+
+  <%= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
+      <%= f.input :tag, collection: $tags, as: :check_boxes %>
+  <% end %>
+
   <% if @posts %>
   <div class="grid" id="posts">
     <div class="grid-sizer"></div>
