@@ -26,10 +26,11 @@
  }
 
  .tag {
-  margin-top: -8px;
+  // margin-top: -8px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 20px auto;
   a {
     font-family: Open Sans;
     font-weight: 600;
