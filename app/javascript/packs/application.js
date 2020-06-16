@@ -25,6 +25,7 @@ window.Rails = Rails;
 // import { letters } from '../packs/letters'
 
 import { masonry } from '../packs/masonry'
+import { shot } from '../packs/shot'
 // import { search } from '../packs/search.js.erb'
 
 $(document).ready(function() {
