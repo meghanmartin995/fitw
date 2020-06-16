@@ -24,6 +24,7 @@ window.Rails = Rails;
 // const imagePath = (name) => images(name, true)
 // import { letters } from '../packs/letters'
 
+//import "./stylesheets/application.scss"
 import { masonry } from '../packs/masonry'
 import { shot } from '../packs/shot'
 // import { search } from '../packs/search.js.erb'
