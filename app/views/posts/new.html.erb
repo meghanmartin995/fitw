@@ -1,44 +1,46 @@
 <div class="new-form">
-  <h1>Add a new post</h1>
-  <%= simple_form_for(@post) do |f| %>
-    <div class="form-row">
-    <div class="col">
-      <%= f.input :website, input_html: { autocomplete: 'off' }, class: "form-control"%>
-    </div>
-    <div class="col">
-      <%= f.input :url, input_html: { autocomplete: 'off' } %>
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="col">
-      <%= f.input :photo, as: :file, class: "form-control-file"  %>
-    </div>
-    <div class="col">
-      <%#= f.input :tag_list, label: "Add tags", hint: "Add your tags, separated by commas" %>
-      <%= f.input :tag_list, as: :check_boxes, collection: [ "experimental", "tech", "classic", "rising", "trending" ] %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.association :fonts, as: :check_boxes %>
-  </div>
-    <%= f.simple_fields_for :fonts do |pp| %>
-      <%= pp.input :name, input_html: { autocomplete: 'off' } %>
-      <div class="form-check form-check-inline">
-        <%= pp.input :google %>
-        <%= pp.input :squarespace %>
-        <%= pp.input :adobe %>
-        <%= pp.input :free_commercial %>
-        <%= pp.input :free_personal %>
-      </div>
+  <% if current_user.admin %>
+    <h1>Add a new post</h1>
+    <%= simple_form_for(@post) do |f| %>
       <div class="form-row">
-        <div class="col">
-          <%= pp.input :source %>
-        </div>
-        <div class="col">
-          <%= pp.input :designer %>
-        </div>
+      <div class="col">
+        <%= f.input :website, input_html: { autocomplete: 'off' }, class: "form-control"%>
       </div>
+      <div class="col">
+        <%= f.input :url, input_html: { autocomplete: 'off' } %>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col">
+        <%= f.input :photo, as: :file, class: "form-control-file"  %>
+      </div>
+      <div class="col">
+        <%#= f.input :tag_list, label: "Add tags", hint: "Add your tags, separated by commas" %>
+        <%= f.input :tag_list, as: :check_boxes, collection: [ "experimental", "tech", "classic", "rising", "trending" ] %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.association :fonts, as: :check_boxes %>
+    </div>
+      <%= f.simple_fields_for :fonts do |pp| %>
+        <%= pp.input :name, input_html: { autocomplete: 'off' } %>
+        <div class="form-check form-check-inline">
+          <%= pp.input :google %>
+          <%= pp.input :squarespace %>
+          <%= pp.input :adobe %>
+          <%= pp.input :free_commercial %>
+          <%= pp.input :free_personal %>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <%= pp.input :source %>
+          </div>
+          <div class="col">
+            <%= pp.input :designer %>
+          </div>
+        </div>
+      <% end %>
+    <%= f.button :submit, "Add", class: "btn btn-primary"%>
     <% end %>
-  <%= f.button :submit, "Add", class: "btn btn-primary"%>
   <% end %>
 </div>

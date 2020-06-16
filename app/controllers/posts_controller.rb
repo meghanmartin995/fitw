@@ -26,6 +26,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    is_admin!
     @post = Post.new
     @post.fonts.build
   end
@@ -71,6 +72,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    is_admin!
     @post = Post.new(post_params)
     if @post.save
       redirect_to posts_path
