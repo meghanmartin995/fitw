@@ -5,6 +5,14 @@
   text-align: center;
   border-radius: 6px;
   background-color: #f8f8f8;
+  width: 800px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin: 0 auto;
+  font-size: 20px;
   &.dragging::before {
     content: "";
     position: absolute;
@@ -31,4 +39,8 @@
     pointer-events: none;
     z-index: 99;
   }
+}
+
+.form-control-file {
+  display: none;
 }

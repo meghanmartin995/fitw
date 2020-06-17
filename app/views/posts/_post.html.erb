@@ -20,6 +20,7 @@
                </div>
                 <% font =  post.fonts.map(&:name).join ', '.titleize %>
                 <p><%= font.titleize %></p>
+                <p class="post-website"><%=post&.website.titleize%></p>
                 <% end %>
               </div>
           <% end %>
@@ -46,6 +47,7 @@
             <% if post.fonts.present? %>
               <% font =  post.fonts.map(&:name).join ', '.titleize %>
               <p><%= font.titleize %></p>
+              <p class="post-website"><%= post&.website.titleize%></p>
             <% end %>
           </div>
         <% end %>

@@ -20,7 +20,7 @@ header.index {
   display: flex;
   align-items: center;
   a {
-    padding: 0 22px;
+    padding: 0 20px;
     color: #928F9C;
     font-family: Open Sans;
     font-weight: 600;
@@ -36,11 +36,12 @@ header.index {
 
 .free-page {
   color: #1533A2 !important;
+  font-family: Inter !important;
+  font-weight: bold;
 }
 
 .free-squig {
   position: relative;
-  font-family: inter;
   img {
     position: absolute;
     top: 25px;
@@ -65,7 +66,7 @@ header.index {
   display: block;
 }
 
-.toggle {
+.drop-recent {
   .dropdown-menu {
     left: -40px !important;
   }
@@ -82,10 +83,9 @@ header.index {
 }
 
 .drop-recent {
-  padding-bottom: 26px;
-  background: rgba(252, 252, 252, 0.65);
-  border-radius: 10px;
-  padding-left: 16px;
+  // background: rgba(252, 252, 252, 0.65);
+  // border-radius: 10px;
+  // padding-left: 16px;
   #dropdownMenuLink {
     color: #1533A2;
   }

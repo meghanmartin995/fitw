@@ -3,24 +3,24 @@
     <%= image_tag "logoxxxs.svg", class: "logo-eye" %>
   <% end %>
 
-  <div class="filters toggle">
-
-  </div>
 <div class="search-index">
-    <%= link_to "All Fonts", root_path, class: '' %>
-    <%= link_to "Google Fonts", google_path, class: '' %>
-    <%= link_to "Squarespace Fonts", squarespace_path, class: '' %>
-    <%= link_to "Free fonts", free_path, class: 'free' %>
+  <div class="dropdown show drop-recent">
+    <a class="btn btn-secondary dropdown-toggle shadow-none" href="/posts" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     Vibes
+    </a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item" href="#">Trending</a>
+      <a class="dropdown-item" href="#">Random</a>
+    </div>
+  </div>
+  <%= link_to "Google Fonts", google_path, class: '' %>
+  <%= link_to "Squarespace", squarespace_path, class: '' %>
+  <%= link_to "Free fonts", free_path, class: 'free' %>
   <%= form_tag(posts_path, method: 'get', remote: true, class: "form-inline") do %>
-<!--   <div id= "search-data" class="form-search search-data" data-articles="<%= @posts.to_json %>"> -->
   <div class="search">
     <%= search_field_tag :q_search, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search for fonts" %>
-    <%#= button_tag "Reset", type: :reset %>
     <%= image_tag("search.svg") %>
-    <!-- <p class="x">x</p> -->
-
   </div>
-<!--   </div> -->
   <% end %>
   <%= image_tag("moon1.svg") %>
 </div>

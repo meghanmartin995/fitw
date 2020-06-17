@@ -1,29 +1,35 @@
 .content {
-  max-width: 1206px;
-  margin: 34px auto;
+  max-width: 1256px;
+  margin: 32px auto;
   img {
     border-radius: 18px;
   }
   p {
     font-family: Inter;
     font-weight: bold;
-    font-size: 19px;
-    line-height: 23px;
+    font-size: 17px;
     color: #0F0F0F;
+    line-height: 120%;
     margin-top: 12px;
+  }
+  .post-website {
+    margin: 0;
+    color: #585858;
+    font-size: 17px;
+    font-weight: 500;
   }
 }
 
 .grid {
-  max-width: 1206px;
+  max-width: 1256px;
   margin: 0 auto;
 }
 
 .grid-sizer,
 .grid-item {
-  width: 400px;
+  width: 410px;
   display: block;
-  padding: 1em .9em;
+  padding: .7em .7em;
   // margin: 0 0 1.5em;
   background: #fff;
 }
@@ -63,9 +69,14 @@
   justify-content: center;
 }
 
+.thumb {
+  height: 500px;
+  width: 100%;
+}
+
 .grid-item:hover .website-text {
-  visibility: visible;
-  opacity: 1;
+  // visibility: visible;
+  // opacity: 1;
 }
 
 .grid-item img {

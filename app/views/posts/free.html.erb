@@ -7,9 +7,9 @@
 
   </div>
 <div class="search-index">
-    <%= link_to "All Fonts", root_path, class: '' %>
+    <%#= link_to "All Fonts", root_path, class: '' %>
     <%= link_to "Google Fonts", google_path, class: '' %>
-    <%= link_to "Squarespace Fonts", squarespace_path, class: '' %>
+    <%= link_to "Squarespace", squarespace_path, class: '' %>
     <div class="free-squig">
       <%= link_to "Free fonts", free_path, class: 'free free-page' %>
       <%= image_tag("squig.svg", class:'animate__animated animate__fadeIn') %>
@@ -31,7 +31,7 @@
 </header>
 
 <section class="content">
-  <div class="filters recent">
+<!--   <div class="filters recent"> -->
 <!--     <div class="dropdown show drop-recent">
       <a class="btn btn-secondary dropdown-toggle shadow-none" href="/posts" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
        ✨ Most recent
@@ -42,17 +42,17 @@
       </div>
     </div> -->
 
-    <div class="tag">
-      <%= link_to "All", posts_path %>
-      <%= simple_form_for :search, url: free_path, method: "GET", remote: true do |f| %>
+<!--     <div class="tag"> -->
+      <%#= link_to "All", posts_path %>
+      <%#= simple_form_for :search, url: free_path, method: "GET", remote: true do |f| %>
 <!--         <div class="inputs form-check form-check-inline"> -->
-          <%= f.input :tag, collection: $tags, as: :check_boxes,
+          <%#= f.input :tag, collection: $tags, as: :check_boxes,
           item_wrapper_class: 'checkbox_container' %>
 <!--         </div> -->
-      <% end %>
-    </div>
-  </div>
-
+      <%# end %>
+<!--     </div> -->
+<!--   </div>
+ -->
   <% if @posts %>
   <div class="grid" id="posts">
     <div class="grid-sizer"></div>
