@@ -9,14 +9,14 @@ class PostsController < ApplicationController
 
     elsif params[:search]
       @filter = params[:search]["tag"].reject(&:blank?)
-      @pagy, @posts = pagy(Post.all.global_search("#{@filter}"))
+      @pagy, @posts = pagy(Post..order(created_at: :desc).includes(:fonts).global_search("#{@filter}"))
 
     elsif params[:q]
 
       @posts = @q.result.includes(:fonts, :tags).page(params[:page]).to_a.uniq
     else
     @posts = @posts & @pg_results if @pg_results
-    @pagy, @posts = pagy(Post.all, items: 33)
+    @pagy, @posts = pagy(Post.order(created_at: :desc).includes(:fonts), items: 33)
 
       respond_to do |format|
         format.html
