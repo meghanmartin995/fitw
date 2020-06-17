@@ -23,7 +23,7 @@ header.index {
     padding: 0 20px;
     color: #928F9C;
     font-family: Open Sans;
-    font-weight: 600;
+    font-weight: 500;
   }
   .search {
     margin: 0 50px 0 0;
@@ -31,7 +31,7 @@ header.index {
 }
 
 .free {
-  margin-right: 28px;
+  margin-right: 22px;
 }
 
 .free-page {
@@ -87,11 +87,11 @@ header.index {
   // border-radius: 10px;
   // padding-left: 16px;
   #dropdownMenuLink {
-    color: #1533A2;
+    color: #928F9C
   }
   .dropdown-item {
-    color: #1533A2;
-    font-size: 17.5px;
+    color: #928F9C;
+    font-size: 18px;
   }
 }
 
@@ -99,16 +99,15 @@ header.index {
   background-color: transparent;
   border: none;
   color: #AEAEAE;
-  font-family: Open sans;
-  font-weight: 600;
+  font-family: Open Sans;
+  font-weight: 500;
   font-size: 19px;
   letter-spacing: .01em;
   padding: 0 28px 0 0;
 }
 
 .dropdown-toggle::after {
-  margin-left: 0.085em !important;
-  vertical-align: 0.12em !important;
+  display: none;
 }
 
 .dropdown-menu {
@@ -122,16 +121,16 @@ header.index {
   box-shadow: 0px 3px 5px rgba(0,0,0,0.04);
   a {
     color: #807E8B;
-    font-family: Open sans;
-    font-weight: 600;
+    font-family: Open Sans;
+    font-weight: 500;
     letter-spacing: .01em;
     text-align: center;
     padding: 6px 0;
     font-size: 18 !important;
   }
   a:hover {
-    color: #1533A2;
-    background: #FAFAFA;
+    // color: #1533A2;
+    // background: #FAFAFA;
   }
 }
 

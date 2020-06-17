@@ -16,7 +16,7 @@ class PostsController < ApplicationController
       @posts = @q.result.includes(:fonts, :tags).page(params[:page]).to_a.uniq
     else
     @posts = @posts & @pg_results if @pg_results
-    @pagy, @posts = pagy(Post.all, items: 18)
+    @pagy, @posts = pagy(Post.all, items: 33)
 
       respond_to do |format|
         format.html
@@ -46,7 +46,7 @@ class PostsController < ApplicationController
       @pagy, @posts = pagy(Post.is_free.global_search("#{@filter}"))
     else
     @posts = @posts & @pg_results if @pg_results
-    @pagy, @posts = pagy(Post.is_free, items: 18)
+    @pagy, @posts = pagy(Post.is_free, items: 33)
 
       respond_to do |format|
         format.html
@@ -56,11 +56,11 @@ class PostsController < ApplicationController
   end
 
   def squarespace
-    @pagy, @posts = pagy(Post.is_free, items: 18)
+    @pagy, @posts = pagy(Post.is_free, items: 33)
   end
 
   def google
-    @pagy, @posts = pagy(Post.is_free, items: 18)
+    @pagy, @posts = pagy(Post.is_free, items: 33)
   end
 
   def show_modal
