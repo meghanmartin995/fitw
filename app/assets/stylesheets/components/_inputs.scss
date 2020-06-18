@@ -55,28 +55,30 @@ input[type='checkbox']{
   // appearance:none;
   // outline: 2px solid #919191;
   // box-shadow: none;
-    width: 1em;
-    height: 1em;
+    width: 1.1em;
+    height: 1.1em;
     background-color: white;
-    border-radius: 50%;
+    border-radius: 1px;
     vertical-align: middle;
     border: 1px solid #ddd;
     -webkit-appearance: none;
     outline: none;
     cursor: pointer;
+    margin-right: 12px;
     margin-top: -4px;
-    margin-right: 8px;
 }
 
 input[type='checkbox']:checked {
-  background-color: #919191;
+  background-color: #1533A2;
 }
   input[type='checkbox']:checked:after {
-    content: '\2713';
+    content: '💫';
     color: white;
     position: absolute;
+    top: 0;
+    right: .5px;
     line-height: 1rem;
-    font-size:1rem;
+    font-size: 1.05rem;
     padding-left: 0.15rem;
 }
 

@@ -72,16 +72,13 @@ header.index {
 .drop-recent {
   .dropdown-menu {
     left: -40px !important;
+    width: 208px;
   }
   #dropdownMenuLink {
     display: flex;
     justify-content: center;
     align-items: center;
     color: #807E8B;
-    img {
-      padding-left: 6px;
-      padding-top: 1px;
-    }
   }
 }
 
@@ -95,6 +92,18 @@ header.index {
   .dropdown-item {
     color: #928F9C;
     font-size: 18px;
+    text-transform: capitalize;
+    padding: 8px 0;
+    background: none;
+    font-family: Open Sans;
+    font-weight: 500;
+    label {
+      cursor: pointer;
+    }
+  }
+
+  .dropdown-item:hover {
+    background: none;
   }
 }
 
@@ -137,4 +146,16 @@ header.index {
   }
 }
 
+.check_boxes {
+  padding: 8px 48px;
+}
 
+.drop {
+  color: #1533A2;
+  transform: rotate(-180deg);
+}
+
+.bold {
+  color: #1533A2 !important;
+  font-weight: bold !important;
+}
