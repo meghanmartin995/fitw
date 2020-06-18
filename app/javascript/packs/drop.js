@@ -17,7 +17,9 @@ drop.forEach(function(d) {
 
 if (dropdown) {
   dropdown.addEventListener("click", function() {
-    arrow.classList.toggle("drop")
+
     dropdown.classList.toggle("bold")
+    arrow.classList.toggle("animate__heartBeat")
+        arrow.classList.toggle("drop")
   })
 }
