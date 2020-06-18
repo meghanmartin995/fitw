@@ -15,12 +15,13 @@
           <% if post.photo.attached? %>
             <%= link_to show_modal_path(id: post.id), remote: true do %>
               <div class="grid-item"><%= cl_image_tag post.photo.key %>
-<!--                 <div class="website-text">
-                  <h2><%#= post&.website %></h2>
-               </div> -->
                 <% font = post.fonts.map(&:name).join ', '.titleize %>
-                <p><%= font.titleize %></p>
-                <p class="post-website"><%=post&.website.titleize%></p>
+                <div class="website-info">
+                  <p><%= font.titleize %></p>
+                  <% url = post&.url %>
+                  <% website = post&.website.titleize %>
+                  <%= link_to website, url, target: "_blank", class: "post-website" %>
+                </div>
                 <% end %>
               </div>
           <% end %>
@@ -46,10 +47,9 @@
               <% font = post.fonts.map(&:name).join ', '.titleize %>
               <div class="website-info">
                 <p><%= font.titleize %></p>
-                <% url = post.url %>
+                <% url = post&.url %>
                 <% website = post&.website.titleize %>
                 <%= link_to website, url, target: "_blank", class: "post-website" %>
-                <!-- <a target="_blank" href="#{post&.url}" class="post-website"><%#= post&.website.titleize%></a> -->
               </div>
             <% end %>
           </div>
