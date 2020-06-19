@@ -20,8 +20,12 @@
     opacity: 1;
 }
 
+.modal {
+  --animate-duration: 0.5s;
+}
+
 .modal-content {
-  border-radius: 10px;
+  border-radius: 8px;
   border: none;
   font-family: Open Sans;
   // width: 900px;
