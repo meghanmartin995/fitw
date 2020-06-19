@@ -19,3 +19,43 @@
     transform: translate3d(0, -300px, 0);
     opacity: 1;
 }
+
+.modal-content {
+  border-radius: 10px;
+  border: none;
+  font-family: Open Sans;
+  width: 900px;
+}
+.modal-body {
+  padding: 42px 72px;
+
+}
+.modal-head {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 42px;
+  align-items: baseline;
+}
+
+.font-info {
+  display: flex;
+  flex-direction: column;
+  h2 {
+    font-weight: bold;
+    font-size: 24px;
+  }
+  p{
+    font-size: 21px;
+    color: #606060;
+  }
+}
+
+.download {
+  a {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 17px;
+    text-decoration-line: underline;
+    color: #292929;
+  }
+}

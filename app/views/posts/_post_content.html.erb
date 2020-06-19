@@ -1,9 +1,25 @@
 <div class="modal-body">
-  <% post.fonts.each do |font| %>
-    <%= font.name %>
-  <% end %>
-  <%= post&.website %>
+  <div class="modal-head">
+    <div class="font-info">
+      <% font_string = post.fonts.map(&:name).join ', '.titleize %>
+      <h2><%= font_string.titleize %></h2>
+      <p><%= post&.website %></p>
+    </div>
+    <div class="download">
+      <% post.fonts.each do |font| %>
+        <%= link_to "download font" %>
+        <% if font.designer %>
+          <p><%= font&.designer %></p>
+        <% end %>
+      <% end %>
+    </div>
+</div>
+
+
+
   <%= cl_image_tag post.photo&.key %>
+
+
 
   <% if related_posts.present? %>
    <h3>Related Posts</h3>
