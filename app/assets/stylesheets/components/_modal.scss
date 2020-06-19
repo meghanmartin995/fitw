@@ -24,10 +24,11 @@
   border-radius: 10px;
   border: none;
   font-family: Open Sans;
-  width: 900px;
+  // width: 900px;
 }
 .modal-body {
-  padding: 42px 72px;
+  padding: 42px 124px;
+  // width: 800px;
 
 }
 .modal-head {
@@ -42,11 +43,12 @@
   flex-direction: column;
   h2 {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 22px;
   }
   p{
-    font-size: 21px;
+    font-size: 19px;
     color: #606060;
+    margin-top: 6px;
   }
 }
 
@@ -58,4 +60,29 @@
     text-decoration-line: underline;
     color: #292929;
   }
+}
+
+.vertical-alignment-helper {
+display:table;
+height: 100%;
+width: 100%;
+pointer-events:none;
+}
+
+.vertical-align-center {
+/* To center vertically */
+display: table-cell;
+vertical-align: middle;
+pointer-events:none;
+}
+
+.modal-content {
+/* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+width:inherit;
+max-width:inherit; /* For Bootstrap 4 - to avoid the modal window stretching
+full width */
+height:inherit;
+/* To center horizontally */
+margin: 0 auto;
+pointer-events:all;
 }

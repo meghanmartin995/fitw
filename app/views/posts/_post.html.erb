@@ -1,11 +1,13 @@
 <% if @pg_results %>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
+<div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="vertical-alignment-helper">
+  <div class="modal-dialog modal-lg vertical-align-center" role="document">
     <div class="modal-content" id="modal_content">
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
+  </div>
   </div>
 </div>
   <% @pg_results.each do |result| %>
@@ -30,14 +32,16 @@
     <% end %>
   <% else %>
   <% posts.each do |post| %>
-<div class="modal fade bd-example-modal-lgs" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="vertical-alignment-helper">
+  <div class="modal-dialog modal-lg vertical-align-center" role="document">
     <div class="modal-content" id="modal_content">
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
+</div>
 </div>
     <% if post.photo.attached? %>
       <%= link_to show_modal_path(id: post.id), remote: true do %>
