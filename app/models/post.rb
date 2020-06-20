@@ -24,6 +24,10 @@ class Post < ApplicationRecord
   }
   scope :is_free, -> { joins(:fonts).where(fonts: { free_commercial: true } ) }
 
+  scope :is_google, -> { joins(:fonts).where(fonts: { google: true } ) }
+
+  scope :is_squarespace, -> { joins(:fonts).where(fonts: { squarespace: true } ) }
+
   def posts_by_font(name)
     Post.joins(:fonts)
         .where(fonts: { name: name })

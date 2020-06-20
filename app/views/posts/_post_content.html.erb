@@ -8,7 +8,11 @@
     <div class="download-links">
       <% post.fonts.each do |font| %>
         <div class="download">
-          <%= link_to "download #{font.name}", "https://#{font&.source}", target: "_blank"%>
+          <% if font.source %>
+            <%= link_to "download #{font.name}", "https://#{font&.source}", target: "_blank"%>
+          <% else %>
+            <%= link_to "download #{font.name}", "https://www.google.com", target: "_blank"%>
+          <% end %>
           <% if font.designer %>
             <p><%= font&.designer %></p>
           <% end %>

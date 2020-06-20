@@ -56,11 +56,11 @@ class PostsController < ApplicationController
   end
 
   def squarespace
-    @pagy, @posts = pagy(Post.is_free, items: 33)
+    @pagy, @posts = pagy(Post.is_squarespace, items: 33)
   end
 
   def google
-    @pagy, @posts = pagy(Post.is_free, items: 33)
+    @pagy, @posts = pagy(Post.is_google, items: 33)
   end
 
   def show_modal
