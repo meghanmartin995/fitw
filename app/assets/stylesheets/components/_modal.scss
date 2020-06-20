@@ -21,7 +21,7 @@
 }
 
 .modal {
-  --animate-duration: 0.5s;
+  --animate-duration: 0.4s;
 }
 
 .modal-content {
@@ -29,6 +29,13 @@
   border: none;
   font-family: Open Sans;
   // width: 900px;
+  img {
+    max-height: 600px;
+  }
+}
+
+.font-img {
+  text-align: center;
 }
 .modal-body {
   padding: 42px 124px;

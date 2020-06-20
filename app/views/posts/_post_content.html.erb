@@ -5,19 +5,20 @@
       <h2><%= font_string.titleize %></h2>
       <p><%= post&.website %></p>
     </div>
-    <div class="download">
-      <% post.fonts.each do |font| %>
+    <% post.fonts.each do |font| %>
+      <div class="download">
         <%= link_to "download font" %>
         <% if font.designer %>
           <p><%= font&.designer %></p>
         <% end %>
-      <% end %>
-    </div>
+        </div>
+    <% end %>
 </div>
 
 
-
+<div class="font-img">
   <%= cl_image_tag post.photo&.key %>
+</div>
 
 
 
