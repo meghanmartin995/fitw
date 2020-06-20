@@ -3,7 +3,9 @@
     <div class="font-info">
       <% font_string = post.fonts.map(&:name).join ', '.titleize %>
       <h2><%= font_string.titleize %></h2>
-      <p><%= post&.website %></p>
+      <% website = post&.website %>
+      <% url = "https://#{post&.url}" %>
+     <p><%= link_to website, url, target: "_blank", class: "post-website" %></p>
     </div>
     <div class="download-links">
       <% post.fonts.each do |font| %>
@@ -25,8 +27,6 @@
 <div class="font-img">
   <%= cl_image_tag post.photo&.key %>
 </div>
-
-
 
   <% if related_posts.present? %>
    <h3>Related Posts</h3>
