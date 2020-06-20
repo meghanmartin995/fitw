@@ -86,6 +86,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:website, :url, :photo, tag_list: [], font_ids: [], vibe_ids: [], :fonts_attributes => [:name, :font_id])
+    params.require(:post).permit(:website, :url, :photo, tag_list: [], font_ids: [], vibe_ids: [], :fonts_attributes => [:name, :designer, :source, :free_commercial, :free_personal, :google, :squarespace, :adobe, :font_id])
   end
 end
