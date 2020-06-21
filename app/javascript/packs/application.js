@@ -53,12 +53,11 @@ for (const check of checkBoxes) {
 }
 
 document.addEventListener('turbolinks:load', () => {
-  const elem = document.querySelector('.grid');
-  const masonry = Masonry.data('.grid')
-  //masonry.reloadItems();
-  imagesLoaded( elem ).on( 'progress', function() {
-  // layout Masonry after each image loads
-  masonry.layout();
-});
+//   const elem = document.querySelector('.grid');
+//   const masonry = Masonry.data('.grid')
+//   masonry.reloadItems();
+//   imagesLoaded( elem ).on( 'progress', function() {
+//   masonry.layout();
+// });
 })
 
