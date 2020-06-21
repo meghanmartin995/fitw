@@ -52,7 +52,12 @@ for (const check of checkBoxes) {
   });
 }
 
-document.addEventListener('turbolinks:load', () => {
 
+form.addEventListener('ajax:success', () => {
+  var elem = document.querySelector('.grid');
+
+  imagesLoaded( elem ).on( 'progress', function() {
+  masonry.reloadItems();
+  masonry.layout();
+  });
 })
-

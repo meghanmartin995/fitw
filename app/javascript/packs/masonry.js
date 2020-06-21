@@ -22,7 +22,6 @@ function masonryUpdate() {
 
 function imageLoad() {
     imagesLoaded( elem ).on( 'progress', function() {
-    // layout Masonry after each image loads
     masonry.layout();
     });
   }
@@ -40,10 +39,11 @@ document.addEventListener('turbolinks:load', () => {
     isFitWidth: true
   });
   }
-});
     imagesLoaded( elem ).on( 'progress', function() {
     masonry.layout();
     });
+});
 }
+
 
 export default masonry
