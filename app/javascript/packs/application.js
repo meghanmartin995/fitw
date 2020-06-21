@@ -24,8 +24,8 @@ window.Rails = Rails;
 // const imagePath = (name) => images(name, true)
 // import { letters } from '../packs/letters'
 
-//import "./stylesheets/application.scss"
 import { masonry } from '../packs/masonry'
+// import { packery } from '../packs/packery'
 import { masonry2 } from '../packs/masonry2'
 import { shot } from '../packs/shot'
 import { drop } from '../packs/drop'
@@ -51,4 +51,14 @@ for (const check of checkBoxes) {
     Rails.fire(form, 'submit');
   });
 }
+
+document.addEventListener('turbolinks:load', () => {
+  const elem = document.querySelector('.grid');
+  const masonry = Masonry.data('.grid')
+  //masonry.reloadItems();
+  imagesLoaded( elem ).on( 'progress', function() {
+  // layout Masonry after each image loads
+  masonry.layout();
+});
+})
 

@@ -106,13 +106,18 @@
 
 .grid-item img {
   display: block;
-  max-width: 100%;
-  max-height: 680px;
+  width: 410px;
+  max-height: 500px;
 }
 
 .grid:after {
   content: '';
   display: block;
   clear: both;
+}
+
+.posts-pagy {
+  display: flex;
+  flex-direction: column;
 }
 

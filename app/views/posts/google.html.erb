@@ -15,7 +15,7 @@
       <%= image_tag("squig.svg", class:'animate__animated animate__fadeIn') %>
     </div>
       <%= link_to "Squarespace", squarespace_path, class: '' %>
-      <%= link_to "Free fonts", free_path, class: '' %>
+      <%= link_to "Free fonts", free_path, class: 'free' %>
   <%= form_tag(posts_path, method: 'get', remote: true, class: "form-inline") do %>
 <!--   <div id= "search-data" class="form-search search-data" data-articles="<%= @posts.to_json %>"> -->
   <div class="search">
@@ -33,28 +33,6 @@
 </header>
 
 <section class="content">
-<!--   <div class="filters recent"> -->
-<!--     <div class="dropdown show drop-recent">
-      <a class="btn btn-secondary dropdown-toggle shadow-none" href="/posts" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-       ✨ Most recent
-      </a>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#">Trending</a>
-        <a class="dropdown-item" href="#">Random</a>
-      </div>
-    </div> -->
-
-<!--     <div class="tag"> -->
-      <%#= link_to "All", posts_path %>
-      <%#= simple_form_for :search, url: free_path, method: "GET", remote: true do |f| %>
-<!--         <div class="inputs form-check form-check-inline"> -->
-          <%#= f.input :tag, collection: $tags, as: :check_boxes,
-          item_wrapper_class: 'checkbox_container' %>
-<!--         </div> -->
-      <%# end %>
-<!--     </div> -->
-<!--   </div>
- -->
   <% if @posts %>
   <div class="grid" id="posts">
     <div class="grid-sizer"></div>
@@ -75,11 +53,13 @@
           <% if post.photo.attached? %>
             <%= link_to show_modal_path(id: post.id), remote: true do %>
               <div class="grid-item"><%= cl_image_tag post.photo.key %>
-                <div class="website-text">
-                  <h2><%= post&.website %></h2>
-               </div>
                 <% font =  post.fonts.map(&:name).join ', '.titleize %>
+              <div class="website-info">
                 <p><%= font.titleize %></p>
+                <% url = post&.url %>
+                <% website = post&.website.titleize %>
+                <%= link_to website, url, target: "_blank", class: "post-website" %>
+              </div>
                 <% end %>
               </div>
           <% end %>
@@ -100,12 +80,14 @@
     <% if post.photo.attached? %>
       <%= link_to show_modal_path(id: post.id), remote: true do %>
           <div class="grid-item"><%= cl_image_tag post.photo.key %>
-            <% if post.website.present? %>
-              <h2 class="website-text"><%= post&.website %></h2>
-            <% end %>
             <% if post.fonts.present? %>
               <% font =  post.fonts.map(&:name).join ', '.titleize %>
-              <p><%= font.titleize %></p>
+              <div class="website-info">
+                <p><%= font.titleize %></p>
+                <% url = post&.url %>
+                <% website = post&.website.titleize %>
+                <%= link_to website, url, target: "_blank", class: "post-website" %>
+              </div>
             <% end %>
           </div>
         <% end %>

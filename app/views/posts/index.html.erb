@@ -23,11 +23,13 @@
 <!--     </div>
   </div> -->
   <% if @posts %>
-  <div class="grid" id="posts">
-    <div class="grid-sizer"></div>
-      <%= render 'post', posts: @posts %>
-  </div>
-  <% end %>
-</section>
-<%= pagy_bootstrap_nav(@pagy).html_safe %>
+<div class="posts-pagy">
+    <div class="grid" id="posts">
+      <div class="grid-sizer"></div>
+        <%= render 'post', posts: @posts %>
+    </div>
+    <% end %>
+  </section>
+  <%= pagy_bootstrap_nav(@pagy).html_safe %>
+</div>
 
