@@ -1,7 +1,7 @@
 var elem = document.querySelector('.grid2');
 
 if (elem) {
-var masonry = new Masonry( elem, {
+var masonry2 = new Masonry( elem, {
   itemSelector: '.grid-item2',
   itemSelector: '.grid-item2',
   columnWidth: '.grid-sizer2',
@@ -12,7 +12,7 @@ var masonry = new Masonry( elem, {
 
 imagesLoaded( elem ).on( 'progress', function() {
   // layout Masonry after each image loads
-  masonry.layout();
+  masonry2.layout();
 });
 }
-export default masonry
+export default masonry2

@@ -86,4 +86,4 @@ var infScroll = new InfiniteScroll( elem, {
 });
 }
 
-export default masonry
+//export default masonry
