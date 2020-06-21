@@ -2,8 +2,14 @@
 <%# content_for :meta_description, @offer.description %>
 <%# content_for :meta_image, cl_image_path(@offer.photo.path) %>
 <header class="index">
+  <% if current_user.admin? == true %>
   <%= link_to new_post_path do %>
     <%= image_tag "logoxxxs.svg", class: "logo-eye" %>
+  <% end %>
+  <% else %>
+    <%= link_to new_post_path do %>
+    <%= image_tag "logoxxxs.svg", class: "logo-eye" %>
+  <% end %>
   <% end %>
 
   <div class="filters toggle">
