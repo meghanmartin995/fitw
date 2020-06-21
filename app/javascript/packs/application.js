@@ -26,6 +26,7 @@ window.Rails = Rails;
 
 //import "./stylesheets/application.scss"
 import { masonry } from '../packs/masonry'
+import { masonry2 } from '../packs/masonry2'
 import { shot } from '../packs/shot'
 import { drop } from '../packs/drop'
 // import { search } from '../packs/search.js.erb'

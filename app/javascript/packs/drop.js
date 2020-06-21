@@ -3,7 +3,6 @@ const dropdownlg = document.querySelector("#myDropdown")
 const arrow = document.querySelector("#carrot")
 const label = document.querySelectorAll(".form-check-label")
 const drop = document.querySelectorAll(".dropped")
-console.log(drop)
 const check = document.querySelectorAll(".form-check-input")
 
 

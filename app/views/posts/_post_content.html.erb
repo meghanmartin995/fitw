@@ -28,12 +28,19 @@
   <%= cl_image_tag post.photo&.key %>
 </div>
 
+<div class="related-posts">
   <% if post.find_related_tags.any? %>
    <h3>You might also like</h3>
+   <div class="modal-img-grid grid2" id="posts">
+    <div class="grid-sizer2"></div>
     <% post.find_related_tags.each do |post| %>
-    <div class="grid-item"><%= cl_image_tag post.photo.key %>
-    </div>
-      <%#= post.website %>
+      <% if post.photo.attached? %>
+      <div class="grid-item2">
+        <%= cl_image_tag post.photo.key, class: "modal-img" %>
+      </div>
+      <% end %>
     <% end %>
+    </div>
   <% end %>
+</div>
 </div>

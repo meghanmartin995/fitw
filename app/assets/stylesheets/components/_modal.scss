@@ -84,23 +84,64 @@
   }
 }
 
+.related-posts h3 {
+  text-align: center;
+  font-weight: bold;
+  font-family: Open Sans;
+  margin: 42px 0 20px 0;
+  font-size: 22px;
+  // .modal-img img {
+  //   max-width: 220px;
+  // }
+}
+
 .vertical-alignment-helper {
-display:table;
-height: 100%;
-width: 100%;
-pointer-events:none;
+  display:table;
+  height: 100%;
+  width: 100%;
+  pointer-events:none;
 }
 
 .vertical-align-center {
-display: table-cell;
-vertical-align: middle;
-pointer-events:none;
+  display: table-cell;
+  vertical-align: middle;
+  pointer-events:none;
 }
 
 .modal-content {
-width:inherit;
-max-width:inherit;
-height:inherit;
-margin: 0 auto;
-pointer-events:all;
+  width:inherit;
+  max-width:inherit;
+  height:inherit;
+  margin: 0 auto;
+  pointer-events:all;
+}
+
+.grid2 {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.grid-sizer2,
+.grid-item2 {
+  width: 200px;
+  display: block;
+  padding: .6em .6em;
+  background: #fff;
+}
+
+.grid-item2 {
+  float: left;
+  position: relative;
+}
+
+.grid-item2 img {
+  display: block;
+  max-width: 100%;
+  max-height: 400px;
+}
+
+.grid2:after {
+  content: '';
+  display: block;
+  clear: both;
 }
