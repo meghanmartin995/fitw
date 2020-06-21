@@ -10,23 +10,29 @@
 
   </div>
 <div class="search-index">
-    <%#= link_to "All Fonts", root_path, class: '' %>
+  <div class="dropdown show drop-recent" id="myDropdown">
+    <a class="btn btn-secondary dropdown-toggle shadow-none" href="/posts" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     Vibes <i class="fas fa-chevron-down animate__animated" id="carrot"></i>
+    </a>
+  <div class="dropdown-menu tag-new" aria-labelledby="dropdownMenuLink">
+    <%= simple_form_for :search, url: squarespace_path, method: "GET", remote: true do |f| %>
+        <%= f.input :tag, collection: $tags, as: :check_boxes,
+        item_wrapper_class: 'dropdown-item dropped' %>
+    <% end %>
+  </div>
+</div>
     <%= link_to "Google Fonts", google_path, class: '' %>
     <div class="free-squig">
-      <%= link_to "Squarespace", squarespace_path, class: '' %>
+      <%= link_to "Squarespace", squarespace_path, class: 'free-page' %>
       <%= image_tag("squig.svg", class:'animate__animated animate__fadeIn') %>
     </div>
       <%= link_to "Free fonts", free_path, class: 'free' %>
   <%= form_tag(posts_path, method: 'get', remote: true, class: "form-inline") do %>
-<!--   <div id= "search-data" class="form-search search-data" data-articles="<%= @posts.to_json %>"> -->
   <div class="search">
     <%= search_field_tag :q_search, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search for fonts" %>
-    <%#= button_tag "Reset", type: :reset %>
     <%= image_tag("search.svg") %>
-    <!-- <p class="x">x</p> -->
 
   </div>
-<!--   </div> -->
   <% end %>
   <%= image_tag("moon1.svg") %>
 </div>
@@ -34,28 +40,6 @@
 </header>
 
 <section class="content">
-<!--   <div class="filters recent"> -->
-<!--     <div class="dropdown show drop-recent">
-      <a class="btn btn-secondary dropdown-toggle shadow-none" href="/posts" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-       ✨ Most recent
-      </a>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#">Trending</a>
-        <a class="dropdown-item" href="#">Random</a>
-      </div>
-    </div> -->
-
-<!--     <div class="tag"> -->
-      <%#= link_to "All", posts_path %>
-      <%#= simple_form_for :search, url: free_path, method: "GET", remote: true do |f| %>
-<!--         <div class="inputs form-check form-check-inline"> -->
-          <%#= f.input :tag, collection: $tags, as: :check_boxes,
-          item_wrapper_class: 'checkbox_container' %>
-<!--         </div> -->
-      <%# end %>
-<!--     </div> -->
-<!--   </div>
- -->
   <% if @posts %>
   <div class="grid" id="posts">
     <div class="grid-sizer"></div>

@@ -9,16 +9,10 @@
      Vibes <i class="fas fa-chevron-down animate__animated" id="carrot"></i>
     </a>
     <div class="dropdown-menu tag-new" aria-labelledby="dropdownMenuLink">
-      <!-- <a class="dropdown-item" href="#">Trending</a>
-      <a class="dropdown-item" href="#">Random</a> -->
-
-
       <%= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
           <%= f.input :tag, collection: $tags, as: :check_boxes,
           item_wrapper_class: 'dropdown-item dropped' %>
       <% end %>
-
-
     </div>
   </div>
   <%= link_to "Google Fonts", google_path, class: '' %>

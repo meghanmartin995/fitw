@@ -1,19 +1,18 @@
 function replacePosts (innerHTML) {
-  // var container = document.querySelector('.grid')
-  var masonry = Masonry.data('.grid')
-  // //masonry.reloadItems();
-  // imagesLoaded( container ).on( 'progress', function() {
-  // // layout Masonry after each image loads
-  //  masonry.layout();
-  // });
   var elem = document.querySelector('.grid');
+  var masonry = new Masonry( elem, {
+    itemSelector: '.grid-item',
+    itemSelector: '.grid-item',
+    columnWidth: '.grid-sizer',
+    horizontalOrder: true,
+    isFitWidth: true
+  });
   imagesLoaded( elem ).on( 'progress', function() {
+  masonry.layout();
+  });
 
-    masonry.layout()
-    const posts = document.getElementById('posts');
-    posts.innerHTML = innerHTML;
-  })
-
+  const posts = document.getElementById('posts');
+  posts.innerHTML = innerHTML;
 }
 
 if ('<%= @filter %>' === "[]") {

@@ -15,6 +15,11 @@
           <% else %>
             <%= link_to "download #{font.name}", "https://www.google.com", target: "_blank"%>
           <% end %>
+          <% if font.free_commercial == true %>
+            <span>(free)</span>
+          <% else %>
+            <span>(paid)</span>
+          <% end %>
           <% if font.designer %>
             <p><%= font&.designer %></p>
           <% end %>

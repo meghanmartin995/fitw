@@ -23,10 +23,13 @@ class Post < ApplicationRecord
     tsearch: {any_word: true}
   }
   scope :is_free, -> { joins(:fonts).where(fonts: { free_commercial: true } ) }
+  scope :free, -> { includes(:fonts).where(fonts: { free_commercial: true }) }
 
   scope :is_google, -> { joins(:fonts).where(fonts: { google: true } ) }
+  scope :google, -> { includes(:fonts).where(fonts: { google: true }) }
 
   scope :is_squarespace, -> { joins(:fonts).where(fonts: { squarespace: true } ) }
+  scope :squarespace, -> { includes(:fonts).where(fonts: { squarespace: true }) }
 
   def posts_by_font(name)
     Post.joins(:fonts)

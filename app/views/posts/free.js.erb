@@ -1,4 +1,15 @@
 function replacePosts (innerHTML) {
+  var elem = document.querySelector('.grid');
+  var masonry = new Masonry( elem, {
+    itemSelector: '.grid-item',
+    itemSelector: '.grid-item',
+    columnWidth: '.grid-sizer',
+    horizontalOrder: true,
+    isFitWidth: true
+  });
+  imagesLoaded( elem ).on( 'progress', function() {
+  masonry.layout();
+  });
   const posts = document.getElementById('posts');
   posts.innerHTML = innerHTML;
 }

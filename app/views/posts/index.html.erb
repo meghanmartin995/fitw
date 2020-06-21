@@ -1,27 +1,6 @@
 <%= render 'shared/navbar' %>
 
-<%#= search_form_for @q do |f| %>
-  <%#= f.label :website_start %>
-  <%#= f.search_field :website_start %>
-  <%#= f.select :tags_name, options_for_select(Vibe.all.map(&:name)), {include_blank: "Vibes"} %>
-   <%#= f.label :fonts_start %>
-  <%#= f.search_field :fonts_start %>
-  <%#= content_tag :th, sort_link(@q, :fonts_commercial_free_true) %>
-  <%#= f.submit %>
-<%# end %>
-
 <section class="content">
-<!--   <div class="filters recent"> -->
-<!--     <div class="tag"> -->
-      <%#= link_to "All", posts_path %>
-      <%#= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
-<!--         <div class="inputs form-check form-check-inline"> -->
-          <%#= f.input :tag, collection: $tags, as: :check_boxes,
-          item_wrapper_class: 'checkbox_container' %>
-<!--         </div> -->
-      <%# end %>
-<!--     </div>
-  </div> -->
   <% if @posts %>
 <div class="posts-pagy">
     <div class="grid" id="posts">

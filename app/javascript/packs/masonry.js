@@ -6,8 +6,6 @@ var masonry = new Masonry( elem, {
   itemSelector: '.grid-item',
   columnWidth: '.grid-sizer',
   horizontalOrder: true,
-  // "gutter": 20,
-  // percentPosition: true,
   isFitWidth: true
 });
 
@@ -39,18 +37,13 @@ document.addEventListener('turbolinks:load', () => {
     itemSelector: '.grid-item',
     columnWidth: '.grid-sizer',
     horizontalOrder: true,
-    // "gutter": 20,
-    // percentPosition: true,
     isFitWidth: true
   });
   }
 });
     imagesLoaded( elem ).on( 'progress', function() {
-    // layout Masonry after each image loads
     masonry.layout();
     });
-
 }
-
 
 export default masonry
