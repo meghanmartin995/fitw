@@ -11,9 +11,8 @@ var masonry = new Masonry( elem, {
 
 function masonryUpdate() {
   setTimeout(function() {
-      const masonry = Masonry.data('.grid')
-      masonry.reloadItems();
-      //$grid.masonry();
+    const masonry = Masonry.data('.grid')
+    masonry.reloadItems();
     imagesLoaded( elem ).on( 'progress', function() {
     masonry.layout();
   });
@@ -45,5 +44,12 @@ document.addEventListener('turbolinks:load', () => {
 });
 }
 
+var infScroll = new InfiniteScroll( elem, {
+
+  path: "a[rel='next']",
+  append: '.grid-item',
+  history: false,
+  outlayer: masonry,
+});
 
 export default masonry

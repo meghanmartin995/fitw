@@ -23,7 +23,7 @@ window.Rails = Rails;
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 // import { letters } from '../packs/letters'
-
+// import "controllers"
 import { masonry } from '../packs/masonry'
 // import { packery } from '../packs/packery'
 import { masonry2 } from '../packs/masonry2'

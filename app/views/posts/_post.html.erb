@@ -31,7 +31,7 @@
       <% end %>
     <% end %>
   <% else %>
-  <% posts.each do |post| %>
+  <% @posts.each do |post| %>
 <div class="modal animate__animated animate__fadeIn bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="vertical-alignment-helper">
   <div class="modal-dialog modal-lg vertical-align-center" role="document">
@@ -43,6 +43,7 @@
   </div>
 </div>
 </div>
+  <%= content_tag :div, id: dom_id(post), class: ["post-class", dom_class(post)] do %>
     <% if post.photo.attached? %>
       <%= link_to show_modal_path(id: post.id), remote: true do %>
           <div class="grid-item"><%= cl_image_tag post.photo.key %>
@@ -58,6 +59,6 @@
             <% end %>
           </div>
         <% end %>
-
+      <% end %>
   <% end %>
 <% end %>

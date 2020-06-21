@@ -12,11 +12,14 @@ class PostsController < ApplicationController
 
     else
       @posts = @posts & @pg_results if @pg_results
-      @pagy, @posts = pagy(Post.order(created_at: :desc).includes(:fonts), items: 33)
+      @pagy, @posts = pagy(Post.order(created_at: :desc).includes(:fonts), items: 20)
 
       respond_to do |format|
         format.html
         format.js
+        format.json {
+        render json: { entries: render_to_string(partial: "post", formats: [:html]), pagination: view_context.pagy_nav(@pagy)}
+      }
       end
     end
   end
@@ -49,6 +52,9 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html
       format.js
+      format.json {
+        render json: { entries: render_to_string(partial: "post", formats: [:html]), pagination: view_context.pagy_nav(@pagy)}
+      }
     end
     end
   end
