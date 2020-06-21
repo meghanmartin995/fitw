@@ -42,8 +42,8 @@ $(document).ready(function() {
 
 });
 
-var checkBoxes = document.querySelectorAll(".tag .form-check-input");
-var form = document.querySelector('.tag form');
+var checkBoxes = document.querySelectorAll(".tag-new .form-check-input");
+var form = document.querySelector('.tag-new form');
 
 for (const check of checkBoxes) {
   check.addEventListener( 'change', function() {

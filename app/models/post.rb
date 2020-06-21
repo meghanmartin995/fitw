@@ -20,7 +20,7 @@ class Post < ApplicationRecord
     tags: [:name]
   },
   using: {
-    tsearch: {prefix: true}
+    tsearch: {any_word: true}
   }
   scope :is_free, -> { joins(:fonts).where(fonts: { free_commercial: true } ) }
 

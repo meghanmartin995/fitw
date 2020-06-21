@@ -3,20 +3,20 @@ class PostsController < ApplicationController
   impressionist actions: [:show_modal], unique: [:session_hash]
 
   def index
-    @q = Post.ransack(params[:q])
+    #@q = Post.ransack(params[:q])
     if params[:q_search].present?
       @pg_results = PgSearch.multisearch(params[:q_search])
 
     elsif params[:search]
       @filter = params[:search]["tag"].reject(&:blank?)
-      @pagy, @posts = pagy(Post..order(created_at: :desc).includes(:fonts).global_search("#{@filter}"))
+      @pagy, @posts = pagy(Post.order(created_at: :desc).includes(:fonts).global_search("#{@filter}"))
 
-    elsif params[:q]
+    #elsif params[:q]
+      #@posts = @q.result.includes(:fonts, :tags).page(params[:page]).to_a.uniq
 
-      @posts = @q.result.includes(:fonts, :tags).page(params[:page]).to_a.uniq
     else
-    @posts = @posts & @pg_results if @pg_results
-    @pagy, @posts = pagy(Post.order(created_at: :desc).includes(:fonts), items: 33)
+      @posts = @posts & @pg_results if @pg_results
+      @pagy, @posts = pagy(Post.order(created_at: :desc).includes(:fonts), items: 33)
 
       respond_to do |format|
         format.html
