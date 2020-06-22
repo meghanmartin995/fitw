@@ -48,7 +48,7 @@ header.index {
   img {
     position: absolute;
     top: 25px;
-    left: 19px;
+    left: 21px;
   }
 }
 
@@ -73,6 +73,23 @@ header.index {
   .dropdown-menu {
     left: -40px !important;
     width: 208px;
+  }
+    #dropdownMenuLink {
+      position: relative;
+    span {
+      display: none;
+    }
+    .num-show {
+      font-size: 9px;
+      display: block;
+      position: absolute;
+      top: -5px;
+      left: -13px;
+      padding: 5px 5px;
+      border-radius: 50%;
+      background: #1533A2;
+      color: white;
+    }
   }
   #dropdownMenuLink {
     display: flex;

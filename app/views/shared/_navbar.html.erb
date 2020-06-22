@@ -13,6 +13,7 @@
   <div class="dropdown show drop-recent" id="myDropdown">
     <a class="btn btn-secondary dropdown-toggle shadow-none" href="/posts" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      Vibes <i class="fas fa-chevron-down animate__animated" id="carrot"></i>
+     <span></span>
     </a>
     <div class="dropdown-menu tag-new" aria-labelledby="dropdownMenuLink">
       <%= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
