@@ -22,6 +22,21 @@
 
 .modal {
   --animate-duration: 0.4s;
+   //position: relative;
+  i.right {
+    position: fixed;
+    top: 35%;
+    right: 4%;
+    font-size: 50px;
+    color: white;
+  }
+  i.left {
+    position: fixed;
+    top: 35%;
+    left: 4%;
+    font-size: 50px;
+    color: white;
+  }
 }
 
 .modal-content {
@@ -36,7 +51,7 @@
 }
 .download-links {
   display: flex;
-  // flex-direction: column;
+  flex-direction: column;
 }
 
 .font-img {
@@ -64,7 +79,7 @@
   p{
     font-size: 20px;
     color: #606060;
-    margin-top: 6px;
+    margin-top: 2px;
     font-weight: 500;
   }
 }
@@ -73,6 +88,7 @@
   margin-right: 12px;
   font-family: Inter;
   font-size: 17px;
+  margin-top: 6px;
   p {
     margin-top: 0;
     font-weight: 500;

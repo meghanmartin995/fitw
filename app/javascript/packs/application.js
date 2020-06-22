@@ -29,6 +29,7 @@ import { masonry } from '../packs/masonry'
 import { masonry2 } from '../packs/masonry2'
 import { shot } from '../packs/shot'
 import { drop } from '../packs/drop'
+import { arrow } from '../packs/arrow'
 // import { search } from '../packs/search.js.erb'
 
 //const Isotope = require('isotope-packery');
@@ -56,7 +57,7 @@ for (const check of checkBoxes) {
   });
 }
 
-form.addEventListener('ajax:success', () => {
+header.addEventListener('ajax:success', () => {
 
   var isoGrid = document.querySelector('.grid');
   var iso = new Isotope( isoGrid, {

@@ -1,5 +1,7 @@
 <% if @pg_results %>
 <div class="modal animate__animated animate__fadeIn bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <a href="#"><i class="fas fa-chevron-right right" id="right-arrow"></i></a>
+    <a href="#"><i class="fas fa-chevron-left left" id="left-arrow"></i></a>
   <div class="vertical-alignment-helper">
   <div class="modal-dialog modal-lg vertical-align-center" role="document">
     <div class="modal-content" id="modal_content">
@@ -33,7 +35,9 @@
   <% else %>
   <% posts.each do |post| %>
 <div class="modal animate__animated animate__fadeIn bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="vertical-alignment-helper">
+  <a href="#"><i class="fas fa-chevron-right right"></i></a>
+  <a href="#"><i class="fas fa-chevron-left left"></i></a>
+<div class="vertical-alignment-helper">
   <div class="modal-dialog modal-lg vertical-align-center" role="document">
     <div class="modal-content" id="modal_content">
       <div class="modal-footer">
