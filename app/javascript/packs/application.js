@@ -45,6 +45,7 @@ $(document).ready(function() {
 
 var checkBoxes = document.querySelectorAll(".tag-new .form-check-input");
 var form = document.querySelector('.tag-new form');
+var header = document.querySelector('header');
 
 for (const check of checkBoxes) {
   check.addEventListener( 'change', function() {
@@ -52,8 +53,7 @@ for (const check of checkBoxes) {
   });
 }
 
-
-form.addEventListener('ajax:success', () => {
+header.addEventListener('ajax:success', () => {
 
   var isoGrid = document.querySelector('.grid');
   var iso = new Isotope( isoGrid, {
