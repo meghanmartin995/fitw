@@ -18,6 +18,9 @@
     font-size: 17px;
     font-weight: 500;
   }
+  .post-website-modal {
+    font-size: 20px;
+  }
 }
 
 .website-info {
@@ -68,31 +71,6 @@
   position: relative;
   // margin: 10px 0;
 }
-
-// .website-text {
-//   position: absolute;
-//   text-align: center;
-//   visibility: hidden;
-//   transition: opacity .8s, visibility .8s;
-//   opacity: 0;
-//   // top: 0;
-//   bottom: 34px;
-//   font-family: Open Sans;
-//   font-size: 24px;
-//   left: 0px;
-//   background: white;
-//   height: 100px;
-//   width: 398px;
-//   // right: 0;
-//   // background: rgba(69, 69, 69, 0.72);
-//   background: linear-gradient(180deg, rgba(135, 135, 135, 0.099) 0%, rgba(108, 108, 108, 0.8132) 100%);
-//   backdrop-filter: blur(1px);
-//   color: #fff;
-//   display: flex;
-//   border-radius: 0px 0px 19px 19px;
-//   align-items: center;
-//   justify-content: center;
-// }
 
 .thumb {
   height: 500px;

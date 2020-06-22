@@ -5,7 +5,7 @@
       <h2><%= font_string.titleize %></h2>
       <% website = post&.website %>
       <% url = "https://#{post&.url}" %>
-     <p><%= link_to website, url, target: "_blank", class: "post-website" %></p>
+     <p><%= link_to website, url, target: "_blank", class: "post-website post-website-modal" %></p>
     </div>
     <div class="download-links">
       <% post.fonts.each do |font| %>
