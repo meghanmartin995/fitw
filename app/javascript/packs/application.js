@@ -54,10 +54,19 @@ for (const check of checkBoxes) {
 
 
 form.addEventListener('ajax:success', () => {
-  var elem = document.querySelector('.grid');
 
-  imagesLoaded( elem ).on( 'progress', function() {
-  masonry.reloadItems();
-  masonry.layout();
+  var isoGrid = document.querySelector('.grid');
+  var iso = new Isotope( isoGrid, {
+    itemSelector: '.grid-item',
+    layoutMode: 'fitRows',
+      masonry: {
+    columnWidth: '.grid-sizer',
+    horizontalOrder: true,
+    isFitWidth: true,
+  }
+});
+
+  imagesLoaded( isoGrid ).on( 'progress', function() {
+   iso.layout()
   });
 })
