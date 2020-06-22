@@ -1,2 +1,23 @@
 $('#modal_content').html("<%= j render 'post_content', post: @post, related_posts: @related_posts %>");
+  var isoGrid = document.querySelector('.grid2');
+
+if (isoGrid) {
+  var iso = new Isotope( isoGrid, {
+    itemSelector: '.grid-item2',
+    layoutMode: 'masonry',
+      masonry: {
+    columnWidth: '.grid-sizer2',
+    horizontalOrder: true,
+    isFitWidth: true,
+    // stagger: 30,
+    // visibleStyle: { transform: 'translateY(0)', opacity: 1 },
+    // hiddenStyle: { transform: 'translateY(100px)', opacity: 0 },
+  }
+});
+
+
+  imagesLoaded( isoGrid ).on( 'progress', function() {
+   iso.layout()
+  });
+  }
 $("#myModal").modal('show');

@@ -31,6 +31,9 @@ import { shot } from '../packs/shot'
 import { drop } from '../packs/drop'
 // import { search } from '../packs/search.js.erb'
 
+//const Isotope = require('isotope-packery');
+//const iso = new Isotope(el, options);
+
 $(document).ready(function() {
 
   var clickOnPopupLink = function(){
@@ -53,7 +56,7 @@ for (const check of checkBoxes) {
   });
 }
 
-header.addEventListener('ajax:success', () => {
+form.addEventListener('ajax:success', () => {
 
   var isoGrid = document.querySelector('.grid');
   var iso = new Isotope( isoGrid, {
@@ -65,7 +68,6 @@ header.addEventListener('ajax:success', () => {
     isFitWidth: true,
   }
 });
-
   imagesLoaded( isoGrid ).on( 'progress', function() {
    iso.layout()
   });

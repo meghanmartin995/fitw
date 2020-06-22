@@ -1,5 +1,4 @@
 function replacePosts (innerHTML) {
-
   const posts = document.getElementById('posts');
   posts.innerHTML = innerHTML;
 }
@@ -7,10 +6,10 @@ function replacePosts (innerHTML) {
 if ('<%= @filter %>' === "[]") {
   replacePosts("<%= j render 'post', posts: Post.all %>");
 
-
 }
 else {
   replacePosts("<%= j render 'post', posts: @posts %>");
+
 }
 
 
