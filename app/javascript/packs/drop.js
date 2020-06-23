@@ -6,16 +6,25 @@ const drop = document.querySelectorAll(".dropped")
 const check = document.querySelectorAll(".form-check-input")
 const number = document.querySelector("#dropdownMenuLink span")
 
-//if (dropdown) {
+if (dropdown) {
 dropdown.addEventListener("click", function() {
+  dropdown.classList.add("bold")
   arrow.classList.add("animate__heartBeat")
   arrow.classList.add("drop")
-  dropdown.classList.add("bold")
+  // const isChecked = document.querySelectorAll('input[type="checkbox"]:checked').length;
+  //   if (isChecked > 0) {
+  //     number.classList.add("num-show")
+  //     dropdown.classList.add("bold")
+  //   }
+  //   else if (isChecked === 0 ) {
+  //     dropdown.classList.remove("bold")
+  //     arrow.classList.remove("animate__heartBeat")
+  //     arrow.classList.remove("drop")
+  // }
 })
-//}
+}
 
-
-//if (dropdown) {
+if (dropdown) {
 drop.forEach(function(d) {
     d.addEventListener("change", function(event) {
     d.classList.toggle("bold")
@@ -32,17 +41,9 @@ drop.forEach(function(d) {
     }
   })
 })
-//}
-
+}
 
 $('#myDropdown').on('hide.bs.dropdown', function () {
     arrow.classList.remove("animate__heartBeat")
     arrow.classList.remove("drop")
-  const isChecked = document.querySelectorAll('input[type="checkbox"]:checked').length;
-  if (isChecked === 0 ) {
-      dropdown.classList.remove("bold")
-      arrow.classList.remove("animate__heartBeat")
-      arrow.classList.remove("drop")
-  }
-    //dropdown.classList.remove("bold")
 });
