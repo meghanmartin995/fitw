@@ -41,7 +41,9 @@
     <% post.find_related_tags.each do |post| %>
       <% if post.photo.attached? %>
       <div class="grid-item2">
-        <%= cl_image_tag post.photo.key, class: "modal-img" %>
+        <%= link_to show_modal_path(id: post.id), remote: true do %>
+          <%= cl_image_tag post.photo.key, class: "modal-img" %>
+        <% end %>
       </div>
       <% end %>
     <% end %>

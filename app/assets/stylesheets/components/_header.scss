@@ -242,7 +242,7 @@ header.index {
   .modal-content {
       margin: 70px 28px !important;
     img {
-      max-width: 260px !important;
+      max-width: 280px !important;
     }
     .modal-body {
       padding: 30px 20px !important;
@@ -257,25 +257,25 @@ header.index {
   }
 }
 
-@media only screen and (max-width:410px) {
-    .modal {
-  .modal-content {
-      margin: 70px 28px !important;
-    img {
-      max-width: 240px !important;
-    }
-    .modal-body {
-      padding: 30px 20px !important;
-    }
-  }
-    .grid2 img {
-      width: 220px !important;
-    }
-  .grid2 {
-    width: 220px !important
-  }
-  }
-}
+// @media only screen and (max-width:410px) {
+//     .modal {
+//   .modal-content {
+//       margin: 70px 28px !important;
+//     img {
+//       max-width: 240px !important;
+//     }
+//     .modal-body {
+//       padding: 30px 20px !important;
+//     }
+//   }
+//     .grid2 img {
+//       width: 220px !important;
+//     }
+//   .grid2 {
+//     width: 220px !important
+//   }
+//   }
+// }
 .search-index {
   display: flex;
   align-items: center;

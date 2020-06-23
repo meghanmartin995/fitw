@@ -32,7 +32,7 @@
       height: 2px;
       bottom: 0;
       left: 0;
-      background-color: #585858;
+      background-color: var(--caption-gray);
       visibility: hidden;
       transform: scaleX(0);
       transition: all 0.3s ease-in-out 0s;
