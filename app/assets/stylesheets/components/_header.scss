@@ -15,12 +15,117 @@ header.index {
     align-items: center;
   }
 }
+.nav-menu {
+  width: 560px;
+  display: flex;
+  align-items: center;
+  // padding-right: 20px;
+  justify-content: space-between;
+}
 
+.search-icon {
+  display: none;
+}
+@media only screen and (max-width:1200px) {
+  .toggle {
+    display: none;
+  }
+}
+
+@media only screen and (max-width:1100px) {
+  .search-index {
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 16px;
+  }
+
+  .nav-menu {
+    font-size: 18px;
+  }
+    .logo-eye {
+    min-height: 56px !important;
+  }
+
+  .search-icon {
+  display: block;
+  }
+  .search2 {
+  display: none;
+  }
+  .form-inline {
+    margin-top: 16px;
+  }
+    header.index {
+    padding-bottom: 24px;
+  }
+}
+
+@media only screen and (max-width:800px) {
+  .nav-menu {
+    width: 500px;
+  }
+  header {
+    .form-control {
+      width: 260px !important;
+      font-size: 17px !important;
+    }
+  }
+}
+
+
+@media only screen and (max-width:700px) {
+  .nav-menu {
+    width: 440px;
+    font-size: 16px;
+  }
+  .drop-recent {
+    #dropdownMenuLink {
+      font-size: 16px;
+      padding: 0;
+    }
+}
+  .logo-eye {
+    min-height: 46px !important;
+  }
+  header.index {
+    padding: 12px 24px 24px 24px;
+  }
+  .free {
+    margin-right: 0 !important;
+  }
+}
+
+@media only screen and (max-width:700px) {
+  header.index {
+    padding: 12px 16px 24px 16px;
+  }
+
+  .nav-menu {
+    width: 423px;
+  }
+  .logo-eye {
+    min-height: 40px !important;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width:560px) {
+  .logo-eye {
+    display: none;
+  }
+
+  .nav-menu {
+    width: 388px;
+  }
+  .content {
+    margin: 20px auto 60px auto !important;
+  }
+}
 .search-index {
   display: flex;
   align-items: center;
   a {
-    padding: 0 20px;
+    // padding: 0 20px;
     color: var(--color-nav);
     font-family: Open Sans;
     font-weight: 500;
@@ -52,8 +157,12 @@ header.index {
   }
 }
 
+.form-inline {
+  width: 300px;
+}
+
 .logo-eye {
-  height: 66px;
+  min-height: 66px;
   cursor: pointer;
 }
 
@@ -132,7 +241,7 @@ header.index {
   font-weight: 500;
   font-size: 19px;
   letter-spacing: .01em;
-  padding: 0 28px 0 0;
+  // padding: 0 28px 0 0;
 }
 
 .dropdown-toggle::after {
