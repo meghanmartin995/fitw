@@ -58,8 +58,8 @@ for (const check of checkBoxes) {
 }
 
 header.addEventListener('ajax:success', () => {
-
-  var isoGrid = document.querySelector('.grid');
+  const masonry = Masonry.data('.grid')
+  var isoGrid = document.querySelector('.grid')
   var iso = new Isotope( isoGrid, {
     itemSelector: '.grid-item',
     layoutMode: 'fitRows',
@@ -70,6 +70,10 @@ header.addEventListener('ajax:success', () => {
   }
 });
   imagesLoaded( isoGrid ).on( 'progress', function() {
+    if (masonry) {
+    //masonry.reloadItems()
+    masonry.layout()
+    }
    iso.layout()
   });
 })
