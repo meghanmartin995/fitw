@@ -8,13 +8,13 @@
     font-family: Inter;
     font-weight: bold;
     font-size: 17px;
-    color: #0F0F0F;
+    color: var(--caption-dark);
     line-height: 120%;
     margin-top: 12px;
   }
   .post-website {
     margin: 0;
-    color: #585858;
+    color: var(--caption-gray);
     font-size: 17px;
     font-weight: 500;
   }
@@ -63,7 +63,6 @@
   width: 410px;
   display: block;
   padding: .7em .7em;
-  background: #fff;
 }
 
 .grid-item {

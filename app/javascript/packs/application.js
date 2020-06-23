@@ -12,7 +12,6 @@ global.$ = jQuery;
 
 import Rails from "@rails/ujs";
 window.Rails = Rails;
-// Rails.start();
 
 
 
@@ -29,8 +28,7 @@ import { masonry } from '../packs/masonry'
 import { masonry2 } from '../packs/masonry2'
 import { shot } from '../packs/shot'
 import { drop } from '../packs/drop'
-import { arrow } from '../packs/arrow'
-// import { search } from '../packs/search.js.erb'
+import { toggle } from '../packs/toggle'
 
 //const Isotope = require('isotope-packery');
 //const iso = new Isotope(el, options);
@@ -72,7 +70,7 @@ header.addEventListener('ajax:success', () => {
   imagesLoaded( isoGrid ).on( 'progress', function() {
     if (masonry) {
     //masonry.reloadItems()
-    masonry.layout()
+    //masonry.layout()
     }
    iso.layout()
   });

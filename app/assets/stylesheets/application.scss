@@ -12,3 +12,32 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+html {
+  --bg: #fff;
+  --input-bg: #FAFAFA;
+  --border: #F3F5F8;
+  --blue: #D9BAF1;
+  --check: #fff;
+  --color-nav: #928F9C;
+  --caption-dark: #0F0F0F;
+  --caption-gray: #585858;
+  --color-search: #828796;
+  --arrow: #fff;
+  --check-bg: #fff;
+
+}
+
+html[data-theme='dark'] {
+    --bg: #262429;
+    --input-bg: #262429;
+    --border: transparent;
+    --blue: #7F94E4;
+    --check: #434343;
+    --color-nav: #F3F3F3;
+    --caption-dark: #F3F3F3;
+    --caption-gray: #F3F3F3;
+    --color-search: #F3F3F3;
+    --arrow: #F3F3F3;
+    --check-bg: #f3f3f3;
+}

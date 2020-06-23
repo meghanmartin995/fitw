@@ -40,7 +40,7 @@ $('#myDropdown').on('hide.bs.dropdown', function () {
     arrow.classList.remove("drop")
   const isChecked = document.querySelectorAll('input[type="checkbox"]:checked').length;
   if (isChecked === 0 ) {
-          dropdown.classList.remove("bold")
+      dropdown.classList.remove("bold")
       arrow.classList.remove("animate__heartBeat")
       arrow.classList.remove("drop")
   }

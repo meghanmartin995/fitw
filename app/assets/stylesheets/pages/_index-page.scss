@@ -1,10 +1,11 @@
 footer {
   text-align: center;
-  color: #585858;
+  color: var(--caption-gray);
+  transition: all .3s ease;
   a {
-    color: #585858;
+    color: var(--caption-gray);
   }
   a:hover {
-    color: #292929;
+    color: var(--caption-dark);
   }
 }

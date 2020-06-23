@@ -7,7 +7,7 @@ header.index {
   justify-content: space-between;
   padding: 12px 62px 12px 36px;
   max-width: 1600px;
-  border-bottom: 1px solid #F3F5F8;
+  border-bottom: 1px solid var(--border);
   margin: 0 auto;
   letter-spacing: 0.01em;
   .filters {
@@ -21,7 +21,7 @@ header.index {
   align-items: center;
   a {
     padding: 0 20px;
-    color: #928F9C;
+    color: var(--color-nav);
     font-family: Open Sans;
     font-weight: 500;
   }
@@ -38,7 +38,7 @@ header.index {
 }
 
 .free-page {
-  color: #1533A2 !important;
+  color: var(--blue) !important;
   font-family: Inter !important;
   font-weight: bold;
 }
@@ -87,7 +87,7 @@ header.index {
       left: -13px;
       padding: 5px 5px;
       border-radius: 50%;
-      background: #1533A2;
+      color: var(--blue);
       color: white;
     }
   }
@@ -95,7 +95,7 @@ header.index {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #807E8B;
+    // color: #807E8B;
     i {
       font-size: 12px;
       margin-top: 4px;
@@ -106,10 +106,10 @@ header.index {
 
 .drop-recent {
   #dropdownMenuLink {
-    color: #928F9C
+    color: var(--color-nav);
   }
   .dropdown-item {
-    color: #928F9C;
+    color: var(--color-nav);
     font-size: 18px;
     text-transform: capitalize;
     padding: 8px 0;
@@ -129,7 +129,6 @@ header.index {
 #dropdownMenuLink {
   background-color: transparent;
   border: none;
-  color: #AEAEAE;
   font-family: Open Sans;
   font-weight: 500;
   font-size: 19px;
@@ -146,22 +145,18 @@ header.index {
   border-radius: 10px;
   line-height: 24px;
   margin-top: 4px;
+  background: var(--bg) !important;
   border-radius: 8px;
   border: 1px solid rgba(0,0,0,0.05);
   -webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.04);
   box-shadow: 0px 3px 5px rgba(0,0,0,0.04);
   a {
-    color: #807E8B;
     font-family: Open Sans;
     font-weight: 500;
     letter-spacing: .01em;
     text-align: center;
     padding: 6px 0;
     font-size: 18 !important;
-  }
-  a:hover {
-    // color: #1533A2;
-    // background: #FAFAFA;
   }
 }
 
@@ -170,13 +165,13 @@ header.index {
 }
 
 .drop {
-  color: #1533A2;
+  color: var(--blue);
   transform: rotate(-180deg);
   margin-top: .7px !important;
   margin-left: 2.5px;
 }
 
 .bold {
-  color: #1533A2 !important;
+  color: var(--blue) !important;
   font-weight: bold !important;
 }
