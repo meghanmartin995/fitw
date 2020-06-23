@@ -73,6 +73,8 @@ class PostsController < ApplicationController
       format.html
       format.js
     end
+    # @previous_post = @post.next
+    # @next_post = @post.previous
   end
 
   def create

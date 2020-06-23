@@ -34,19 +34,20 @@
     <% end %>
   <% else %>
   <% posts.each_with_index do |post, i| %>
+<%= content_tag :div, id: dom_id(post), class: ["post-class-modal", dom_class(post)] do %>
 <div class="modal animate__animated animate__fadeIn bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <% next_post = posts[i+1] %>
-  <% previous_post = posts[i-1] %>
-  <% unless next_post.nil? %>
-    <%= link_to show_modal_path(next_post), remote: true do %>
+  <%# next_post = posts[i+1] %>
+  <%# previous_post = posts[i-1] %>
+  <%# unless next_post.nil? %>
+    <%= link_to "#", class: "right-arrow", remote: true do %>
       <i class="fas fa-chevron-right right"></i>
     <% end %>
-  <% end %>
-  <% unless previous_post.nil? %>
-    <%= link_to show_modal_path(previous_post), remote: true do %>
+  <%# end %>
+  <%# unless previous_post.nil? %>
+    <%= link_to "#", class: "left-arrow", remote: true do %>
       <i class="fas fa-chevron-left left"></i>
   <% end %>
-  <% end %>
+  <%# end %>
 <div class="vertical-alignment-helper">
   <div class="modal-dialog modal-lg vertical-align-center" role="document">
     <div class="modal-content" id="modal_content">
@@ -57,7 +58,8 @@
   </div>
 </div>
 </div>
-  <%= content_tag :div, id: dom_id(post), class: ["post-class", dom_class(post)] do %>
+<% end %>
+  <%= content_tag :div, class: ["post-class", dom_class(post)] do %>
     <% if post.photo.attached? %>
       <%= link_to show_modal_path(id: post.id), remote: true do %>
       <%# binding.pry %>
