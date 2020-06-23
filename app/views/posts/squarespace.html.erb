@@ -7,40 +7,53 @@
     <%= image_tag "logoxxxs.svg", class: "logo-eye" %>
   <% end %>
   <% else %>
-    <%= link_to new_post_path do %>
+    <%= link_to root_path do %>
     <%= image_tag "logoxxxs.svg", class: "logo-eye" %>
   <% end %>
   <% end %>
 
-  <div class="filters toggle">
-
-  </div>
 <div class="search-index">
-  <div class="dropdown show drop-recent" id="myDropdown">
-    <a class="btn btn-secondary dropdown-toggle shadow-none" href="/posts" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     Vibes <i class="fas fa-chevron-down animate__animated" id="carrot"></i>
-    </a>
-  <div class="dropdown-menu tag-new" aria-labelledby="dropdownMenuLink">
-    <%= simple_form_for :search, url: squarespace_path, method: "GET", remote: true do |f| %>
-        <%= f.input :tag, collection: $tags, as: :check_boxes,
-        item_wrapper_class: 'dropdown-item dropped' %>
-    <% end %>
-  </div>
-</div>
+  <div class="nav-menu">
+    <div class="dropdown show drop-recent" id="myDropdown">
+      <a class="btn btn-secondary dropdown-toggle shadow-none" href="/posts" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       Vibes <i class="fas fa-chevron-down animate__animated" id="carrot"></i>
+       <span></span>
+      </a>
+      <div class="dropdown-menu tag-new" aria-labelledby="dropdownMenuLink">
+        <%= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
+            <%= f.input :tag, collection: $tags, as: :check_boxes,
+            item_wrapper_class: 'dropdown-item dropped' %>
+        <% end %>
+      </div>
+    </div>
     <%= link_to "Google Fonts", google_path, class: '' %>
     <div class="free-squig">
       <%= link_to "Squarespace", squarespace_path, class: 'free-page' %>
-      <%= image_tag("s-squig.svg", class:'animate__animated') %>
     </div>
       <%= link_to "Free fonts", free_path, class: 'free' %>
-  <%= form_tag(posts_path, method: 'get', remote: true, class: "form-inline") do %>
+      <%#= image_tag("s-squig.svg", class:'animate__animated') %>
+
+     <a class="" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    <%= image_tag("search.svg", class: "search-icon") %>
+    </a>
+
+  </div>
+  <%= form_tag(posts_path, method: 'get', remote: true, class: "form-inline search2", id: "") do %>
   <div class="search">
     <%= search_field_tag :q_search, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search for fonts" %>
     <%= image_tag("search.svg") %>
-
   </div>
   <% end %>
-  <%= image_tag("moon1.svg") %>
+  <%= form_tag(posts_path, method: 'get', remote: true, class: "form-inline collapse", id: "collapseExample") do %>
+  <div class="search">
+    <%= search_field_tag :q_search, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search for fonts" %>
+    <%= image_tag("search.svg") %>
+  </div>
+  <% end %>
+  <%#= image_tag("moon1.svg", class: "moon") %>
+  <div class="toggle">
+    <input type="checkbox" id="switch" name="theme" /><label for="switch">Toggle</label>
+  </div>
 </div>
 
 </header>
