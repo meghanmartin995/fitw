@@ -46,4 +46,9 @@ drop.forEach(function(d) {
 $('#myDropdown').on('hide.bs.dropdown', function () {
     arrow.classList.remove("animate__heartBeat")
     arrow.classList.remove("drop")
+    const isChecked = document.querySelectorAll('input[type="checkbox"]:checked').length;
+    if (isChecked === 0) {
+      number.classList.remove("num-show")
+      dropdown.classList.remove("bold")
+    }
 });
