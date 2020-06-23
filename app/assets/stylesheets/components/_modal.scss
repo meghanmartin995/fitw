@@ -42,11 +42,11 @@
 .modal-content {
   border-radius: 8px;
   border: none;
-  margin: 40px auto;
+  margin: 40px auto !important;
   font-family: Open Sans;
   // width: 900px;
   img {
-    max-height: 600px;
+    max-height: 688px;
   }
 }
 .download-links {
@@ -61,6 +61,7 @@
 .modal-body {
   padding: 42px 100px;
   background: var(--bg) !important;
+  border-radius: 18px;
 }
 .modal-head {
   display: flex;
