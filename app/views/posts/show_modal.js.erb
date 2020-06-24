@@ -1,4 +1,4 @@
-$('#modal_content').html("<%= j render 'post_content', post: @post, related_posts: @related_posts %>");
+$('#modal_content').html("<%= j render 'post_content', post: @post, related_posts: @related_posts, next_post: @next_post, previous_post: @previous_post %>");
   var isoGrid = document.querySelector('.grid2');
 
 if (isoGrid) {
@@ -20,6 +20,22 @@ if (isoGrid) {
   });
   }
 $("#myModal").modal('show');
+
+$('#myModal').on('show.bs.modal', function () {
+  const rightArrow = document.querySelector(".right-arrow")
+  const leftArrow = document.querySelector(".left-arrow")
+  rightArrow.setAttribute('href', '<%= show_modal_path(@next_post) %>');
+  leftArrow.setAttribute('href', '<%= show_modal_path(@previous_post) %>');
+  document.addEventListener("keyup", function(event) {
+    if (event.keyCode == 39) {
+      console.log("hi")
+      document.getElementById("rightArrow").click();
+    }
+    else if (event.keyCode == 37) {
+      document.getElementById("leftArrow").click();
+    }
+  });
+})
 
 
 

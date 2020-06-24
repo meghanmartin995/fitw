@@ -29,8 +29,18 @@
 </div>
 
 <div class="font-img">
-  <%= cl_image_tag post.photo&.key %>
+  <% if post.photo.attached? %>
+    <%= cl_image_tag post.photo&.key %>
+  <% end %>
 </div>
+    <%= link_to show_modal_path(previous_post), class: "right-arrow", remote: true do %>
+      <i class="fas fa-chevron-right right"></i>
+    <% end %>
+  <%# end %>
+  <%# unless previous_post.nil? %>
+    <%= link_to show_modal_path(next_post), class: "left-arrow", remote: true do %>
+      <i class="fas fa-chevron-left left"></i>
+  <% end %>
 
 <div class="related-posts">
   <% if post.find_related_tags.any? %>

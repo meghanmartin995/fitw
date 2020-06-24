@@ -36,11 +36,11 @@ class Post < ApplicationRecord
         .where(fonts: { name: name })
   end
 
-  # def next
-  #   self.class.where("id > ?", id).first
-  # end
+  def next
+    self.class.where("id > ?", id).first
+  end
 
-  # def previous
-  #   self.class.where("id < ?", id).last
-  # end
+  def previous
+    self.class.where("id < ?", id).last
+  end
 end
