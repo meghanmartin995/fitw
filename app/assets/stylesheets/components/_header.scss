@@ -26,13 +26,38 @@ header.index {
 .search-icon {
   display: none;
 }
+
+.settings {
+  display: none;
+}
+
 @media only screen and (max-width:1200px) {
-  .toggle {
-    display: none;
-  }
+  // .toggle {
+  //   display: none;
+  // }
 }
 
 @media only screen and (max-width:1100px) {
+  .icons {
+    display: flex;
+    align-items: center;
+  }
+  .settings {
+    display: block;
+  }
+
+  .dropHide {
+    display: none !important;
+  }
+  .nav-menu {
+    justify-content: flex-end;
+    width: 100% !important;
+  }
+  .toggles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .search-index {
     flex-direction: column;
     margin: 0 auto;
@@ -42,10 +67,6 @@ header.index {
   .nav-menu {
     font-size: 18px;
   }
-    .logo-eye {
-    min-height: 56px !important;
-  }
-
   .search-icon {
   display: block;
   }
@@ -82,17 +103,12 @@ header.index {
 @media only screen and (max-width:700px) {
   .nav-menu {
     width: 440px;
-    font-size: 16px;
   }
   .drop-recent {
     #dropdownMenuLink {
-      font-size: 16px;
       padding: 0;
     }
 }
-  .logo-eye {
-    min-height: 46px !important;
-  }
   header.index {
     padding: 12px 24px 24px 24px;
   }
@@ -108,13 +124,8 @@ header.index {
   header.index {
     padding: 12px 16px 24px 16px;
   }
-
   .nav-menu {
     width: 423px;
-  }
-  .logo-eye {
-    min-height: 40px !important;
-    cursor: pointer;
   }
   .modal-content img {
     max-width: 400px;
@@ -151,14 +162,6 @@ header.index {
   }
 }
 @media only screen and (max-width:560px) {
-  .logo-eye {
-    display: none;
-  }
-
-  .nav-menu {
-    width: 388px;
-  }
-
   .content {
     margin: 20px auto 60px auto !important;
   }
