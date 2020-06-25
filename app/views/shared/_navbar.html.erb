@@ -1,12 +1,12 @@
 <header class="index">
-  <% if current_user.admin? == true %>
-  <%= link_to new_post_path do %>
-    <%= image_tag "logoxxxs.svg", class: "logo-eye" %>
-  <% end %>
+  <% if current_user && current.user.admin? == true %>
+    <%= link_to new_post_path do %>
+      <%= image_tag "logoxxxs.svg", class: "logo-eye" %>
+    <% end %>
   <% else %>
-    <%= link_to root_path do %>
-    <%= image_tag "logoxxxs.svg", class: "logo-eye" %>
-  <% end %>
+      <%= link_to root_path do %>
+      <%= image_tag "logoxxxs.svg", class: "logo-eye" %>
+    <% end %>
   <% end %>
 
 <div class="search-index">
