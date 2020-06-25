@@ -15,14 +15,19 @@ header.index {
     align-items: center;
   }
 }
+
+.search-toggle {
+  display: none;
+}
 .nav-menu {
   width: 560px;
   display: flex;
   align-items: center;
-  // padding-right: 20px;
   justify-content: space-between;
 }
-
+.toggles {
+  display: none;
+}
 .search-icon {
   display: none;
 }
@@ -31,16 +36,19 @@ header.index {
   display: none;
 }
 
-@media only screen and (max-width:1200px) {
-  // .toggle {
-  //   display: none;
-  // }
-}
-
 @media only screen and (max-width:1100px) {
   .icons {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    i {
+      font-size: 32px;
+      color: #8D919D;
+      opacity: .6;
+    }
+    img {
+      opacity: .6;
+    }
   }
   .settings {
     display: block;
@@ -55,29 +63,68 @@ header.index {
   }
   .toggles {
     display: flex;
+    margin-top: 12px;
     align-items: center;
     justify-content: center;
+    .drop-recent {
+      #dropdownMenuLink {
+        padding-right: 20px;
+        font-size: 22px;
+        color: var(--color-nav);
+        font-family: Open Sans;
+      }
+    }
+    a {
+      padding-right: 20px;
+      font-size: 22px;
+      color: var(--color-nav);
+      font-family: Open Sans;
+    }
+  }
+  form.search {
+    legend.col-form-label {
+      display: none;
+    }
+  }
+
+  .drop-recent .dropdown-item {
+    font-size: 20px !important;
+  }
+  .drop-recent #dropdownMenuLink i {
+    font-size: 12px;
+    margin-top: 4px;
+    margin-left: 2.5px;
   }
   .search-index {
     flex-direction: column;
-    margin: 0 auto;
     margin-top: 16px;
+    align-items: normal !important;
   }
 
-  .nav-menu {
-    font-size: 18px;
-  }
   .search-icon {
-  display: block;
+    display: block;
+    height: 42px;
+    padding-right: 12px;
   }
   .search2 {
-  display: none;
+    display: none;
   }
   .form-inline {
     margin-top: 16px;
   }
     header.index {
     padding-bottom: 24px;
+  }
+  .search-toggle {
+    display: flex;
+    justify-content: center;
+    .form-control {
+      width: 364px !important;
+      //margin-left: -22px;
+    }
+  }
+  a.free {
+    padding-right: 0 !important;
   }
 }
 
@@ -107,6 +154,7 @@ header.index {
   .drop-recent {
     #dropdownMenuLink {
       padding: 0;
+      font-size: 24px;
     }
 }
   header.index {
@@ -209,6 +257,17 @@ header.index {
     width: 260px !important
   }
   }
+  .toggles a {
+    font-size: 19px !important;
+    .drop-recent {
+      #dropdownMenuLink {
+        font-size: 19px !important;
+    }
+  }
+  }
+  .search-toggle .form-control {
+    width: 296px !important;
+  }
 }
 
 @media only screen and (max-width:420px) {
@@ -240,7 +299,7 @@ header.index {
   }
 }
 
-@media only screen and (max-width:420px) {
+@media only screen and (max-width:400px) {
     .modal {
   .modal-content {
       margin: 70px 28px !important;
@@ -260,30 +319,10 @@ header.index {
   }
 }
 
-// @media only screen and (max-width:410px) {
-//     .modal {
-//   .modal-content {
-//       margin: 70px 28px !important;
-//     img {
-//       max-width: 240px !important;
-//     }
-//     .modal-body {
-//       padding: 30px 20px !important;
-//     }
-//   }
-//     .grid2 img {
-//       width: 220px !important;
-//     }
-//   .grid2 {
-//     width: 220px !important
-//   }
-//   }
-// }
 .search-index {
   display: flex;
   align-items: center;
   a {
-    // padding: 0 20px;
     color: var(--color-nav);
     font-family: Open Sans;
     font-weight: 500;
@@ -321,19 +360,10 @@ header.index {
 
 .logo-eye {
   min-height: 66px;
-  cursor: pointer;
 }
 
 .toggle .dropdown-toggle::after {
   display: none;
-}
-
-.x {
-  display: none;
-}
-
-.show-x {
-  display: block;
 }
 
 .drop-recent {
@@ -361,7 +391,6 @@ header.index {
     display: flex;
     justify-content: center;
     align-items: center;
-    // color: #807E8B;
     i {
       font-size: 12px;
       margin-top: 4px;
@@ -386,7 +415,6 @@ header.index {
       cursor: pointer;
     }
   }
-
   .dropdown-item:hover {
     background: none;
   }
@@ -399,7 +427,6 @@ header.index {
   font-weight: 500;
   font-size: 19px;
   letter-spacing: .01em;
-  // padding: 0 28px 0 0;
 }
 
 .dropdown-toggle::after {

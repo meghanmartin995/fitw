@@ -33,25 +33,23 @@
     <%= image_tag("search.svg") %>
   </div>
   <% end %>
-
-  <div class="icons">
-    <a class="" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-      <%= image_tag("search.svg", class: "search-icon") %>
-    </a>
-    <a class="" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
-      <i class="fas fa-sliders-h settings"></i>
-    </a>
-    <div class="toggle">
-      <input type="checkbox" id="switch" name="theme" /><label for="switch"></label>
+  <div class="toggle-forms">
+    <div class="icons">
+      <a class="" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <%= image_tag("search.svg", class: "search-icon") %>
+      </a>
+      <a class="" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+        <i class="fas fa-sliders-h settings"></i>
+      </a>
+      <div class="toggle">
+        <input type="checkbox" id="switch" name="theme" /><label for="switch"></label>
+      </div>
     </div>
   </div>
-    <%= form_tag(posts_path, method: 'get', remote: true, class: "form-inline collapse", id: "collapseExample") do %>
-  <div class="search">
-    <%= search_field_tag :q_search, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search for fonts" %>
-    <%= image_tag("search.svg") %>
-  </div>
-  <% end %>
-  <div class="collapse" id="collapseExample2">
+</div>
+
+</header>
+  <div class="collapse drop-recent" id="collapseExample2">
     <div class="toggles">
       <div class="dropdown show drop-recent" id="myDropdown">
         <a class="btn btn-secondary dropdown-toggle shadow-none" href="/posts" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -70,6 +68,11 @@
       <%= link_to "Free", free_path, class: 'free' %>
     </div>
   </div>
+<div class="search-toggle">
+  <%= form_tag(posts_path, method: 'get', remote: true, class: "form-inline collapse", id: "collapseExample") do %>
+    <div class="search">
+      <%= search_field_tag :q_search, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search for fonts" %>
+      <%= image_tag("search.svg") %>
+    </div>
+  <% end %>
 </div>
-
-</header>
