@@ -56,10 +56,6 @@ header.index {
   .nav-menu {
     display: none;
   }
-  header {
-    border: solid 1px red;
-  }
-
   .dropHide {
     display: none !important;
   }
@@ -126,7 +122,6 @@ header.index {
     justify-content: center;
     .form-control {
       width: 314px !important;
-      //margin-left: -22px;
     }
   }
   a.free {
@@ -141,9 +136,6 @@ header.index {
 }
 
 @media only screen and (max-width:800px) {
-  .nav-menu {
-    // width: 500px;
-  }
   header {
     .form-control {
       width: 260px !important;
@@ -312,6 +304,11 @@ header.index {
    .grid-sizer {
     width: 320px !important;
    }
+   .drop-recent {
+    .dropdown-item {
+      font-size: 19px !important;
+    }
+   }
 }
 
 @media only screen and (max-width:400px) {
@@ -344,9 +341,6 @@ header.index {
   }
   .search {
     margin: 0 50px 0 0;
-  }
-  .moon {
-    cursor: pointer;
   }
 }
 
@@ -442,6 +436,7 @@ header.index {
   font-weight: 500;
   font-size: 19px;
   letter-spacing: .01em;
+  padding: 0;
 }
 
 .dropdown-toggle::after {
