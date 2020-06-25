@@ -53,6 +53,12 @@ header.index {
   .settings {
     display: block;
   }
+  .nav-menu {
+    display: none;
+  }
+  header {
+    border: solid 1px red;
+  }
 
   .dropHide {
     display: none !important;
@@ -119,7 +125,7 @@ header.index {
     display: flex;
     justify-content: center;
     .form-control {
-      width: 364px !important;
+      width: 314px !important;
       //margin-left: -22px;
     }
   }
@@ -136,7 +142,7 @@ header.index {
 
 @media only screen and (max-width:800px) {
   .nav-menu {
-    width: 500px;
+    // width: 500px;
   }
   header {
     .form-control {
@@ -149,14 +155,8 @@ header.index {
 
 @media only screen and (max-width:700px) {
   .nav-menu {
-    width: 440px;
+    // width: 440px;
   }
-  .drop-recent {
-    #dropdownMenuLink {
-      padding: 0;
-      font-size: 24px;
-    }
-}
   header.index {
     padding: 12px 24px 24px 24px;
   }
@@ -173,7 +173,7 @@ header.index {
     padding: 12px 16px 24px 16px;
   }
   .nav-menu {
-    width: 423px;
+    // width: 423px;
   }
   .modal-content img {
     max-width: 400px;
@@ -297,6 +297,21 @@ header.index {
     }
   }
   }
+  .grid-item {
+      padding: 0;
+      width: 320px !important;
+    img {
+      width: 320px !important;
+      margin: 0 auto;
+
+    }
+    a {
+      margin: 0 auto;
+    }
+  }
+   .grid-sizer {
+    width: 320px !important;
+   }
 }
 
 @media only screen and (max-width:400px) {
