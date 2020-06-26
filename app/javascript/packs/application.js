@@ -56,8 +56,9 @@ for (const check of checkBoxes) {
 }
 
 header.addEventListener('ajax:success', () => {
-  const masonry = Masonry.data('.grid')
   var isoGrid = document.querySelector('.grid')
+  if (isoGrid) {
+  const masonry = Masonry.data('.grid')
   var iso = new Isotope( isoGrid, {
     itemSelector: '.grid-item',
     layoutMode: 'fitRows',
@@ -74,4 +75,5 @@ header.addEventListener('ajax:success', () => {
     }
    iso.layout()
   });
+}
 })

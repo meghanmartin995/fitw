@@ -41,6 +41,7 @@ gem 'pagy', '~> 3.8.1'
 gem 'impressionist'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'meta-tags'
+gem 'sprockets', '~> 3.7.2'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
