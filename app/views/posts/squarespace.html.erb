@@ -20,15 +20,15 @@
          <span></span>
         </a>
         <div class="dropdown-menu tag-new" aria-labelledby="dropdownMenuLink">
-          <%= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
+          <%= simple_form_for :search, url: squarespace_posts_path, method: "GET", remote: true do |f| %>
               <%= f.input :tag, collection: $tags, as: :check_boxes,
               item_wrapper_class: 'dropdown-item dropped' %>
           <% end %>
         </div>
       </div>
-      <%= link_to "Google Fonts", google_path, class: 'dropHide' %>
-      <%= link_to "Squarespace", squarespace_path, class: 'dropHide free-page' %>
-      <%= link_to "Free fonts", free_path, class: 'free dropHide' %>
+      <%= link_to "Free Fonts", free_path, class: 'dropHide' %>
+      <%= link_to "Google Fonts", google_path, class: 'dropHide ' %>
+      <%= link_to "Squarespace", squarespace_path, class: 'free dropHide free-page' %>
   </div>
   <%= form_tag(posts_path, method: 'get', remote: true, class: "form-inline search2", id: "") do %>
   <div class="search">
@@ -60,15 +60,15 @@
          <span></span>
         </a>
         <div class="dropdown-menu tag-new" aria-labelledby="dropdownMenuLink">
-          <%= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
+          <%= simple_form_for :search, url: squarespace_posts_path, method: "GET", remote: true do |f| %>
               <%= f.input :tag, collection: $tags, as: :check_boxes,
               item_wrapper_class: 'dropdown-item dropped' %>
           <% end %>
         </div>
       </div>
+      <%= link_to "Free", free_path, class: '' %>
       <%= link_to "Google", google_path, class: '' %>
-      <%= link_to "Squarespace", squarespace_path, class: 'free-page' %>
-      <%= link_to "Free", free_path, class: 'free' %>
+      <%= link_to "Squarespace", squarespace_path, class: 'free free-page' %>
     </div>
   </div>
 <div class="search-toggle">

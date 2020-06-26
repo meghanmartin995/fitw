@@ -35,7 +35,6 @@ document.addEventListener('turbolinks:load', () => {
     });
 });
 
-
 var infScroll = new InfiniteScroll( elem, {
 
   path: "a[rel='next']",

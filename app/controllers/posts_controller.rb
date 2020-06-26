@@ -41,7 +41,6 @@ class PostsController < ApplicationController
       @filter = params[:search]["tag"].reject(&:blank?)
       @pagy, @posts = pagy(Post.is_free.global_search("#{@filter}"))
     else
-      # @posts = @posts & @pg_results if @pg_results
       @pagy, @posts = pagy(Post.is_free.order(created_at: :desc).includes(:fonts), items: 33)
 
     respond_to do |format|
@@ -52,11 +51,31 @@ class PostsController < ApplicationController
   end
 
   def squarespace
-    @pagy, @posts = pagy(Post.is_squarespace, items: 33)
+    if params[:search]
+      @filter = params[:search]["tag"].reject(&:blank?)
+      @pagy, @posts = pagy(Post.is_squarespace.global_search("#{@filter}"))
+    else
+      @pagy, @posts = pagy(Post.is_squarespace.order(created_at: :desc).includes(:fonts), items: 33)
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+    end
   end
 
   def google
-    @pagy, @posts = pagy(Post.is_google, items: 33)
+    if params[:search]
+      @filter = params[:search]["tag"].reject(&:blank?)
+      @pagy, @posts = pagy(Post.is_google.global_search("#{@filter}"))
+    else
+      @pagy, @posts = pagy(Post.is_google.order(created_at: :desc).includes(:fonts), items: 33)
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+    end
   end
 
   def show_modal

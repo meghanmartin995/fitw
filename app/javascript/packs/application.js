@@ -55,6 +55,18 @@ for (const check of checkBoxes) {
   });
 }
 
+document.addEventListener('turbolinks:load', () => {
+  var checkBoxes = document.querySelectorAll(".tag-new .form-check-input");
+  var form = document.querySelector('.tag-new form');
+  var header = document.querySelector('header');
+
+  for (const check of checkBoxes) {
+    check.addEventListener( 'change', function() {
+      Rails.fire(form, 'submit');
+    });
+  }
+})
+
 header.addEventListener('ajax:success', () => {
   var isoGrid = document.querySelector('.grid')
   if (isoGrid) {

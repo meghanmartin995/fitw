@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   get 'free', to: 'posts#free', as: :free
   post 'free', to: 'posts#free', as: :free_posts
   get 'google', to: 'posts#google', as: :google
+  post 'google', to: 'posts#google', as: :google_posts
   get 'squarespace', to: 'posts#squarespace', as: :squarespace
+  post 'squarespace', to: 'posts#squarespace', as: :squarespace_posts
 end
