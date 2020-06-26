@@ -11,16 +11,6 @@ dropdown.addEventListener("click", function() {
   dropdown.classList.add("bold")
   arrow.classList.add("animate__heartBeat")
   arrow.classList.add("drop")
-  // const isChecked = document.querySelectorAll('input[type="checkbox"]:checked').length;
-  //   if (isChecked > 0) {
-  //     number.classList.add("num-show")
-  //     dropdown.classList.add("bold")
-  //   }
-  //   else if (isChecked === 0 ) {
-  //     dropdown.classList.remove("bold")
-  //     arrow.classList.remove("animate__heartBeat")
-  //     arrow.classList.remove("drop")
-  // }
 })
 }
 
@@ -52,3 +42,4 @@ $('#myDropdown').on('hide.bs.dropdown', function () {
       dropdown.classList.remove("bold")
     }
 });
+

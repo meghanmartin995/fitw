@@ -24,7 +24,6 @@ window.Rails = Rails;
 // import { letters } from '../packs/letters'
 // import "controllers"
 import { masonry } from '../packs/masonry'
-// import { packery } from '../packs/packery'
 import { masonry2 } from '../packs/masonry2'
 import { shot } from '../packs/shot'
 import { drop } from '../packs/drop'
