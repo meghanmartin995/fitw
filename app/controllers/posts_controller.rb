@@ -17,9 +17,6 @@ class PostsController < ApplicationController
       respond_to do |format|
         format.html
         format.js
-        format.json {
-        render json: { entries: render_to_string(partial: "post", formats: [:html]), pagination: view_context.pagy_nav(@pagy)}
-      }
       end
     end
   end
@@ -40,21 +37,16 @@ class PostsController < ApplicationController
   end
 
   def free
-    if params[:q_search].present?
-      @pg_results = PgSearch.multisearch(params[:q_search])
-    elsif params[:search]
+    if params[:search]
       @filter = params[:search]["tag"].reject(&:blank?)
       @pagy, @posts = pagy(Post.is_free.global_search("#{@filter}"))
     else
-      @posts = @posts & @pg_results if @pg_results
+      # @posts = @posts & @pg_results if @pg_results
       @pagy, @posts = pagy(Post.is_free.order(created_at: :desc).includes(:fonts), items: 33)
 
     respond_to do |format|
       format.html
       format.js
-      format.json {
-        render json: { entries: render_to_string(partial: "post", formats: [:html]), pagination: view_context.pagy_nav(@pagy)}
-      }
     end
     end
   end

@@ -20,7 +20,7 @@
          <span></span>
         </a>
         <div class="dropdown-menu tag-new" aria-labelledby="dropdownMenuLink">
-          <%= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
+          <%= simple_form_for :search, url: free_posts_path, method: "GET", remote: true do |f| %>
               <%= f.input :tag, collection: $tags, as: :check_boxes,
               item_wrapper_class: 'dropdown-item dropped' %>
           <% end %>
@@ -60,7 +60,7 @@
          <span></span>
         </a>
         <div class="dropdown-menu tag-new" aria-labelledby="dropdownMenuLink">
-          <%= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
+          <%= simple_form_for :search, url: free_posts_path, method: "GET", remote: true do |f| %>
               <%= f.input :tag, collection: $tags, as: :check_boxes,
               item_wrapper_class: 'dropdown-item dropped' %>
           <% end %>

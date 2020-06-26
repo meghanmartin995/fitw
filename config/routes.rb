@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :tags, only: [ :show ]
   get 'show_modal/:id', to: 'posts#show_modal', as: :show_modal
   get 'free', to: 'posts#free', as: :free
+  post 'free', to: 'posts#free', as: :free_posts
   get 'google', to: 'posts#google', as: :google
   get 'squarespace', to: 'posts#squarespace', as: :squarespace
 end
