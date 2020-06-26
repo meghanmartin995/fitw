@@ -26,9 +26,9 @@
           <% end %>
         </div>
       </div>
+      <%= link_to "Free Fonts", free_path, class: 'dropHide free-page' %>
       <%= link_to "Google Fonts", google_path, class: 'dropHide' %>
-      <%= link_to "Squarespace", squarespace_path, class: 'dropHide' %>
-      <%= link_to "Free fonts", free_path, class: 'free dropHide free-page' %>
+      <%= link_to "Squarespace", squarespace_path, class: 'free dropHide' %>
   </div>
   <%= form_tag(posts_path, method: 'get', remote: true, class: "form-inline search2", id: "") do %>
   <div class="search">
@@ -66,9 +66,9 @@
           <% end %>
         </div>
       </div>
+      <%= link_to "Free", free_path, class: 'free-page' %>
       <%= link_to "Google", google_path, class: '' %>
-      <%= link_to "Squarespace", squarespace_path, class: '' %>
-      <%= link_to "Free", free_path, class: 'free free-page' %>
+      <%= link_to "Squarespace", squarespace_path, class: 'free' %>
     </div>
   </div>
 <div class="search-toggle">
@@ -150,4 +150,4 @@
   <% end %>
 </section>
 
-<%#= pagy_bootstrap_nav(@pagy).html_safe %>
+<%= pagy_bootstrap_nav(@pagy).html_safe %>
