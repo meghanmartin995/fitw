@@ -1,11 +1,17 @@
 <header class="index">
   <% if current_user && current_user.admin? == true %>
     <%= link_to new_post_path do %>
-      <%= image_tag "logoxxxs.svg", class: "logo-eye" %>
+    <div class="logo">
+      <%= image_tag "logo2.svg", class: "logo-eye" %>
+      <h1>fonts in the wild</h1>
+    </div>
     <% end %>
   <% else %>
       <%= link_to root_path do %>
-      <%= image_tag "logoxxxs.svg", class: "logo-eye" %>
+      <div class="logo">
+        <%= image_tag "logo2.svg", class: "logo-eye" %>
+        <h1>fonts in the wild</h1>
+      </div>
     <% end %>
   <% end %>
 
@@ -23,9 +29,9 @@
           <% end %>
         </div>
       </div>
-      <%= link_to "Free Fonts", free_path, class: 'dropHide' %>
-      <%= link_to "Google Fonts", google_path, class: 'dropHide' %>
-      <%= link_to "Squarespace", squarespace_path, class: 'free dropHide' %>
+      <%= link_to "free fonts", free_path, class: 'dropHide' %>
+      <%= link_to "foogle fonts", google_path, class: 'dropHide' %>
+      <%= link_to "squarespace", squarespace_path, class: 'free dropHide' %>
   </div>
   <%= form_tag(posts_path, method: 'get', remote: true, class: "form-inline search2", id: "") do %>
   <div class="search">
@@ -63,9 +69,9 @@
           <% end %>
         </div>
       </div>
-      <%= link_to "Free", free_path, class: '' %>
-      <%= link_to "Google", google_path, class: '' %>
-      <%= link_to "Squarespace", squarespace_path, class: 'free' %>
+      <%= link_to "free", free_path, class: '' %>
+      <%= link_to "google", google_path, class: '' %>
+      <%= link_to "squarespace", squarespace_path, class: 'free' %>
     </div>
   </div>
 <div class="search-toggle">
