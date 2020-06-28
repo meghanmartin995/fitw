@@ -1,5 +1,29 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(0, 26px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0,0);
+  }
+}
+
+@keyframes header-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.content {
+  animation: fadeIn 1.8s 1s both cubic-bezier(0.9,0.03,0.69,0.22);
+}
 header.index {
   display: flex;
+  animation: header-in 1s .4s both cubic-bezier(0.9,0.03,0.69,0.22);
   align-items: center;
   font-weight: bold;
   font-size: 19px;
@@ -337,7 +361,7 @@ header.index {
   a {
     color: var(--color-nav);
     font-family: Open Sans;
-    font-weight: 500;
+    font-weight: 700;
   }
   .search {
     margin: 0 50px 0 0;
@@ -351,7 +375,7 @@ header.index {
 .free-page {
   color: var(--blue) !important;
   font-family: Inter !important;
-  font-weight: bold !important;
+  font-weight: 700!important;
 }
 
 .free-squig {
@@ -419,7 +443,7 @@ header.index {
     padding: 8px 0;
     background: none;
     font-family: Open Sans;
-    font-weight: 500;
+    font-weight: 600;
     label {
       cursor: pointer;
     }
@@ -433,7 +457,7 @@ header.index {
   background-color: transparent;
   border: none;
   font-family: Open Sans;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 19px;
   letter-spacing: .01em;
   padding: 0;
@@ -455,7 +479,7 @@ header.index {
   box-shadow: 0px 3px 5px rgba(0,0,0,0.04);
   a {
     font-family: Open Sans;
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: .01em;
     text-align: center;
     padding: 6px 0;
@@ -476,5 +500,5 @@ header.index {
 
 .bold {
   color: var(--blue) !important;
-  font-weight: bold !important;
+  font-weight: 700 !important;
 }
