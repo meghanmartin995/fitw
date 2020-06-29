@@ -9,17 +9,17 @@
   }
 }
 
-@keyframes header-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+// @keyframes header-in {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
 
 .content {
-  animation: fadeIn 1.8s 1s both cubic-bezier(0.9,0.03,0.69,0.22);
+  animation: fadeIn .35s .35s both cubic-bezier(0.9,0.03,0.69,0.22);
 }
 header.index {
   display: flex;
@@ -27,9 +27,9 @@ header.index {
   align-items: center;
   font-weight: bold;
   font-size: 19px;
-  font-family: Inter;
+  font-family: Poppins;
   justify-content: space-between;
-  padding: 12px 62px 12px 36px;
+  padding: 12px 48px 12px 48px;
   max-width: 1600px;
   border-bottom: 1px solid var(--border);
   margin: 0 auto;
@@ -45,6 +45,7 @@ header.index {
 }
 .nav-menu {
   width: 560px;
+  padding-right: 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -97,14 +98,14 @@ header.index {
         padding-right: 20px;
         font-size: 22px;
         color: var(--color-nav);
-        font-family: Open Sans;
+        font-family: Poppins;
       }
     }
     a {
       padding-right: 20px;
       font-size: 22px;
       color: var(--color-nav);
-      font-family: Open Sans;
+      font-family: Poppins;
     }
   }
   form.search {
@@ -360,8 +361,8 @@ header.index {
   align-items: center;
   a {
     color: var(--color-nav);
-    font-family: Open Sans;
-    font-weight: 700;
+    font-family: Poppins;
+    font-weight: 500;
   }
   .search {
     margin: 0 50px 0 0;
@@ -374,7 +375,6 @@ header.index {
 
 .free-page {
   color: var(--blue) !important;
-  font-family: Inter !important;
   font-weight: 700!important;
 }
 
@@ -388,7 +388,7 @@ header.index {
 }
 
 .form-inline {
-  width: 300px;
+  width: 290px;
 }
 
 .logo-eye {
@@ -442,8 +442,8 @@ header.index {
     text-transform: capitalize;
     padding: 8px 0;
     background: none;
-    font-family: Open Sans;
-    font-weight: 600;
+    font-family: Poppins;
+    font-weight: 500;
     label {
       cursor: pointer;
     }
@@ -456,8 +456,8 @@ header.index {
 #dropdownMenuLink {
   background-color: transparent;
   border: none;
-  font-family: Open Sans;
-  font-weight: 700;
+  font-family: Poppins;
+  font-weight: 500;
   font-size: 19px;
   letter-spacing: .01em;
   padding: 0;
@@ -478,8 +478,8 @@ header.index {
   -webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.04);
   box-shadow: 0px 3px 5px rgba(0,0,0,0.04);
   a {
-    font-family: Open Sans;
-    font-weight: 700;
+    font-family: Poppins;
+    font-weight: 500;
     letter-spacing: .01em;
     text-align: center;
     padding: 6px 0;

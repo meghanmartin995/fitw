@@ -2,15 +2,15 @@
   <% if current_user && current_user.admin? == true %>
     <%= link_to new_post_path do %>
     <div class="logo">
-      <%= image_tag "logo2.svg", class: "logo-eye" %>
-      <h1>fonts in the wild</h1>
+      <%#= image_tag "logo2.svg", class: "logo-eye" %>
+      <h1>fonts in the wild.</h1>
     </div>
     <% end %>
   <% else %>
       <%= link_to root_path do %>
       <div class="logo">
-        <%= image_tag "logo2.svg", class: "logo-eye" %>
-        <h1>fonts in the wild</h1>
+        <%#= image_tag "logo2.svg", class: "logo-eye" %>
+        <h1>fonts in the wild.</h1>
       </div>
     <% end %>
   <% end %>
@@ -19,7 +19,7 @@
   <div class="nav-menu">
       <div class="dropdown show drop-recent dropHide" id="myDropdown">
         <a class="btn btn-secondary dropdown-toggle shadow-none" href="/posts" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         vibes <i class="fas fa-chevron-down animate__animated" id="carrot"></i>
+         <figure>✨</figure>vibes <i class="fas fa-chevron-down animate__animated" id="carrot"></i>
          <span></span>
         </a>
         <div class="dropdown-menu tag-new" aria-labelledby="dropdownMenuLink">
@@ -59,7 +59,7 @@
     <div class="toggles">
       <div class="dropdown show drop-recent" id="myDropdown">
         <a class="btn btn-secondary dropdown-toggle shadow-none" href="/posts" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         vibes <i class="fas fa-chevron-down animate__animated" id="carrot"></i>
+         <figure>✨</figure>vibes <i class="fas fa-chevron-down animate__animated" id="carrot"></i>
          <span></span>
         </a>
         <div class="dropdown-menu tag-new" aria-labelledby="dropdownMenuLink">
