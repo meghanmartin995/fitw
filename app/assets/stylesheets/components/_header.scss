@@ -1,13 +1,13 @@
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translate(0, 26px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0,0);
-  }
-}
+// @keyframes fadeIn {
+//   0% {
+//     opacity: 0;
+//     transform: translate(0, 26px);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: translate(0,0);
+//   }
+// }
 
 // @keyframes header-in {
 //   0% {
@@ -19,17 +19,17 @@
 // }
 
 .content {
-  animation: fadeIn .35s .35s both cubic-bezier(0.9,0.03,0.69,0.22);
+  // animation: fadeIn .35s .35s both cubic-bezier(0.9,0.03,0.69,0.22);
 }
 header.index {
   display: flex;
-  animation: header-in 1s .4s both cubic-bezier(0.9,0.03,0.69,0.22);
+  // animation: header-in 1s .4s both cubic-bezier(0.9,0.03,0.69,0.22);
   align-items: center;
   font-weight: bold;
   font-size: 19px;
   font-family: Poppins;
   justify-content: space-between;
-  padding: 12px 48px 12px 48px;
+  padding: 14px 48px 14px 48px;
   max-width: 1600px;
   border-bottom: 1px solid var(--border);
   margin: 0 auto;
@@ -99,6 +99,7 @@ header.index {
         font-size: 22px;
         color: var(--color-nav);
         font-family: Poppins;
+        font-weight: 500;
       }
     }
     a {
@@ -106,6 +107,7 @@ header.index {
       font-size: 22px;
       color: var(--color-nav);
       font-family: Poppins;
+      font-weight: 500;
     }
   }
   form.search {
@@ -352,6 +354,14 @@ header.index {
     }
   .grid2 {
     width: 240px !important
+  }
+  }
+    .toggles a {
+      padding-right: 13px !important;
+    .drop-recent {
+      #dropdownMenuLink {
+        padding-right: 13px !important;
+    }
   }
   }
 }
