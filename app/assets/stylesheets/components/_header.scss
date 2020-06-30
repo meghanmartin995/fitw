@@ -1,13 +1,13 @@
-// @keyframes fadeIn {
-//   0% {
-//     opacity: 0;
-//     transform: translate(0, 26px);
-//   }
-//   100% {
-//     opacity: 1;
-//     transform: translate(0,0);
-//   }
-// }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(0, 26px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0,0);
+  }
+}
 
 // @keyframes header-in {
 //   0% {
@@ -361,6 +361,17 @@ header.index {
     .drop-recent {
       #dropdownMenuLink {
         padding-right: 13px !important;
+    }
+  }
+  }
+}
+
+@media only screen and (max-width:375px) {
+  .toggles a {
+      padding-right: 10px !important;
+    .drop-recent {
+      #dropdownMenuLink {
+        padding-right: 10px !important;
     }
   }
   }
