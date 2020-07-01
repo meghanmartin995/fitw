@@ -89,6 +89,9 @@
   display: block;
   width: 410px;
   max-height: 500px;
+  background: #f9f1f5;
+  box-shadow: inset 13px 13px 30px #e8e0e4,
+            inset -13px -13px 30px #ffffff;
 }
 
 .grid:after {
