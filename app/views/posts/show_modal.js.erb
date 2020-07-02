@@ -26,7 +26,7 @@ $('#myModal').on('show.bs.modal', function () {
   const leftArrow = document.querySelector(".left-arrow")
   rightArrow.setAttribute('href', '<%= show_modal_path(@next_post) %>');
   leftArrow.setAttribute('href', '<%= show_modal_path(@previous_post) %>');
-  document.addEventListener("keydown", function(event) {
+  document.addEventListener("keyup", function(event) {
     if (event.keyCode == 39) {
       document.querySelector(".right-arrow").click()
     }
