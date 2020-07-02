@@ -26,12 +26,12 @@ header.index {
   // animation: header-in 1s .4s both cubic-bezier(0.9,0.03,0.69,0.22);
   align-items: center;
   font-weight: bold;
-  font-size: 19px;
+  font-size: 21px;
   font-family: Karla;
   justify-content: space-between;
-  padding: 14px 48px 14px 48px;
+  padding: 26px 48px 10px 48px;
   max-width: 1600px;
-  border-bottom: 1px solid var(--border);
+  // border-bottom: 1px solid var(--border);
   margin: 0 auto;
   letter-spacing: 0.01em;
   .filters {
@@ -96,7 +96,7 @@ header.index {
     .drop-recent {
       #dropdownMenuLink {
         padding-right: 20px;
-        font-size: 22px;
+        font-size: 21px;
         color: var(--color-nav);
         font-family: Karla;
         font-weight: 500;
@@ -104,7 +104,7 @@ header.index {
     }
     a {
       padding-right: 20px;
-      font-size: 22px;
+      font-size: 21px;
       color: var(--color-nav);
       font-family: Karla;
       font-weight: 500;
@@ -459,7 +459,7 @@ header.index {
   }
   .dropdown-item {
     color: var(--color-nav);
-    font-size: 18px;
+    font-size: 19px;
     text-transform: capitalize;
     padding: 8px 0;
     background: none;
@@ -479,7 +479,7 @@ header.index {
   border: none;
   font-family: Karla;
   font-weight: 500;
-  font-size: 19px;
+  font-size: 21px;
   letter-spacing: .01em;
   padding: 0;
 }
@@ -509,7 +509,7 @@ header.index {
 }
 
 .check_boxes {
-  padding: 8px 48px;
+  padding: 8px 46px;
 }
 
 .drop {

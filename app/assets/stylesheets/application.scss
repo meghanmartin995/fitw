@@ -19,7 +19,8 @@ html {
   --border: #F3F5F8;
   --blue: #D9BAF1;
   --check: #fff;
-  --color-nav: #ADADAD;
+  --logo: #2C2C2C;
+  --color-nav: #1E1E1E;
   --caption-dark: #0F0F0F;
   --caption-gray: #585858;
   --color-search: #828796;
@@ -35,6 +36,7 @@ html[data-theme='dark'] {
     --blue: #7F94E4;
     --check: #434343;
     --color-nav: #F3F3F3;
+    --logo: #F3F3F3;
     --caption-dark: #F3F3F3;
     --caption-gray: #F3F3F3;
     --color-search: #F3F3F3;
