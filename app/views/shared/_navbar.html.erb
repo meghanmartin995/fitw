@@ -21,6 +21,7 @@
         <a class="btn btn-secondary dropdown-toggle shadow-none" href="/posts" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           vibes <i class="fas fa-chevron-down animate__animated" id="carrot"></i>
          <span></span>
+         <%= image_tag "blue-square.svg", class: "nav-svg" %>
         </a>
         <div class="dropdown-menu tag-new" aria-labelledby="dropdownMenuLink">
           <%= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
@@ -29,9 +30,19 @@
           <% end %>
         </div>
       </div>
-      <%= link_to "free fonts", free_path, class: 'dropHide' %>
-      <%= link_to "google fonts", google_path, class: 'dropHide' %>
-      <%= link_to "squarespace", squarespace_path, class: 'free dropHide' %>
+      <div class="nav-svg-wrapper">
+        <%= link_to "free fonts", free_path, class: 'dropHide' %>
+      <%= image_tag "blue-triangle.svg", class: "nav-svg" %>
+      </div>
+      <div class="nav-svg-wrapper">
+        <%= link_to "google fonts", google_path, class: 'dropHide' %>
+        <%= image_tag "pink-circle-sm.svg", class: "nav-svg" %>
+      </div>
+      <div class="nav-svg-wrapper">
+        <%= link_to "squarespace", squarespace_path, class: 'free dropHide' %>
+        <%= image_tag "blue-square.svg", class: "nav-svg" %>
+      </div>
+      <%= image_tag "search-black.svg", class: "black-search" %>
   </div>
   <%= form_tag(posts_path, method: 'get', remote: true, class: "form-inline search2", id: "") do %>
   <div class="search">
@@ -47,14 +58,13 @@
       <a class="" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
         <i class="fas fa-sliders-h settings"></i>
       </a>
-      <div class="toggle">
-        <input type="checkbox" id="switch" name="theme" /><label for="switch"></label>
-      </div>
     </div>
   </div>
 </div>
-
 </header>
+  <div class="toggle">
+    <input type="checkbox" id="switch" name="theme" /><label for="switch"></label>
+  </div>
   <div class="collapse drop-recent" id="collapseExample2">
     <div class="toggles">
       <div class="dropdown show drop-recent" id="myDropdown">

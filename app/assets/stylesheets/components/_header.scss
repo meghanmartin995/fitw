@@ -29,7 +29,7 @@ header.index {
   font-size: 21px;
   font-family: Karla;
   justify-content: space-between;
-  padding: 26px 48px 10px 48px;
+  padding: 28px 110px 4px 80px;
   max-width: 1600px;
   // border-bottom: 1px solid var(--border);
   margin: 0 auto;
@@ -378,8 +378,8 @@ header.index {
 }
 
 .search-index {
-  display: flex;
-  align-items: center;
+  // display: flex;
+  // align-items: center;
   a {
     color: var(--color-nav);
     font-family: Karla;
@@ -387,11 +387,12 @@ header.index {
   }
   .search {
     margin: 0 50px 0 0;
+    display: none;
   }
 }
 
 .free {
-  margin-right: 22px;
+  // margin-right: 22px;
 }
 
 .free-page {

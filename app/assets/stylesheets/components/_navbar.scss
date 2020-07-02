@@ -30,3 +30,19 @@ nav.pagy-bootstrap-nav {
     color: var(--logo) !important;
   }
 }
+
+.nav-svg {
+  position: absolute;
+  top: -4px;
+  left: -6px;
+  z-index: -1;
+}
+
+.nav-svg-wrapper {
+  position: relative;
+}
+
+.black-search {
+  margin-left: -10px;
+  cursor: pointer;
+}
