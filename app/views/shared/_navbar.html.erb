@@ -21,7 +21,7 @@
         <a class="btn btn-secondary dropdown-toggle shadow-none" href="/posts" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           vibes <i class="fas fa-chevron-down animate__animated" id="carrot"></i>
          <span></span>
-         <%= image_tag "pink-square.svg", class: "nav-svg" %>
+         <%= image_tag "pink-square.svg", class: "nav-svg nav-svg0" %>
         </a>
         <div class="dropdown-menu tag-new" aria-labelledby="dropdownMenuLink">
           <%= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
@@ -36,11 +36,11 @@
       </div>
       <div class="nav-svg-wrapper">
         <%= link_to "google fonts", google_path, class: 'dropHide' %>
-        <%= image_tag "pink-circle-sm.svg", class: "nav-svg" %>
+        <%= image_tag "pink-circle-sm.svg", class: "nav-svg nav-svg3" %>
       </div>
       <div class="nav-svg-wrapper">
         <%= link_to "squarespace", squarespace_path, class: 'free dropHide' %>
-        <%= image_tag "blue-square.svg", class: "nav-svg" %>
+        <%= image_tag "blue-square.svg", class: "nav-svg nav-svg4" %>
       </div>
       <%= image_tag "search-black.svg", class: "black-search" %>
   </div>

@@ -5,14 +5,14 @@
   <% if current_user && current_user.admin? == true %>
     <%= link_to new_post_path do %>
     <div class="logo">
-      <%#= image_tag "logo2.svg", class: "logo-eye" %>
+      <%= image_tag "pink-circle.svg", class: "pink-circle" %>
       <h1>fonts in the wild.</h1>
     </div>
     <% end %>
   <% else %>
       <%= link_to root_path do %>
       <div class="logo">
-        <%#= image_tag "logo2.svg", class: "logo-eye" %>
+        <%= image_tag "pink-circle.svg", class: "pink-circle" %>
         <h1>fonts in the wild.</h1>
       </div>
     <% end %>
@@ -22,8 +22,9 @@
   <div class="nav-menu">
       <div class="dropdown show drop-recent dropHide" id="myDropdown">
         <a class="btn btn-secondary dropdown-toggle shadow-none" href="/posts" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         <figure>✨</figure>vibes <i class="fas fa-chevron-down animate__animated" id="carrot"></i>
+          vibes <i class="fas fa-chevron-down animate__animated" id="carrot"></i>
          <span></span>
+         <%= image_tag "pink-square.svg", class: "nav-svg nav-svg0" %>
         </a>
         <div class="dropdown-menu tag-new" aria-labelledby="dropdownMenuLink">
           <%= simple_form_for :search, url: google_posts_path, method: "GET", remote: true do |f| %>
@@ -32,9 +33,19 @@
           <% end %>
         </div>
       </div>
-      <%= link_to "free fonts", free_path, class: 'dropHide' %>
-      <%= link_to "google fonts", google_path, class: 'dropHide free-page' %>
-      <%= link_to "squarespace", squarespace_path, class: 'free dropHide' %>
+      <div class="nav-svg-wrapper">
+        <%= link_to "free fonts", free_path, class: 'dropHide' %>
+      <%= image_tag "blue-triangle.svg", class: "nav-svg nav-svg2" %>
+      </div>
+      <div class="nav-svg-wrapper">
+        <%= link_to "google fonts", google_path, class: 'dropHide free-page' %>
+        <%= image_tag "pink-circle-sm.svg", class: "nav-svg nav-svg3" %>
+      </div>
+      <div class="nav-svg-wrapper">
+        <%= link_to "squarespace", squarespace_path, class: 'free dropHide' %>
+        <%= image_tag "blue-square.svg", class: "nav-svg nav-svg4" %>
+      </div>
+      <%= image_tag "search-black.svg", class: "black-search" %>
   </div>
   <%= form_tag(posts_path, method: 'get', remote: true, class: "form-inline search2", id: "") do %>
   <div class="search">
@@ -50,19 +61,18 @@
       <a class="" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
         <i class="fas fa-sliders-h settings"></i>
       </a>
-      <div class="toggle">
-        <input type="checkbox" id="switch" name="theme" /><label for="switch"></label>
-      </div>
     </div>
   </div>
 </div>
-
 </header>
+  <div class="toggle">
+    <input type="checkbox" id="switch" name="theme" /><label for="switch"></label>
+  </div>
   <div class="collapse drop-recent" id="collapseExample2">
     <div class="toggles">
       <div class="dropdown show drop-recent" id="myDropdown">
         <a class="btn btn-secondary dropdown-toggle shadow-none" href="/posts" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         <figure>✨</figure>vibes <i class="fas fa-chevron-down animate__animated" id="carrot"></i>
+          vibes <i class="fas fa-chevron-down animate__animated" id="carrot"></i>
          <span></span>
         </a>
         <div class="dropdown-menu tag-new" aria-labelledby="dropdownMenuLink">
@@ -73,8 +83,8 @@
         </div>
       </div>
       <%= link_to "free", free_path, class: '' %>
-      <%= link_to "google", google_path, class: 'free-page' %>
-      <%= link_to "squarespace", squarespace_path, class: 'free' %>
+      <%= link_to "google", google_path, class: '' %>
+      <%= link_to "squarespace", squarespace_path, class: 'free free-page' %>
     </div>
   </div>
 <div class="search-toggle">
@@ -85,6 +95,7 @@
     </div>
   <% end %>
 </div>
+
 
 <section class="content">
   <% if @posts %>
@@ -154,6 +165,11 @@
 <% end %>
   </div>
   <% end %>
+<div data-target="infinite-scroll.pagination">
+    <%= pagy_bootstrap_nav(@pagy).html_safe %>
+</div>
+<footer>
+  all screenshots © of their respective owners. site by <a target="_blank" href="www.meghanxmartin.com">meghan</a>.
+</footer>
 </section>
 
-<%= pagy_bootstrap_nav(@pagy).html_safe %>
