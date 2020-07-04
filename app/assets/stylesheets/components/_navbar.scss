@@ -55,8 +55,6 @@ nav.pagy-bootstrap-nav {
   left: -4px;
 }
 
-
-
 .nav-svg-wrapper {
   position: relative;
 }
@@ -64,4 +62,20 @@ nav.pagy-bootstrap-nav {
 .black-search {
   margin-left: -10px;
   cursor: pointer;
+  height: 28px;
+  width: 28px;
+}
+
+.search3 input {
+  width: 210px;
+  height: 42px;
+  border-radius: 26px;
+  font-size: 18px;
+  padding: 18px;
+  color: black !important;
+}
+
+.blacklg {
+  height: 36px;
+  width: 36px;
 }
