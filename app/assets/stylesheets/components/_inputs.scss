@@ -62,7 +62,7 @@ input[type='checkbox']{
     width: 1.1em;
     height: 1.1em;
     background-color: var(--check-bg);
-    border-radius: 1px;
+        border-radius: 20px;
     vertical-align: middle;
     border: 1px solid #ddd;
     -webkit-appearance: none;
@@ -83,7 +83,7 @@ input[type='checkbox']:checked {
     top: 0;
     right: .5px;
     line-height: 1rem;
-    font-size: 1.05rem;
+    font-size: 1rem;
     padding-left: 0.15rem;
 }
 
