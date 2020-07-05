@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index, :free, :show, :show_modal ]
+  skip_before_action :authenticate_user!, only: [ :index, :free, :show, :show_modal, :squarespace, :google ]
   impressionist actions: [:show_modal], unique: [:session_hash]
 
   def index
