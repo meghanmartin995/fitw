@@ -4,14 +4,14 @@
       <% font_string = post.fonts.map(&:name).join ', '.titleize %>
       <h2><%= font_string.titleize %></h2>
       <% website = post&.website %>
-      <% url = "https://#{post&.url}" %>
+      <% url = "#{post&.url}" %>
      <p><%= link_to website, url, target: "_blank", class: "post-website post-website-modal" %></p>
     </div>
     <div class="download-links">
       <% post.fonts.each do |font| %>
         <div class="download">
           <% if font.source %>
-            <%= link_to "download #{font.name}", "https://#{font&.source}", target: "_blank"%>
+            <%= link_to "download #{font.name}", "#{font&.source}", target: "_blank"%>
           <% else %>
             <%= link_to "download #{font.name}", "https://www.google.com", target: "_blank"%>
           <% end %>
