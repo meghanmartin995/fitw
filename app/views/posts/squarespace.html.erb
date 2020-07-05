@@ -42,21 +42,17 @@
         <%= image_tag "pink-circle-sm.svg", class: "nav-svg nav-svg3" %>
       </div>
       <div class="nav-svg-wrapper">
-        <%= link_to "squarespace", squarespace_path, class: 'free dropHide free-page' %>
+        <%= link_to "squarespace", squarespace_path, class: 'dropHide free-page' %>
         <%= image_tag "blue-square.svg", class: "nav-svg nav-svg4" %>
       </div>
-      <%= image_tag "search-black.svg", class: "black-search" %>
+      <a class="" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <%= image_tag "search-black.svg", class: "black-search" %>
+      </a>
   </div>
-  <%= form_tag(posts_path, method: 'get', remote: true, class: "form-inline search2", id: "") do %>
-  <div class="search">
-    <%= search_field_tag :q_search, nil, autocomplete: :off, class: "form-control search-input", placeholder: "Search for fonts" %>
-    <%= image_tag("search.svg") %>
-  </div>
-  <% end %>
   <div class="toggle-forms">
     <div class="icons">
       <a class="" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        <%= image_tag("search.svg", class: "search-icon") %>
+        <%= image_tag "search-black.svg", class: "black-search blacklg" %>
       </a>
       <a class="" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
         <i class="fas fa-sliders-h settings"></i>
@@ -65,9 +61,18 @@
   </div>
 </div>
 </header>
-  <div class="toggle">
-    <input type="checkbox" id="switch" name="theme" /><label for="switch"></label>
+<div class="form">
+  <%= form_tag(posts_path, method: 'get', remote: true, class: "form-inline search2 collapse", id: "collapseExample3") do %>
+  <div class="search3">
+    <%= search_field_tag :q_search, nil, autocomplete: :off, class: " search-input1", placeholder: "Search for fonts" %>
+    <%#= image_tag("search.svg") %>
   </div>
+  <% end %>
+</div>
+
+<!--   <div class="toggle">
+    <input type="checkbox" id="switch" name="theme" /><label for="switch"></label>
+  </div> -->
   <div class="collapse drop-recent" id="collapseExample2">
     <div class="toggles">
       <div class="dropdown show drop-recent" id="myDropdown">
@@ -84,7 +89,7 @@
       </div>
       <%= link_to "free", free_path, class: '' %>
       <%= link_to "google", google_path, class: '' %>
-      <%= link_to "squarespace", squarespace_path, class: 'free free-page' %>
+      <%= link_to "squarespace", squarespace_path, class: 'free-page' %>
     </div>
   </div>
 <div class="search-toggle">
