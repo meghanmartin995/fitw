@@ -29,9 +29,8 @@ header.index {
   font-size: 21px;
   font-family: Karla;
   justify-content: space-between;
-  padding: 28px 110px 4px 80px;
+  padding: 28px 110px 6px 80px;
   max-width: 1440px;
-  // border-bottom: 1px solid var(--border);
   margin: 0 auto;
   letter-spacing: 0.01em;
   .filters {
@@ -73,10 +72,6 @@ header.index {
     i {
       font-size: 28px;
       color: #1E1D1D;
-      // opacity: .6;
-    }
-    img {
-      // opacity: .6;
     }
   }
   .settings {
@@ -376,8 +371,6 @@ header.index {
 }
 
 .search-index {
-  // display: flex;
-  // align-items: center;
   a {
     color: var(--color-nav);
     font-family: Karla;
@@ -387,10 +380,6 @@ header.index {
     margin: 0 50px 0 0;
     display: none;
   }
-}
-
-.free {
-  // margin-right: 22px;
 }
 
 .free-page {
@@ -405,14 +394,6 @@ header.index {
     top: 25px;
     left: 21px;
   }
-}
-
-.form-inline {
-  width: 290px;
-}
-
-.logo-eye {
-  min-height: 66px;
 }
 
 .toggle .dropdown-toggle::after {

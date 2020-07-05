@@ -58,17 +58,19 @@
     </div>
   </div>
 </div>
+</header>
+<div class="form">
   <%= form_tag(posts_path, method: 'get', remote: true, class: "form-inline search2 collapse", id: "collapseExample3") do %>
   <div class="search3">
     <%= search_field_tag :q_search, nil, autocomplete: :off, class: " search-input1", placeholder: "Search for fonts" %>
     <%#= image_tag("search.svg") %>
   </div>
   <% end %>
-</header>
+</div>
 
-  <div class="toggle">
+<!--   <div class="toggle">
     <input type="checkbox" id="switch" name="theme" /><label for="switch"></label>
-  </div>
+  </div> -->
   <div class="collapse drop-recent" id="collapseExample2">
     <div class="toggles">
       <div class="dropdown show drop-recent" id="myDropdown">

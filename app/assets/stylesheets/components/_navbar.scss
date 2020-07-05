@@ -71,11 +71,24 @@ nav.pagy-bootstrap-nav {
   height: 42px;
   border-radius: 26px;
   font-size: 18px;
-  padding: 18px;
+  padding: 20px 19px;
   color: black !important;
+  font-family: Karla;
+  //border: black;
+}
+
+.search3
+input::placeholder {
+  color: black;
 }
 
 .blacklg {
   height: 36px;
   width: 36px;
+}
+.form {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 1440px;
+  margin-right: 138px;
 }
