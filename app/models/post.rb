@@ -31,6 +31,9 @@ class Post < ApplicationRecord
   scope :is_squarespace, -> { joins(:fonts).where(fonts: { squarespace: true } ) }
   scope :squarespace, -> { includes(:fonts).where(fonts: { squarespace: true }) }
 
+  scope :is_adobe, -> { joins(:fonts).where(fonts: { adobe: true } ) }
+  scope :adobe, -> { includes(:fonts).where(fonts: { adobe: true }) }
+
   def posts_by_font(name)
     Post.joins(:fonts)
         .where(fonts: { name: name })
