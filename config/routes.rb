@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   post 'google', to: 'posts#google', as: :google_posts
   get 'squarespace', to: 'posts#squarespace', as: :squarespace
   post 'squarespace', to: 'posts#squarespace', as: :squarespace_posts
+  get 'adobe', to: 'posts#adobe', as: :adobe
+  post 'adobe', to: 'posts#adobe', as: :adobe_posts
 end

@@ -17,7 +17,7 @@ function replacePosts (innerHTML) {
 
 
 if ('<%= @filter %>' === "[]") {
-replacePosts("<%= j render 'post', posts: Post.is_free %>");
+replacePosts("<%= j render 'post', posts: Post.is_google %>");
 }
 else {
 replacePosts("<%= j render 'post', posts: @posts %>");

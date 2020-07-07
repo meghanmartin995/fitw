@@ -27,7 +27,7 @@
          <%= image_tag "pink-square.svg", class: "nav-svg nav-svg0" %>
         </a>
         <div class="dropdown-menu tag-new" aria-labelledby="dropdownMenuLink">
-          <%= simple_form_for :search, url: google_posts_path, method: "GET", remote: true do |f| %>
+          <%= simple_form_for :search, url: adobe_posts_path, method: "GET", remote: true do |f| %>
               <%= f.input :tag, collection: $tags, as: :check_boxes,
               item_wrapper_class: 'dropdown-item dropped' %>
           <% end %>
@@ -38,11 +38,11 @@
       <%= image_tag "blue-triangle.svg", class: "nav-svg nav-svg2" %>
       </div>
       <div class="nav-svg-wrapper">
-        <%= link_to "google fonts", google_path, class: 'dropHide free-page' %>
+        <%= link_to "google fonts", google_path, class: 'dropHide' %>
         <%= image_tag "pink-circle-sm.svg", class: "nav-svg nav-svg3" %>
       </div>
       <div class="nav-svg-wrapper">
-        <%= link_to "adobe", adobe_path, class: 'free dropHide' %>
+        <%= link_to "adobe", adobe_path, class: 'dropHide free-page' %>
         <%= image_tag "blue-square.svg", class: "nav-svg nav-svg4" %>
       </div>
       <a class="" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -81,15 +81,15 @@
          <span></span>
         </a>
         <div class="dropdown-menu tag-new" aria-labelledby="dropdownMenuLink">
-          <%= simple_form_for :search, url: google_posts_path, method: "GET", remote: true do |f| %>
+          <%= simple_form_for :search, url: adobe_posts_path, method: "GET", remote: true do |f| %>
               <%= f.input :tag, collection: $tags, as: :check_boxes,
               item_wrapper_class: 'dropdown-item dropped' %>
           <% end %>
         </div>
       </div>
       <%= link_to "free", free_path, class: '' %>
-      <%= link_to "google", google_path, class: 'free-page' %>
-      <%= link_to "adobe", adobe_path, class: 'free' %>
+      <%= link_to "google", google_path, class: '' %>
+      <%= link_to "adobe", adobe_path, class: 'free-page' %>
     </div>
   </div>
 <div class="search-toggle">
@@ -100,7 +100,6 @@
     </div>
   <% end %>
 </div>
-
 
 
 <section class="content">

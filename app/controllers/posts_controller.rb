@@ -64,6 +64,20 @@ class PostsController < ApplicationController
     end
   end
 
+  def adobe
+    if params[:search]
+      @filter = params[:search]["tag"].reject(&:blank?)
+      @pagy, @posts = pagy(Post.is_adobe.global_search("#{@filter}"))
+    else
+      @pagy, @posts = pagy(Post.is_adobe.order(created_at: :desc).includes(:fonts), items: 33)
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+    end
+  end
+
   def google
     if params[:search]
       @filter = params[:search]["tag"].reject(&:blank?)
