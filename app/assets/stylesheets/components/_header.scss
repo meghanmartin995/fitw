@@ -189,6 +189,9 @@ header.index {
   .modal-content img {
     max-width: 400px;
   }
+  .modal i {
+    display: none;
+  }
 }
 
 @media only screen and (max-width:620px) {
@@ -310,9 +313,9 @@ header.index {
   }
   .grid-item {
       padding: 0;
-      width: 320px !important;
+      width: 380px !important;
     img {
-      width: 320px !important;
+      width: 380px !important;
       margin: 0 auto;
 
     }
@@ -321,7 +324,7 @@ header.index {
     }
   }
    .grid-sizer {
-    width: 320px !important;
+    width: 380px !important;
    }
    .drop-recent {
     .dropdown-item {
@@ -358,7 +361,7 @@ header.index {
   }
 }
 
-@media only screen and (max-width:375px) {
+@media only screen and (max-width:380px) {
   .toggles a {
       padding-right: 10px !important;
     .drop-recent {
@@ -367,6 +370,18 @@ header.index {
     }
   }
   }
+    .grid-item {
+      padding: 0;
+      width: 320px !important;
+    img {
+      width: 320px !important;
+      margin: 0 auto;
+
+    }
+  }
+   .grid-sizer {
+    width: 320px !important;
+   }
 }
 
 .search-index {
