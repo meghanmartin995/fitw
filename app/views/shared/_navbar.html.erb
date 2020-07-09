@@ -17,19 +17,19 @@
 
 <div class="search-index">
   <div class="nav-menu">
-      <div class="dropdown show drop-recent dropHide" id="myDropdown">
+<!--       <div class="dropdown show drop-recent dropHide" id="myDropdown">
         <a class="btn btn-secondary dropdown-toggle shadow-none" href="/posts" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           vibes <i class="fas fa-chevron-down animate__animated" id="carrot"></i>
          <span></span>
-         <%= image_tag "pink-square.svg", class: "nav-svg nav-svg0" %>
+         <%#= image_tag "pink-square.svg", class: "nav-svg nav-svg0" %>
         </a>
         <div class="dropdown-menu tag-new" aria-labelledby="dropdownMenuLink">
-          <%= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
-              <%= f.input :tag, collection: $tags, as: :check_boxes,
+          <%#= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
+              <%#= f.input :tag, collection: $tags, as: :check_boxes,
               item_wrapper_class: 'dropdown-item dropped' %>
-          <% end %>
+          <%# end %>
         </div>
-      </div>
+      </div> -->
       <div class="nav-svg-wrapper">
         <%= link_to "free fonts", free_path, class: 'dropHide' %>
       <%= image_tag "blue-triangle.svg", class: "nav-svg nav-svg2" %>
@@ -72,18 +72,18 @@
   </div> -->
   <div class="collapse drop-recent" id="collapseExample2">
     <div class="toggles">
-      <div class="dropdown show drop-recent" id="myDropdown">
+<!--       <div class="dropdown show drop-recent" id="myDropdown">
         <a class="btn btn-secondary dropdown-toggle shadow-none" href="/posts" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           vibes <i class="fas fa-chevron-down animate__animated" id="carrot"></i>
          <span></span>
         </a>
         <div class="dropdown-menu tag-new" aria-labelledby="dropdownMenuLink">
-          <%= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
-              <%= f.input :tag, collection: $tags, as: :check_boxes,
+          <%#= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
+              <%#= f.input :tag, collection: $tags, as: :check_boxes,
               item_wrapper_class: 'dropdown-item dropped' %>
-          <% end %>
+          <%# end %>
         </div>
-      </div>
+      </div> -->
       <%= link_to "free", free_path, class: '' %>
       <%= link_to "google", google_path, class: '' %>
       <%= link_to "adobe", adobe_path, class: 'free' %>
