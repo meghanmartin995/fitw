@@ -258,17 +258,29 @@ header.index {
 
 @media only screen and (max-width:460px) {
   .modal {
+    .modal-body {
+      padding: 0 !important;
+    }
+    .download-links {
+      display: none;
+    }
   .modal-content {
       margin: 70px 32px !important;
     img {
       max-width: 320px !important;
     }
+    .modal-head {
+      justify-content: left;
+      padding-left: 22px;
+      padding-bottom: 24px;
+      padding-top: 24px;
+    }
   }
     .grid2 img {
-      width: 260px !important;
+      width: 280px !important;
     }
   .grid2 {
-    width: 260px !important
+    width: 280px !important
   }
   }
   .toggles a {
@@ -290,7 +302,7 @@ header.index {
        margin: 64px 32px !important;
     }
   .modal-body {
-    padding: 32px 17px !important;
+    // padding: 32px 17px !important;
     h2 {
       font-size: 20px;
     }
@@ -338,10 +350,7 @@ header.index {
   .modal-content {
       margin: 64px 32px !important;
     img {
-      max-width: 260px !important;
-    }
-    .modal-body {
-      padding: 30px 20px !important;
+      max-width: 280px !important;
     }
   }
     .grid2 img {
