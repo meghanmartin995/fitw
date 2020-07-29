@@ -7,6 +7,8 @@
         <div class="grid-sizer"></div>
         <%= render 'post', posts: @posts %>
     </div>
+    <% else %>
+      <p>no fonts found</p>
     <% end %>
     <div data-target="infinite-scroll.pagination">
         <%= pagy_bootstrap_nav(@pagy).html_safe %>

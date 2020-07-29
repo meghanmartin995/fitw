@@ -6,13 +6,13 @@ class PostsController < ApplicationController
     if params[:q_search].present?
       @pg_results = PgSearch.multisearch(params[:q_search])
 
-    elsif params[:search]
-      @filter = params[:search]["tag"].reject(&:blank?)
-      @pagy, @posts = pagy(Post.order(created_at: :desc).includes(:fonts).global_search("#{@filter}"))
+      @posts = @pg_results if @pg_results.size > 0
+    # elsif params[:search]
+    #   @filter = params[:search]["tag"].reject(&:blank?)
+    #   @pagy, @posts = pagy(Post.order(created_at: :desc).includes(:fonts).global_search("#{@filter}"))
 
     else
-      @posts = @posts & @pg_results if @pg_results
-      @pagy, @posts = pagy(Post.order(created_at: :desc).includes(:fonts), items: 20)
+      @pagy, @posts = pagy(Post.order(created_at: :desc).includes(:fonts), items: 33)
 
       respond_to do |format|
         format.html
