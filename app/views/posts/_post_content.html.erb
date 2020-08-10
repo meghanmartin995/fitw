@@ -30,7 +30,7 @@
 
 <div class="font-img">
   <% if post.photo.attached? %>
-    <%= cl_image_tag post.photo&.key %>
+    <%= cl_image_tag(post.photo&.key, :quality=>"auto") %>
   <% end %>
 </div>
     <%= link_to show_modal_path(previous_post), class: "right-arrow", remote: true do %>
@@ -51,7 +51,7 @@
       <% if post.photo.attached? %>
       <div class="grid-item2">
         <%= link_to show_modal_path(id: post.id), remote: true do %>
-          <%= cl_image_tag post.photo.key, class: "modal-img" %>
+          <%= cl_image_tag(post.photo&.key, quality: "auto", class: "modal-img") %>
         <% end %>
       </div>
       <% end %>

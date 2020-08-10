@@ -123,7 +123,7 @@
         <% font.posts.each do |post| %>
           <% if post.photo.attached? %>
             <%= link_to show_modal_path(id: post.id), remote: true do %>
-              <div class="grid-item"><%= cl_image_tag post.photo.key %>
+              <div class="grid-item"><%= cl_image_tag(post.photo&.key, :quality=>"auto") %>
                 <% font =  post.fonts.map(&:name).join ', '.titleize %>
               <div class="website-info">
                 <p><%= font.titleize %></p>
@@ -152,7 +152,7 @@
 </div>
     <% if post.photo.attached? %>
       <%= link_to show_modal_path(id: post.id), remote: true do %>
-          <div class="grid-item"><%= cl_image_tag post.photo.key %>
+          <div class="grid-item"><%= cl_image_tag(post.photo&.key, :quality=>"auto") %>
             <% if post.fonts.present? %>
               <% font =  post.fonts.map(&:name).join ', '.titleize %>
               <div class="website-info">
